@@ -55,10 +55,8 @@
         .reveal .bio-card {
           background: #333;
           border-radius: 2px;
-          box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
           display: inline-block;
           width: 260px;
-          height: 320px;
           margin: 1rem;
           position: relative;
           font-size: 20px;
@@ -82,7 +80,7 @@
         .reveal .card-info {
           width: 100%;
           float: left;
-          font-size: 13px;
+          font-size: 20px;
           margin-top: 0;
           padding: 0 4px;
           text-align: center;
@@ -133,6 +131,54 @@
                     <p>Data structures for data science</p>
                 </section>
                 <section>
+                    <div class="team-section-content">
+                        <div style="display: inline-block; width: 45%; margin: 30px; vertical-align: top;">
+                            <img class="card-photo" alt="Avatar picture" src="sylvain.png">
+                            <p class="card-header">Sylvain Corlay</p>
+                            <div style="font-size: 20px; text-align: justify; margin: 30px;">
+                            <ul>
+                                <li>Scientific software developer, Quant researcher, formerly quant at Bloomberg, and adjunct at Columbia and NYU</li>
+                                <li>Founded QuantStack in 2016</li>
+                                <li>Jupyter core developer (widgets, bqplot, pythreejs)</li>
+                            </ul>
+                            </div>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://github.com/SylvainCorlay" target="_blank">
+                                    <span class="genericon genericon-github"></span>
+                                    <em>@SylvainCorlay</em>
+                                </a>
+                            </div>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://twitter.com/SylvainCorlay" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@SylvainCorlay</em>
+                                </a>
+                            </div>
+                        </div>
+                        <div style="display: inline-block; width: 45%; margin: 30px; vertical-align: top;">
+                            <img class="card-photo" alt="Avatar picture" src="johan.jpg">
+                            <p class="card-header">Johan Mabille</p>
+                            <div style="font-size: 20px; text-align: justify; margin: 30px;">
+                            <ul>
+                                <li>Scientific software developer, Quant developer, formerly at HSBC</li>
+                                <li>Joined QuantStack in 2016</li>
+                                <li>Co-author of xtensor, xsimd, xeus</li>
+                            </ul>
+                            </div>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://github.com/JohanMabille" target="_blank">
+                                    <span class="genericon genericon-github"></span>
+                                    <em>@JohanMabille</em>
+                                </a>
+                            </div>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://twitter.com/JohanMabille" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@JohanMabille</em>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </section>
                 <section>
                     <h2>State of the art</h2>
@@ -141,17 +187,14 @@
                     <img alt="Python" src="PythonLogo.svg" width="8%"/>
                     <img alt="R" src="RLogo.svg" width="10%"/>
                     <p>all have concepts of</p>
-                        <ul>
-                            <li>N-D arrays</li>
-                            <li>Data frames</li>
-                        </ul>
-                    <div class="normal-paragraph" style="font-size: 30px;">
-                        <p>with slightly different semantics</p>
-                        <p>with incompatible in-memory representation</p>
-                    </div>
+                    <ul>
+                        <li>N-D arrays</li>
+                        <li>Data frames</li>
+                    </ul>
+                    <p>but with slightly different semantics and  incompatible in-memory representation</p>
                 </section>
                 <section>
-                    <h2>One standard to rule them all?</h2>
+                    <h2>A new standard for dataframes and tensors?</h2>
                     <img alt="xkcd-standards" src="xkcd-standards.png" width="60%"/>
                 </section>
                 <section>
@@ -167,11 +210,13 @@
                 </section>
                 <section>
                      <h2>Their conclusions</h2>
-                     <ul>
-                         <li>Enforce common serialization / deserialization and messaging protocols for these data structures.</li>
-                         <li>Support for these protocols accross these languages</li>
-                         <li>Converge on common native C++ implementations of these data structures with bindings for R, Julia and Python.</li>
-                     </ul>
+                     <div style="width: 70%; margin: auto;">
+                         <ul>
+                             <li>Enforce common serialization / deserialization and messaging protocols for these data structures.</li>
+                             <li>Support for these protocols accross these languages</li>
+                             <li>Converge on common native C++ implementations of these data structures with bindings for R, Julia and Python.</li>
+                         </ul>
+                     </div>
                 </section>
                 <section>
                      <h2>One Tensor to Rule Them All</h2>
@@ -179,7 +224,22 @@
                      <p class="fragment">What would it look like?</p>
                 </section>
                 <section>
-                    <p>You've got</p>
+                     <h2>One Tensor to Rule Them All: The Requirements</h2>
+                     <div style="text-align: left; margin: auto; width: 70%;">
+                     <ul>
+                         <li>Be as cool as NumPy</li>
+                         <li>Enable use of data structures from existing tensor libraries transparently</li>
+                         <li>Enable transparent use of large tensors backed by database calls or the file system.</li>
+                     </ul>
+                     <p>The One Tensor to Rule them All cannot be just one container implementation.</p>
+                     <p>Instead, it has to be a flexible expression system in which any data structure can be plugged, offering the most expressive and flexible API to the users.</p>
+                     </div>
+                </section>
+                <section>
+                    <img alt="xtensor" src="xtensor.svg" width="80%"/>
+                    <p>The Lazy Tensor Algebra Expression System</p>
+                </section>
+                <section>
                     <div style="margin-top: 5%; margin-bottom: 10%;">
                         <ul>
                             <li>a cool C++ package to call on numpy array</li>
