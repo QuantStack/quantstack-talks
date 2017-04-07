@@ -8,6 +8,7 @@
 
         <link rel="stylesheet" href="css/reveal.css">
         <link rel="stylesheet" href="css/theme/black.css">
+        <link rel="stylesheet" href="genericons.css">
         <link rel="stylesheet" href="lib/css/zenburn.css">
 
         <!-- Printing and PDF exports -->
@@ -22,13 +23,109 @@
         .reveal section img {
             border: none;
             background-color: initial;
+            margin: 10px;
         }
         .reveal .normal-paragraph {
-            text-align: initial;
+            text-align: left;
+            margin: 0 auto 0 auto;
+            width: 60%;
         }
-        </style> 
+        .reveal .normal-paragraph p {
+            text-align: left;
+        }
+        .header-left {
+            position: absolute;
+            top: 2%;
+            left: 2%;
+        }
+        .header-right {
+            position: absolute;
+            top: 2%;
+            right: 2%;
+        }
+        .footer-left {
+            position: absolute;
+            bottom: 2%;
+            left: 2%;
+        }
+        .reveal .genericon {
+          font-family: "genericons";
+        }
+
+        .reveal .bio-card {
+          background: #333;
+          border-radius: 2px;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+          display: inline-block;
+          width: 260px;
+          height: 320px;
+          margin: 1rem;
+          position: relative;
+          font-size: 20px;
+        }
+
+        .reveal .card-photo {
+          display: block;
+          width: 200px;
+          border-top-left-radius: 2px;
+          border-top-right-radius: 2px;
+          margin: 28px auto 0 auto;
+        }
+
+        .reveal .card-header {
+          width: 100%;
+          font-size: 20px;
+          margin-top: 10px;
+          text-align: center;
+        }
+
+        .reveal .card-info {
+          width: 100%;
+          float: left;
+          font-size: 13px;
+          margin-top: 0;
+          padding: 0 4px;
+          text-align: center;
+        }
+
+        .reveal .card-info a {
+          text-decoration: none;
+          color: #999;
+        }
+
+        .reveal .card-info em {
+          vertical-align: top;
+        }
+
+        .revral .card-info a .genericon {
+          vertical-align: middle;
+        }
+
+        .reveal .bio-social a {
+          text-decoration: none;
+        }
+
+        .reveal .bio-photo {
+          width: 200px;
+          margin: 0 40px 40px -40px;
+          float: left;
+        }
+        </style>
     </head>
     <body>
+        <div id="common" style="z-index: 2;">
+            <div class="header-left">
+                <img alt="QuantStack" src="quantstack-white.svg" width="30%"/>
+            </div>
+            <div class="footer-left">
+                <div style="color: white; font-family: Source Sans Pro, Helvetica, sans-serif;">
+                <img alt="Twitter" src="twitter-white.svg" height="20px"/>
+                <img alt="GitHub" src="github-white.svg" height="20px"/>
+                <p style="display: inline; vertical-align: top; margin-left: 4px; font-size: 20px;">@SylvainCorlay @JohanMabille @QuantStack</p>
+                </div>
+            </div>
+        </div>
+
         <div class="reveal">
             <div class="slides">
                 <section>
@@ -36,39 +133,70 @@
                     <p>Data structures for data science</p>
                 </section>
                 <section>
+                </section>
+                <section>
                     <h2>State of the art</h2>
-                    <div class="normal-paragraph">
-                        <p>The three main languages of data science, Python, R and Julia all have concepts of</p>
+                    <p>The three main languages of data science</p>
+                    <img alt="Julia" src="JuliaLogo.svg" width="10%"/>
+                    <img alt="Python" src="PythonLogo.svg" width="8%"/>
+                    <img alt="R" src="RLogo.svg" width="10%"/>
+                    <p>all have concepts of</p>
                         <ul>
-                            <li>N-D arrays / tensors</li>
+                            <li>N-D arrays</li>
                             <li>Data frames</li>
                         </ul>
-                        <p>With slightly different semantics and in-memory representation.</p>
-                        <p>And so is the case for frameworks such as Spark, tensorflow.</p>
+                    <div class="normal-paragraph" style="font-size: 30px;">
+                        <p>with slightly different semantics</p>
+                        <p>with incompatible in-memory representation</p>
                     </div>
                 </section>
-                
-
-
-                <section data-background-color="#146287">
+                <section>
+                    <h2>One standard to rule them all?</h2>
+                    <img alt="xkcd-standards" src="xkcd-standards.png" width="60%"/>
+                </section>
+                <section>
+                    <h2>2015 Berkeley Workshop</h2>
+                    <p>Data Structures for Data Science</p>
+                    <div class=".normal-paragraph">
+                        <img alt="Workshop" src="workshop-berkeley.jpg" width="30%" style="float: right;"/>
+                        <p style="text-align: left; margin: 44px;">
+                        On November 9, 2015, key developers from the R and Python ecosystem gathered in Berkeley for a workshop to explore
+                        data structures across programming languages and Packages.
+                        </p>
+                    </div>
+                </section>
+                <section>
+                     <h2>Their conclusions</h2>
+                     <ul>
+                         <li>Enforce common serialization / deserialization and messaging protocols for these data structures.</li>
+                         <li>Support for these protocols accross these languages</li>
+                         <li>Converge on common native C++ implementations of these data structures with bindings for R, Julia and Python.</li>
+                     </ul>
+                </section>
+                <section>
+                     <h2>One Tensor to Rule Them All</h2>
+                     <img alt="Ring" src="ring.png" width="30%"/>
+                     <p class="fragment">What would it look like?</p>
+                </section>
+                <section>
                     <p>You've got</p>
                     <div style="margin-top: 5%; margin-bottom: 10%;">
                         <ul>
-                            <li class="fragment">a cool C++ package to call on numpy array</li>
-                            <li class="fragment" style="margin-top: 5%;">code that cannot be easily vectorized (i.e. loops)</li>
+                            <li>a cool C++ package to call on numpy array</li>
+                            <li style="margin-top: 5%;">code that cannot be easily vectorized (i.e. loops)</li>
                         </ul>
                     </div>
                 </section>
                 <section>
                     <p>Example</p>
                 </section>
-                <section data-background-color="#146287">
+                <section>
                     <p>xtensor</p>
                     <div style="margin-top:5%; margin-bottom: 10%;">
                         <ul>
                             <li class="fragment">C++ idioms</li>
                             <li class="fragment" style="margin-top: 10%;">STL iterators</li>
-                            <li class="fragment" style="margin-top: 10%;">Familiar API</li>
+                            <li class="fragment" style="margin-top: 10%;">Familiar API for numpy users</li>
                         </ul>
                     </div>
                 </section>
@@ -320,7 +448,7 @@
                             </div>
                         </div>
                     </section>
-                    <section data-background-color="#146287">
+                    <section>
                         <div>
                             <p>So what is <code>res</code> ?</p>
                         </div>
@@ -708,7 +836,7 @@
                 <section>
                     <p>Demo</p>
                 </section>
-                <section data-background-color="#146287">
+                <section>
                     <p>What's next ?</p>
                     <div style="margin-top: 5%; margin-bottom: 10%;">
                         <ul>
@@ -721,8 +849,58 @@
                     </div>
                 </section>
                 <section>
-                <section data-background-color="#146287">
+                <section>
                     <p>Credits</p>
+                    <div class="team-section-content">
+                        <div class="bio-card">
+                            <img class="card-photo" alt="Avatar picture" src="sylvain.png">
+                            <p class="card-header">Sylvain Corlay</p>
+                            <div class="card-info">
+                                <a href="https://github.com/SylvainCorlay" target="_blank">
+                                    <span class="genericon genericon-github"></span>
+                                    <em>@SylvainCorlay</em>
+                                </a>
+                            </div>
+                            <div class="card-info">
+                                <a href="https://twitter.com/SylvainCorlay" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@SylvainCorlay</em>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bio-card">
+                            <img class="card-photo" alt="Avatar picture" src="johan.jpg">
+                            <p class="card-header">Johan Mabille</p>
+                            <div class="card-info">
+                                <a href="https://github.com/JohanMabille" target="_blank">
+                                    <span class="genericon genericon-github"></span>
+                                    <em>@JohanMabille</em>
+                                </a>
+                            </div>
+                            <div class="card-info">
+                                <a href="https://twitter.com/JohanMabille" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@JohanMabille</em>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bio-card">
+                            <img class="card-photo" alt="Avatar picture" src="wolf.jpg">
+                            <p class="card-header">Wolf Vollprecht</p>
+                            <div class="card-info">
+                                <a href="https://github.com/wolfv" target="_blank">
+                                    <span class="genericon genericon-github"></span>
+                                    <em>@wolfv</em>
+                                </a>
+                            </div>
+                            <div class="card-info">
+                                <a href="https://twitter.com/wuoulf" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@wuoulf</em>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>
