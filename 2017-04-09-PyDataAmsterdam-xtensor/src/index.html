@@ -1,29 +1,55 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+        <title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+        <style>
+        .reveal section img {
+            border: none;
+            background-color: initial;
+        }
+        .reveal .normal-paragraph {
+            text-align: initial;
+        }
+        </style> 
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <img alt="xtensor" src="xtensor.svg" width="80%"/>
+                    <p>Data structures for data science</p>
+                </section>
+                <section>
+                    <h2>State of the art</h2>
+                    <div class="normal-paragraph">
+                        <p>The three main languages of data science, Python, R and Julia all have concepts of</p>
+                        <ul>
+                            <li>N-D arrays / tensors</li>
+                            <li>Data frames</li>
+                        </ul>
+                        <p>With slightly different semantics and in-memory representation.</p>
+                        <p>And so is the case for frameworks such as Spark, tensorflow.</p>
+                    </div>
+                </section>
+                
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
+
                 <section data-background-color="#146287">
                     <p>You've got</p>
                     <div style="margin-top: 5%; margin-bottom: 10%;">
@@ -255,7 +281,7 @@
                     </section>
                 </section>
                 <section>
-				    <section>
+                    <section>
                         <div class="splitting"></div>
                         <p style="vertical-align: top;">Lazy evaluation</p>
                         <div style="margin-top: 5%;">
@@ -299,14 +325,14 @@
                             <p>So what is <code>res</code> ?</p>
                         </div>
                         <div class="fragment">
-                            <img style="border: none; background-color: initial;" alt="magic.gif" src="magic.gif" width="20%"/>
+                            <img alt="magic.gif" src="magic.gif" width="20%"/>
                         </div>
                         <div class="fragment">
                             <p><code>res</code> is an <em>expression</em></p>
                         </div>
                     </section>
                     <section>
-                        <img style="border: none; background-color: initial;" alt="expression.svg" src="expression.svg" width="50%"/>
+                        <img alt="expression.svg" src="expression.svg" width="50%"/>
                     </section>
                 </section>
                 <section>
@@ -406,7 +432,7 @@
                                 </code></pre>
                             </div>
                             <div class="right-panel">
-                                <img style="border: none; background-color: initial;" alt="expression1.svg" src="expression1.svg" width="40%"/>
+                                <img alt="expression1.svg" src="expression1.svg" width="40%"/>
                             </div>
                         </div>
                         <div style="margin-top: 10%;">
@@ -416,7 +442,7 @@
                                 </code></pre>
                             </div>
                             <div class="right-panel fragment">
-                                <img style="border: none; background-color: initial;" alt="expression2.svg" src="expression2.svg" width="40%"/>
+                                <img alt="expression2.svg" src="expression2.svg" width="40%"/>
                             </div>
                         </div>
                     </section>
@@ -493,7 +519,7 @@
                                 </code></pre>
                             </div>
                             <div class="right-panel fragment">
-                                <img style="border: none; background-color: initial;" alt="broadcasting4.svg" src="broadcasting4.svg" width="70%"/>
+                                <img alt="broadcasting4.svg" src="broadcasting4.svg" width="70%"/>
                             </div>
                         </div>
                         <div style="margin-top: 5%;">
@@ -503,7 +529,7 @@
                                 </code></pre>
                             </div>
                             <div class="right-panel fragment">
-                                <img style="border: none; background-color: initial;" alt="broadcasting5.svg" src="broadcasting5.svg" width="30%"/>
+                                <img alt="broadcasting5.svg" src="broadcasting5.svg" width="30%"/>
                             </div>
                         </div>
                     </section>
@@ -517,7 +543,7 @@
                                 </code></pre>
                             </div>
                             <div class="right-panel fragment">
-                                <img style="border: none; background-color: initial;" alt="broadcasting1.svg" src="broadcasting1.svg" width="30%"/>
+                                <img alt="broadcasting1.svg" src="broadcasting1.svg" width="30%"/>
                             </div>
                         </div>
                         <div style="margin-top: 2%;">
@@ -527,7 +553,7 @@
                                 </code></pre>
                             </div>
                             <div class="right-panel fragment">
-                                <img style="border: none; background-color: initial;" alt="broadcasting2.svg" src="broadcasting2.svg" width="30%"/>
+                                <img alt="broadcasting2.svg" src="broadcasting2.svg" width="30%"/>
                             </div>
                         </div>
                         <div style="margin-top:2%;">
@@ -539,7 +565,7 @@
                                 </code></pre>
                             </div>
                             <div class="right-panel fragment">
-                                <img style="border: none; background-color: initial;" alt="broadcasting3.svg" src="broadcasting3.svg" width="30%"/>
+                                <img alt="broadcasting3.svg" src="broadcasting3.svg" width="30%"/>
                             </div>
                         </div>
                     </section>
@@ -559,7 +585,7 @@
                                 </code></pre>
                             </div>
                             <div class="right-panel fragment">
-                                <img style="border: none; background-color: initial;" alt="view1.svg" src="view1.svg" width="30%"/>
+                                <img alt="view1.svg" src="view1.svg" width="30%"/>
                             </div>
                         </div>
                         <div style="margin-top: 4%;">
@@ -573,7 +599,7 @@
                                 </code></pre>
                             </div>
                             <div class="right-panel fragment">
-                                <img style="border: none; background-color: initial;" alt="view2.svg" src="view2.svg" width="30%"/>
+                                <img alt="view2.svg" src="view2.svg" width="30%"/>
                             </div>
                         </div>
                     </section>
@@ -584,26 +610,26 @@
                             <div class="left-panel fragment">
                                 <pre class="panel"><code class="cpp panel" data-trim>
                                     xarray&lt;int&gt; a = {{1,  2,  3,  4},
-                                                     {5,  6,  7,  8},
-                                                     {9, 10, 11, 12}};
+                                                           {5,  6,  7,  8},
+                                                           {9, 10, 11, 12}};
                                     auto res = view(a, 1, all());
                                 </code></pre>
                             </div>
                             <div class="right-panel fragment">
-                                <img style="border: none; background-color: initial;" alt="view3.svg" src="view3.svg" width="30%"/>
+                                <img alt="view3.svg" src="view3.svg" width="30%"/>
                             </div>
                         </div>
                         <div style="margin-top: 4%;">
                             <div class="left-panel fragment">
                                 <pre class="panel"><code class="cpp panel" data-trim>
                                     xarray&lt;int&gt; a = {{1,  2,  3,  4},
-                                                     {5,  6,  7,  8},
-                                                     {9, 10, 11, 12}};
+                                                           {5,  6,  7,  8},
+                                                           {9, 10, 11, 12}};
                                     auto res = view(a, 1, range(1, _));
                                 </code></pre>
                             </div>
                             <div class="right-panel fragment">
-                                <img style="border: none; background-color: initial;" alt="view4.svg" src="view4.svg" width="30%"/>
+                                <img alt="view4.svg" src="view4.svg" width="30%"/>
                             </div>
                         </div>
                     </section>
@@ -614,28 +640,28 @@
                             <div class="left-panel fragment">
                                 <pre class="panel"><code class="cpp panel" data-trim>
                                     xarray&lt;int&gt; a = {{21,  2,  3,  4},
-                                                     { 5,  6, 27,  8},
-                                                     { 9, 10, 31, 12}};
+                                                           { 5,  6, 27,  8},
+                                                           { 9, 10, 31, 12}};
                                     auto res = indexview(a, {{0, 0}, 
                                                              {1, 2},
                                                              {2, 2}});
                                 </code></pre>
                             </div>
                             <div class="right-panel fragment">
-                                <img style="border: none; background-color: initial;" alt="view5.svg" src="view5.svg" width="60%"/>
+                                <img alt="view5.svg" src="view5.svg" width="60%"/>
                             </div>
                         </div>
                         <div>
                             <div class="left-panel fragment">
                                 <pre class="panel"><code class="cpp panel" data-trim>
                                     xarray&lt;int&gt; a = {{21,  2,  3,  4},
-                                                     { 5,  6, 27,  8},
-                                                     { 9, 10, 31, 12}};
+                                                           { 5,  6, 27,  8},
+                                                           { 9, 10, 31, 12}};
                                     auto res = filter(a, a &lt; 20); 
                                 </code></pre>
                             </div>
                             <div class="right-panel fragment">
-                                <img style="border: none; background-color: initial;" alt="view5.svg" src="view5.svg" width="60%"/>
+                                <img alt="view5.svg" src="view5.svg" width="60%"/>
                             </div>
                         </div>
                         <div>
@@ -645,7 +671,7 @@
                                 </code></pre>
                             </div>
                             <div class="right-panel fragment">
-                                <img style="border: none; background-color: initial;" alt="view6.svg" src="view6.svg" width="60%"/>
+                                <img alt="view6.svg" src="view6.svg" width="60%"/>
                             </div>
                         </div>
                     </section>
@@ -664,7 +690,7 @@
                             </code></pre>
                         </div>
                         <div class="right-panel fragment">
-                            <img style="border: none; background-color: initial;" alt="missing_values1.svg" src="missing_values1.svg" width="60%"/>
+                            <img alt="missing_values1.svg" src="missing_values1.svg" width="60%"/>
                         </div>
                     </div>
                     <div style="margin-top: 5%;">
@@ -675,7 +701,7 @@
                             </code></pre>
                         </div>
                         <div class="right-panel fragment">
-                            <img style="border: none; background-color: initial;" alt="missing_values2.svg" src="missing_values2.svg" width="60%"/>
+                            <img alt="missing_values2.svg" src="missing_values2.svg" width="60%"/>
                         </div>
                     </div>
                 </section>
@@ -698,30 +724,30 @@
                 <section data-background-color="#146287">
                     <p>Credits</p>
                 </section>
-			</div>
-		</div>
+            </div>
+        </div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
 
-		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				history: true,
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
                 width: "100%",
                 height: "100%",
                 margin: 0,
                 minScale: 1,
                 maxScale: 1,
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
 </html>
