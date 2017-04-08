@@ -131,6 +131,7 @@
                     <p>Data structures for data science</p>
                 </section>
                 <section>
+                    <img alt="QuantStack" src="quantstack-white.svg" width="55%">
                     <div class="team-section-content">
                         <div style="display: inline-block; width: 45%; margin: 30px; vertical-align: top;">
                             <img class="card-photo" alt="Avatar picture" src="sylvain.png">
@@ -160,7 +161,7 @@
                             <p class="card-header">Johan Mabille</p>
                             <div style="font-size: 20px; text-align: justify; margin: 30px;">
                             <ul>
-                                <li>Scientific software developer, Quant developer, formerly at HSBC</li>
+                                <li>Scientific software developer, Quant developer, formerly quant developer at HSBC</li>
                                 <li>Joined QuantStack in 2016</li>
                                 <li>Co-author of xtensor, xsimd, xeus</li>
                             </ul>
@@ -203,7 +204,7 @@
                     <div class=".normal-paragraph">
                         <img alt="Workshop" src="workshop-berkeley.jpg" width="30%" style="float: right;"/>
                         <p style="text-align: left; margin: 44px;">
-                        On November 9, 2015, key developers from the R and Python ecosystem gathered in Berkeley for a workshop to explore
+                        On November 9, 2015, key developers from the R and Python ecosystems gathered in Berkeley for a workshop to explore
                         data structures across programming languages and Packages.
                         </p>
                     </div>
@@ -212,9 +213,9 @@
                      <h2>Their conclusions</h2>
                      <div style="width: 70%; margin: auto;">
                          <ul>
-                             <li>Enforce common serialization / deserialization and messaging protocols for these data structures.</li>
-                             <li>Support for these protocols accross these languages</li>
-                             <li>Converge on common native C++ implementations of these data structures with bindings for R, Julia and Python.</li>
+                             <li>Enforce common formats and protocols to communicate and store these data structures.</li>
+                             <li>Support for these protocols accross all three languages.</li>
+                             <li>Converge on common native C++ implementations of these data structures with bindings for multiple scripting languages.</li>
                          </ul>
                      </div>
                 </section>
@@ -240,25 +241,30 @@
                     <p>The Lazy Tensor Algebra Expression System</p>
                 </section>
                 <section>
-                    <div style="margin-top: 5%; margin-bottom: 10%;">
-                        <ul>
-                            <li>a cool C++ package to call on numpy array</li>
-                            <li style="margin-top: 5%;">code that cannot be easily vectorized (i.e. loops)</li>
-                        </ul>
-                    </div>
+                    <h2>What is xtensor?</h2>
+                    <ul>
+                        <li class="fragment">A C++ library for multi-dimensional array manipulation
+                            <ul>
+                                <li>
+                                    <p>Followings the idioms of the C++ STL</p>
+                                    <p>(iterator pairs, clear value semantics)</p>
+                                </li>
+                                <li>But also an API similar to that of numpy</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">Python bindings to enable xtensor APIs on numpy arrays.</li>
+                        <li class="fragment">A cookiecutter project for authoring of Python extensions.</li>
+                        <li class="fragment">All open-source (BSD License).</li>
+                    </ul>
                 </section>
                 <section>
-                    <p>Example</p>
-                </section>
-                <section>
-                    <p>xtensor</p>
-                    <div style="margin-top:5%; margin-bottom: 10%;">
-                        <ul>
-                            <li class="fragment">C++ idioms</li>
-                            <li class="fragment" style="margin-top: 10%;">STL iterators</li>
-                            <li class="fragment" style="margin-top: 10%;">Familiar API for numpy users</li>
-                        </ul>
-                    </div>
+                    <h2>Resources</h2>
+                    <ul>
+                        <li>Sources: <em>https://github.com/QuantStack/xtensor/</em></li>
+                        <li>Documentation: <em>http://xtensor.readthedocs.io</em></li>
+                        <li>Python bindings: <em>https://github.com/QuantStack/xtensor-python/</em></li>
+                        <li>Documentation for bindings: <em>http://xtensor-python.readthedocs.io</em></li>
+                    </ul>
                 </section>
                 <section>
                     <style>
@@ -957,6 +963,22 @@
                                 <a href="https://twitter.com/wuoulf" target="_blank">
                                     <span class="genericon genericon-twitter"></span>
                                     <em>@wuoulf</em>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bio-card">
+                            <img class="card-photo" alt="Avatar picture" src="ghislain.jpg">
+                            <p class="card-header">Ghislain Antony Vaillant</p>
+                            <div class="card-info">
+                                <a href="https://github.com/ghisvail" target="_blank">
+                                    <span class="genericon genericon-github"></span>
+                                    <em>@ghisvail</em>
+                                </a>
+                            </div>
+                            <div class="card-info">
+                                <a href="https://twitter.com/ghisvail" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@ghisvail</em>
                                 </a>
                             </div>
                         </div>
