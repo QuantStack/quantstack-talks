@@ -303,7 +303,7 @@
                         <div>
                             <p style="text-align: center; vertical-align: top;">Ever heard of numpy ?</p>
                         </div>
-                        <div class="fragment">
+                        <div>
                             <div class="left-panel">
                                 <p style="text-align: center;"><b>Python 3 - numpy</b></p>
                             </div>
@@ -311,33 +311,24 @@
                                 <p style="text-align: center;"><b>C++ 14 - xtensor</b></p>
                             </div>
                         </div>
-                        <div>
-                            <div class="left-panel fragment">
+                        <div class="fragment">
+                            <div class="left-panel">
                                 <pre class="panel"><code class="python panel" data-trim>
                                     np.array([[3, 4], [5, 6]])
-                                </code></pre>
-                            </div>
-                            <div class="right-panel fragment">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                    xt::xarray&lt;double&gt;({{3, 4}, {5, 6}})
-                                    xt::xtensor&lt;double, 2&gt;({{3, 4}, {5, 6}})
-                                </code></pre>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="left-panel fragment">
-                                <pre class="panel"><code class="python panel" data-trim>
+
                                     arr.reshape([3, 4])
                                 </code></pre>
                             </div>
-                            <div class="right-panel fragment">
+                            <div class="right-panel">
                                 <pre class="panel"><code class="cpp panel" data-trim>
+                                    xt::xarray&lt;double&gt;({{3, 4}, {5, 6}})
+                                    xt::xtensor&lt;double, 2&gt;({{3, 4}, {5, 6}})
                                     arr.reshape({3, 4});
                                 </code></pre>
                             </div>
                         </div>
-                        <div>
-                            <div class="left-panel fragment">
+                        <div class="fragment">
+                            <div class="left-panel">
                                 <pre class="panel"><code class="python panel" data-trim>
                                     np.linspace(1.0, 10.0, 100)
                                     np.logspace(1.0, 10.0, 100)
@@ -347,7 +338,7 @@
                                     np.ones([3, 4])
                                 </code></pre>
                             </div>
-                            <div class="right-panel fragment">
+                            <div class="right-panel">
                                 <pre class="panel"><code class="cpp panel" data-trim>
                                     xt::linspace&lt;double&gt;(1.0, 10.0, 100)
                                     xt::logspace&lt;double&gt;(1.0, 10.0, 100)
@@ -369,8 +360,8 @@
                                 <p style="text-align: center;"><b>C++ 14 - xtensor</b></p>
                             </div>
                         </div>
-                        <div>
-                            <div class="left-panel fragment">
+                        <div class="fragment">
+                            <div class="left-panel">
                                 <pre class="panel"><code class="python panel" data-trim>
                                     a[:, np.newaxis]
                                     a[:5, 1:]
@@ -381,7 +372,7 @@
                                     a[[0, 1], [0, 0]]
                                 </code></pre>
                             </div>
-                            <div class="right-panel fragment">
+                            <div class="right-panel">
                                 <pre class="panel"><code class="cpp panel" data-trim>
                                     xt::view(a, xt::all(), xt::newaxis())
                                     xt::view(a, xt::range(_, 5), xt::range(1, _))
@@ -393,8 +384,8 @@
                                 </code></pre>
                             </div>
                         </div>
-                        <div>
-                            <div class="left-panel fragment">
+                        <div class="fragment">
+                            <div class="left-panel">
                                 <pre class="panel"><code class="python panel" data-trim>
                                     np.sum(a, axis=[0, 1])
                                     np.sum(a)
@@ -404,7 +395,7 @@
                                     np.mean(a)
                                 </code></pre>
                             </div>
-                            <div class="right-panel fragment">
+                            <div class="right-panel">
                                 <pre class="panel"><code class="cpp panel" data-trim>
                                     xt::sum(a, {0, 1})
                                     xt::sum(a)
@@ -426,8 +417,8 @@
                                 <p style="text-align: center;"><b>C++ 14 - xtensor</b></p>
                             </div>
                         </div>
-                        <div>
-                            <div class="left-panel fragment">
+                        <div class="fragment">
+                            <div class="left-panel">
                                 <pre class="panel"><code class="python panel" data-trim>
                                     np.where(a &gt; 5, a, b)
                                     np.where(a &gt; 5)
@@ -437,7 +428,7 @@
                                     np.logical_or(a, b)
                                 </code></pre>
                             </div>
-                            <div class="right-panel fragment">
+                            <div class="right-panel">
                                 <pre class="panel"><code class="cpp panel" data-trim>
                                     xt::where(a &gt; 5, a, b)
                                     xt::where(a &gt; 5)
@@ -448,8 +439,8 @@
                                 </code></pre>
                             </div>
                         </div>
-                        <div>
-                            <div class="left-panel fragment">
+                        <div class="fragment">
+                            <div class="left-panel">
                                 <pre class="panel"><code class="python panel" data-trim>
                                     np.absolute(a)
                                     np.exp(a)
@@ -460,7 +451,7 @@
                                     np.isnan(a)
                                 </code></pre>
                             </div>
-                            <div class="right-panel fragment">
+                            <div class="right-panel">
                                 <pre class="panel"><code class="cpp panel" data-trim>
                                     xt::abs(a)
                                     xt::exp(a)
@@ -490,11 +481,11 @@
                                 </code></pre>
                             </div>
                         </div>
-                        <div style="margin-top: 5%;">
-                            <div class="left-panel fragment" data-fragment-index="3">
+                        <div class="fragment" style="margin-top: 5%;">
+                            <div class="left-panel" data-fragment-index="3">
                                 <p>... until assigned to a container ...</p>
                             </div>
-                            <div class="right-panel fragment" data-fragment-index="4">
+                            <div class="right-panel" data-fragment-index="4">
                                 <pre class="panel"><code class="cpp panel" data-trim>
                                 xarray&lt;double&gt; d = res;
                                 // or
@@ -502,11 +493,11 @@
                                 </code></pre>
                             </div>
                         </div>
-                        <div style="margin-top: 5%;">
-                            <div class="left-panel fragment" data-fragment-index="5">
+                        <div class="fragment" style="margin-top: 5%;">
+                            <div class="left-panel" data-fragment-index="5">
                                 <p>... or upon access</p>
                             </div>
-                            <div class="right-panel fragment" data-fragment-index="6">
+                            <div class="right-panel" data-fragment-index="6">
                                 <pre class="panel"><code class="cpp panel" data-trim>
                                     // Assuming res is a 2D tensor
                                     double d = res(4, 2);
@@ -617,7 +608,7 @@
                     <section>
                         <div class="splitting"></div>
                         <p>Expression system</p>
-                        <div class="fragment" style="margin-top: 5%;">
+                        <div style="margin-top: 5%;">
                             <div class="left-panel">
                                 <pre class="panel"><code class="cpp panel" data-trim>
                                     xarray&lt;double&gt; a, b, c, d;
@@ -629,13 +620,13 @@
                                 <img alt="expression1.svg" src="expression1.svg" width="40%"/>
                             </div>
                         </div>
-                        <div style="margin-top: 10%;">
-                            <div class="left-panel fragment">
+                        <div class="fragment" style="margin-top: 10%;">
+                            <div class="left-panel">
                                 <pre class="panel"><code class="cpp panel" data-trim>
                                     auto res = res1 * res2;
                                 </code></pre>
                             </div>
-                            <div class="right-panel fragment">
+                            <div class="right-panel">
                                 <img alt="expression2.svg" src="expression2.svg" width="40%"/>
                             </div>
                         </div>
@@ -649,7 +640,7 @@
                             <div class="left-panel fragment">
                                 <pre class="panel"><code class="cpp panel" data-trim>
                                     xarray&lt;double&gt; a, b;
-                                    a.reshape({2, 3});
+                                    a.reshape({   2, 3});
                                     b.reshape({4, 2, 3});
                                     auto r = a + b; // r.shape() ?
                                 </code></pre>
@@ -685,7 +676,7 @@
                             <div class="left-panel fragment">
                                 <pre class="panel"><code class="cpp panel" data-trim>
                                     xarray&lt;double&gt; a, b;
-                                    a.reshape({2, 3});
+                                    a.reshape({   2, 3});
                                     b.reshape({4, 2, 1});
                                     auto r = a + b; // r.shape() ?
                                 </code></pre>
@@ -703,8 +694,8 @@
                     <section>
                         <div class="splitting"></div>
                         <p>Broadcasting>
-                        <div style="margin-top: 5%;">
-                            <div class="left-panel fragment">
+                        <div class="fragment" style="margin-top: 5%;">
+                            <div class="left-panel">
                                 <pre class="panel"><code class="cpp panel" data-trim>
                                     xarray&lt;int&gt; a = {{1,  2,  3,  4},
                                                      {5,  6,  7,  8},
@@ -712,17 +703,17 @@
                                     xarray&lt;int&gt; b = { 1, 3, 5, 7};
                                 </code></pre>
                             </div>
-                            <div class="right-panel fragment">
+                            <div class="right-panel">
                                 <img alt="broadcasting4.svg" src="broadcasting4.svg" width="70%"/>
                             </div>
                         </div>
-                        <div style="margin-top: 5%;">
-                            <div class="left-panel fragment">
+                        <div class="fragment" style="margin-top: 5%;">
+                            <div class="left-panel">
                                 <pre class="panel"><code class="cpp panel" data-trim>
                                     xarray&lt;int&gt; res = a + b;
                                 </code></pre>
                             </div>
-                            <div class="right-panel fragment">
+                            <div class="right-panel">
                                 <img alt="broadcasting5.svg" src="broadcasting5.svg" width="30%"/>
                             </div>
                         </div>
@@ -804,8 +795,8 @@
                             <div class="left-panel fragment">
                                 <pre class="panel"><code class="cpp panel" data-trim>
                                     xarray&lt;int&gt; a = {{1,  2,  3,  4},
-                                                           {5,  6,  7,  8},
-                                                           {9, 10, 11, 12}};
+                                                     {5,  6,  7,  8},
+                                                     {9, 10, 11, 12}};
                                     auto res = view(a, 1, all());
                                 </code></pre>
                             </div>
@@ -817,8 +808,8 @@
                             <div class="left-panel fragment">
                                 <pre class="panel"><code class="cpp panel" data-trim>
                                     xarray&lt;int&gt; a = {{1,  2,  3,  4},
-                                                           {5,  6,  7,  8},
-                                                           {9, 10, 11, 12}};
+                                                     {5,  6,  7,  8},
+                                                     {9, 10, 11, 12}};
                                     auto res = view(a, 1, range(1, _));
                                 </code></pre>
                             </div>
@@ -834,8 +825,8 @@
                             <div class="left-panel fragment">
                                 <pre class="panel"><code class="cpp panel" data-trim>
                                     xarray&lt;int&gt; a = {{21,  2,  3,  4},
-                                                           { 5,  6, 27,  8},
-                                                           { 9, 10, 31, 12}};
+                                                     { 5,  6, 27,  8},
+                                                     { 9, 10, 31, 12}};
                                     auto res = indexview(a, {{0, 0}, 
                                                              {1, 2},
                                                              {2, 2}});
@@ -845,16 +836,16 @@
                                 <img alt="view5.svg" src="view5.svg" width="60%"/>
                             </div>
                         </div>
-                        <div>
-                            <div class="left-panel fragment">
+                        <div class="fragment">
+                            <div class="left-panel">
                                 <pre class="panel"><code class="cpp panel" data-trim>
                                     xarray&lt;int&gt; a = {{21,  2,  3,  4},
-                                                           { 5,  6, 27,  8},
-                                                           { 9, 10, 31, 12}};
-                                    auto res = filter(a, a &lt; 20); 
+                                                     { 5,  6, 27,  8},
+                                                     { 9, 10, 31, 12}};
+                                    auto res = filter(a, a &gt; 20); 
                                 </code></pre>
                             </div>
-                            <div class="right-panel fragment">
+                            <div class="right-panel">
                                 <img alt="view5.svg" src="view5.svg" width="60%"/>
                             </div>
                         </div>
@@ -873,8 +864,8 @@
                 <section>
                     <div class="splitting"></div>
                     <p>Missing values</p>
-                    <div style="margin-top: 5%;">
-                        <div class="left-panel fragment">
+                    <div class="fragment" style="margin-top: 5%;">
+                        <div class="left-panel">
                             <pre class="panel"><code class="cpp panel" data-trim>
                                 xtensor_optional&lt;int&gt; a =
                                     {{ 1,       2        },
@@ -883,18 +874,18 @@
                                                   { 3, 4 }};
                             </code></pre>
                         </div>
-                        <div class="right-panel fragment">
+                        <div class="right-panel">
                             <img alt="missing_values1.svg" src="missing_values1.svg" width="60%"/>
                         </div>
                     </div>
-                    <div style="margin-top: 5%;">
-                        <div class="left-panel fragment">
+                    <div class="fragment" style="margin-top: 5%;">
+                        <div class="left-panel">
                             <pre class="panel"><code class="cpp panel" data-trim>
                                 auto res = a + b;
                                 auto hv = has_value(a + b);
                             </code></pre>
                         </div>
-                        <div class="right-panel fragment">
+                        <div class="right-panel">
                             <img alt="missing_values2.svg" src="missing_values2.svg" width="60%"/>
                         </div>
                     </div>
