@@ -940,6 +940,104 @@
                     </div>
                 </section>
                 <section>
+                    <h3>A C++ notebook</h3>
+                    <div>
+                    <img alt="Notebook Screenshot" src="notebook-screenshot.png" width="50%"/>
+                    </div>
+                </section>
+                <section>
+                    <h3>Authoring Python extensions</h3>
+                    <p>C++: Using an algorithm from the STL on a numpy array</p>
+<pre class="panel">
+<code class="cpp">
+#include <numeric>                        // Standard library import for std::accumulate
+#include "pybind11/pybind11.h"            // Pybind11 import to define Python bindings
+#include "xtensor/xmath.hpp"              // xtensor import for the C++ universal functions
+#define FORCE_IMPORT_ARRAY                // numpy C api loading
+#include "xtensor-python/pyarray.hpp"     // Numpy bindings
+
+double sum_of_sines(xt::pyarray<double> &m)
+{
+    auto sines = xt::sin(m);
+    // sines does not actually hold any value, which are only computed upon access
+    return std::accumulate(sines.begin(), sines.end(), 0.0);
+}
+
+PYBIND11_PLUGIN(xtensor_python_test)
+{
+    xt::import_numpy();
+    pybind11::module m("xtensor_python_test", "Test module for xtensor python bindings");
+
+    m.def("sum_of_sines", sum_of_sines,
+        "Computes the sum of the sines of the values of the input array");
+
+    return m.ptr();
+}
+</code>
+</pre>
+<p>Python</p>
+<pre class="panel">
+<code class="python">
+import numpy as np
+import xtensor_python_test as xt
+
+a = np.arange(15).reshape(3, 5)
+xt.sum_of_sines(v)
+</code>
+</pre>
+                </section>
+                <section>
+                    <h3>Authoring Python extensions</h3>
+                    <p>C++: Create a universal function from a C++ scalar function</p>
+<pre class="panel">
+<code class="cpp">
+#include "pybind11/pybind11.h"
+#define FORCE_IMPORT_ARRAY
+#include "xtensor-python/pyvectorize.hpp"
+#include <numeric>
+#include <cmath>
+
+namespace py = pybind11;
+
+double scalar_func(double i, double j)
+{
+    return std::sin(i) - std::cos(j);
+}
+
+PYBIND11_PLUGIN(xtensor_python_test)
+{
+    xt::import_numpy();
+    py::module m("xtensor_python_test", "Test module for xtensor python bindings");
+
+    m.def("vectorized_func", xt::pyvectorize(scalar_func), "");
+
+    return m.ptr();
+}
+</code>
+</pre>
+<p>Python</p>
+<pre class="panel">
+<code class="python">
+import numpy as np
+import xtensor_python_test as xt
+
+x = np.arange(15).reshape(3, 5)
+y = [1, 2, 3, 4, 5]
+xt.vectorized_func(x, y)
+</code>
+</pre>
+                </section>
+                <section>
+                    <img alt="xtensor-cookiecutter" src="xtensor-cookiecutter.png" width="70%"/>
+                    <p>Generate your packaged xtensor extension</p>
+                    <ul>
+                        <li>With a few examples from the documentation</li>
+                        <li>Unit-tests</li>
+                        <li>HTML documentation</li>
+                        <li>A setup.py for pushing it on pypi</li>
+                    </ul>
+                </section>
+                <section>
                     <p>What's next ?</p>
                     <div style="margin-top: 5%; margin-bottom: 10%;">
                         <ul>
