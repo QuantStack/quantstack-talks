@@ -950,13 +950,13 @@
                     <p>C++: Using an algorithm from the STL on a numpy array</p>
 <pre class="panel">
 <code class="cpp">
-#include <numeric>                        // Standard library import for std::accumulate
+#include &lt;numeric&gt;                        // Standard library import for std::accumulate
 #include "pybind11/pybind11.h"            // Pybind11 import to define Python bindings
 #include "xtensor/xmath.hpp"              // xtensor import for the C++ universal functions
 #define FORCE_IMPORT_ARRAY                // numpy C api loading
 #include "xtensor-python/pyarray.hpp"     // Numpy bindings
 
-double sum_of_sines(xt::pyarray<double> &m)
+double sum_of_sines(xt::pyarray&lt;double&gt; &m)
 {
     auto sines = xt::sin(m);
     // sines does not actually hold any value, which are only computed upon access
@@ -994,8 +994,8 @@ xt.sum_of_sines(v)
 #include "pybind11/pybind11.h"
 #define FORCE_IMPORT_ARRAY
 #include "xtensor-python/pyvectorize.hpp"
-#include <numeric>
-#include <cmath>
+#include &lt;numeric&gt;
+#include &lt;cmath&gt;
 
 namespace py = pybind11;
 
