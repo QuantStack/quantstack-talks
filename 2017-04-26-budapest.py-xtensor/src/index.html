@@ -885,7 +885,7 @@ double sum_of_sines(xt::pyarray&lt;double&gt; &m)
 {
     auto sines = xt::sin(m);
     // sines does not actually hold any value, which are only computed upon access
-    return std::accumulate(sines.begin(), sines.end(), 0.0);
+    return std::accumulate(sines.cbegin(), sines.cend(), 0.0);
 }
 
 PYBIND11_PLUGIN(xtensor_python_test)
