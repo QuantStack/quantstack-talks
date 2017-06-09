@@ -1,0 +1,638 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>reveal.js</title>
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css">
+        <link rel="stylesheet" href="genericons.css">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+        <style>
+        .reveal section img {
+            border: none;
+            background-color: initial;
+            margin: 10px;
+        }
+        .reveal .normal-paragraph {
+            text-align: left;
+            margin: 0 auto 0 auto;
+            width: 60%;
+        }
+        .reveal .normal-paragraph p {
+            text-align: left;
+        }
+        .header-left {
+            position: absolute;
+            top: 2%;
+            left: 2%;
+        }
+        .header-right {
+            position: absolute;
+            top: 2%;
+            right: 2%;
+        }
+        .footer-left {
+            position: absolute;
+            bottom: 2%;
+            left: 2%;
+        }
+        .reveal .genericon {
+          font-family: "genericons";
+        }
+
+        .reveal .bio-card {
+          background: #333;
+          border-radius: 2px;
+          display: inline-block;
+          width: 260px;
+          margin: 1rem;
+          position: relative;
+          font-size: 20px;
+        }
+
+        .reveal .card-photo {
+          display: block;
+          width: 200px;
+          border-top-left-radius: 2px;
+          border-top-right-radius: 2px;
+          margin: 28px auto 0 auto;
+        }
+
+        .reveal .card-header {
+          width: 100%;
+          font-size: 20px;
+          margin-top: 10px;
+          text-align: center;
+        }
+
+        .reveal .card-info {
+          width: 100%;
+          float: left;
+          font-size: 20px;
+          margin-top: 0;
+          padding: 0 4px;
+          text-align: center;
+        }
+
+        .reveal .card-info a {
+          text-decoration: none;
+          color: #999;
+        }
+
+        .reveal .card-info em {
+          vertical-align: top;
+        }
+
+        .revral .card-info a .genericon {
+          vertical-align: middle;
+        }
+
+        .reveal .bio-social a {
+          text-decoration: none;
+        }
+
+        .reveal .bio-photo {
+          width: 200px;
+          margin: 0 40px 40px -40px;
+          float: left;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="common" style="z-index: 2;">
+            <div class="footer-left">
+                <div style="color: white; font-family: Source Sans Pro, Helvetica, sans-serif;">
+                    <img alt="Twitter" src="twitter-white.svg" height="20px"/>
+                    <img alt="GitHub" src="github-white.svg" height="20px"/>
+                    <p style="display: inline; vertical-align: top; margin-left: 4px; font-size: 20px;">@SylvainCorlay</p>
+                    </div>
+            </div>
+        </div>
+
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <img alt="PyParis" src="PyParis.png" width="70%" style="box-shadow: none;"/>
+                    <p style="font-size: 60px;">Sylvain Corlay</p>
+                    <aside class="notes">
+                        <p>
+	                    Hi everybody, it's great to be here, and a honor to be giving the opening keynote address of this conference, especially given the incredible line up of speakers presenting after me.
+	                    </p>
+	                    <p>
+	                    Before anything else, we should <strong>thank Stephane Fermigier</strong>, for organizing this conference for the past 4 years, and doing this amazing work of community leadership with the PyData and PyParis conferences.
+	                    </p>
+	                    <p>
+	                    As I was preparing this presentation, I was thinking about <strong>the first tech conference I attended</strong>. It was Scipy Austin, 5 years ago and I got to meet some of the authors of the software I was using and already tweaking at work.
+	                    </p>
+	                    <p>
+	                    When I flew back home, after a full week at the conference, hacking all day and night and trying to get up to speed on Project Jupyter (then called IPython), I was completely exhausted and sleep deprived, and absolutely certain that I wanted to be part of that community.
+	                    </p>
+                    </aside>
+                </section>
+                <section>
+                    <div class="team-section-content">
+                        <div style="display: inline-block; width: 45%; margin: 30px; vertical-align: top;">
+                            <img class="card-photo" alt="Avatar picture" src="sylvain.png">
+                            <div style="font-size: 20px; text-align: justify; margin: 30px;">
+                            <ul>
+                                <li>Scientific software developer, Quant researcher, formerly quant at Bloomberg, and adjunct at Columbia and NYU</li>
+                                <li>Founded QuantStack in 2016</li>
+                                <li>Core developer of Project Jupyter: mostly focused on widgets.</li>
+                                <li>Data visualization in the browser: bqplot, pythreejs, ipyleaflet</li>
+                                <li>C++ scientific computing: xtensor, xeus</li>
+                            </ul>
+                            </div>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://github.com/SylvainCorlay" target="_blank">
+                                    <span class="genericon genericon-github"></span>
+                                    <em>@SylvainCorlay</em>
+                                </a>
+                            </div>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://twitter.com/SylvainCorlay" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@SylvainCorlay</em>
+                                </a>
+                            </div>
+                        </div>
+                    <aside class="notes">
+                        <p>Read the slide</p>
+                        <p>You know where to find me @SylvainCorlay everywhere (Twitter, GitHub)</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>A piece of career advice for newcomers</h2>
+                    <div style="width: 70%; margin-left: auto; margin-left: auto; margin-right: auto; font-size: 40px;">
+                    <img alt="My 2 cents" src="two-cents.png" width="8%" style="box-shadow: none;"/>
+                    <p>
+                    Get involved in open-source early in your carrer
+                    </p>
+                    <ul style="margin-top: 40px; margin-bottom: 40px;">
+                        <li>Contribute to a large project that you are already using.</li>
+                        <li>Start a small project on your own, that may be useful for others.</li>
+                    </ul>
+                    <p>In both cases, <em>start small</em>.</p>
+                    </div>
+                    <aside class="notes">
+                        <p>
+                        You will receive feedback with some of the <strong>smartest folks</strong> you will ever get to work with who may have a <strong>much broader perspective</strong> than the people working closer to you.
+                        </p>
+                        <p>
+                        You will be working with people having experience <strong>building software at the internet scale</strong>, for millions of users.
+                        </p>
+                        <p>
+                        </p>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>You can have <strong>a lot</strong> of impact</h2>
+                    <ul style="max-width: 70%; margin-top: 40px; font-size: 35px;">
+                        <li>A simple CSS fix in Jupyter can impact tens of thousands of users.</li>
+                        <li>Smooth ramp of complexity from the drop-by contributions to becoming core contributors to major packages</li>
+                        <li>Another dimension for growth than climbing the corporate ladder</li>
+                    </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li>There are other means to grow in your career than climbing the corporate ladder to management. You can grow as a tech leader and an expert in your community, and be appreciated for your technical skills.</li>
+                            <li>The skills you will learn and the work you will have done are transposable to other jobs.</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <img alt="Adapters" src="adapters.jpg" width="25%" style="float: left;"/>
+                    <p>Finally you will find some of the most inclusive and diverse communities.</p>
+                    <ul style="margin-top: 25px;">
+                        <li style="margin-top: 25px;">Jupyter</li>
+                        <li style="margin-top: 25px;">Scipy</li>
+                        <li style="margin-top: 25px;">nteract</li>
+                        <li style="margin-top: 25px;">Django</li>
+                        <li style="margin-top: 25px;">Sage</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>A piece of advice for employers</h2>
+                    <div style="width: 70%; margin-right: auto; margin-left: auto;">
+                    <img alt="My 2 cents" src="two-cents.png" width="8%" style="box-shadow: none;"/>
+                    <ul style="font-size: 40px; line-height: 40px;">
+                        <li>Encourage employees to contribute to the software they rely upon in their work.</li>
+                        <li>In their free time, let them contribute to anything unrelated!</li>
+                        <li>This gives a new dimension to grow for your engineering. Other career perspective than becoming a manager.</li>
+                        <li>Help you recruit people, show off the quality of your tech teams.</li>
+                    </ul>
+                    </div>
+                    <aside class="notes">
+                    <ul>
+                        <li>You already do rely on opensource in all of the aspects of your operations.</li>
+                        <li><strong>Poll:</strong>Is there anyone in the audience who think that they don't?</li>
+                        <li>They will grow in expertise</li>
+                        <li>If I had to walk around without a shirt all the time, I would probably go a lot more to the gym). The same holds for the code that we write. We have higher standards for what everyone can see on the internet than <strong>code buried in the obscure back office of a large corporation.</strong></li>
+                        <li>So if it is not <em>secret sauce</em>, give it away.</li>
+                        <li>Building a trust relationship with the upstream community will help when you encounter issues that compromise your operations and need help from them.</li>
+                    </ul>
+                    </aside>
+                </section>
+                <section data-background-image="roads.jpg">
+                    <h2>Roads and bridges</h2>
+                    <ul style="width: 60%; margin-left: auto; margin-right: auto; font-size: 40px;">
+                        <li>Open source is not for crazy hippies and closed-source software is not evil.</li>
+                        <li>Open source is the backbone of scientific computing.
+                            <ul>
+                                <li>compilers, interpreters, OSs, scientific libraries, package managers.</li>
+                                <li>You cannot afford to redo all of that yourself.</li>
+                            </ul>
+                        </li>
+                        <li>Open source is common infrastructure used by everyone</li>
+                    </ul>
+                </section>
+
+                <section data-background-image="roads.jpg">
+                    <h2>Roads and bridges</h2>
+                    <em>
+                    Open up your phone.<br>
+                    Your social media,<br>
+                    your news, your<br>
+                    medical records, your<br>
+                    bank: they are all using<br>
+                    free and public code.
+                    </em>
+                    <p>-- Nadia Eghbal</p>
+                    <aside class="notes">
+                        <ul>
+                            <li><em>Roads and bridges</em> is actually the title of an article by Nadia Eghbal</li>
+                            <li></li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section data-background-image="roads.jpg">
+                    <h3>What happens when infrastructure breaks?</h3>
+                    <div style="width: 70%; margin-right: auto; margin-left: auto;">
+                    <p>The case <em>OpenSSL</em></p>
+                    <div style="text-align: left; margin-top: 20px; margin-bottom: 20px; font-size: 26px;">
+                    <em>
+                    Having worked with the Department of Defense, Marquess saw how
+                    critical OpenSSL was, not just to their software, but to other industries
+                    around the world, from enterprise to aeronautics to health care.
+                    Until that moment, he had “always assumed, (as had the rest of the
+                    world) that the OpenSSL team was large, active, and well resourced.” In
+                    reality, OpenSSL wasn’t even able to support one person’s work.
+                    </em>
+                    </div>
+                    <h5>Now what happens when <em>numpy / jupyter / scipy / pandas / conda</em> breaks?</h5>
+                    <div style="font-size: 26px;">
+                    <ul>
+                        <li>There is only a handful of developers working on Pandas full time</li>
+                        <li>No full-time developer working on numpy at the moment</li>
+                    </ul>
+                    </div>
+                    </div>
+                    <aside class="notes">
+                        <ul>
+                            <li>People realized that a software that was relied upon so much was not being maintained with the level of support that was required.</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Organize!</h2>
+                    <img alt="numfocus" src="numfocus.png" width="50%" style="box-shadow: none;">
+                    <div style="text-align: left; font-size: 30px; line-height: 30px; width: 65%; margin-left: auto; margin-right: auto;">
+                    <em>
+                    The mission of NumFOCUS is to promote sustainable high-level programming languages, open code development, and reproducible scientific research. We accomplish this mission through our educational programs and events as well as through fiscal sponsorship of open source data science projects. We aim to increase collaboration and communication within the scientific computing community.
+                    </em>
+                    </div>
+
+                    <aside class="notes">
+                    <ul>
+                    <li>But having good roads requires <strong>more than cleaning up</strong> in front of your home. We need  to organize and collaborate at a larger scale.</li>
+                    <li>This is something that a number of companies in Europe have understood, and as I relocated in France, two large companies based in France contacted me (as a member of the Jupyter team) and <strong>offered to make a donation</strong> to help the project grow, for a total of around 100k euros.</li>
+                    <li>One issue is that we did not even know how to take the money. we don't have a single non-profit legal entity that could be a recipent to such a donation in France, and could make it tax deductible.</li>
+                    <li>This is what the <strong>NumFOCUS foundation</strong> is about: serving as an umbrella organization for a large number of open-source projects to receive corporate and public funding, mutualising the administrative cost accross multiple projects.</li>
+                    <li>Even on opensource projects that have most of their core developers located in Europe, <strong>leadership and governance</strong> often are located in the US. Why? Because we don't have the equivalent to NumFOCUS. Now it is clear that we need it - and we are now already working on it with the leadership of several open-source projects to make it happen sooner rather than later.</li>
+                    </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Our action</h2>
+                    <ul style="margin-top: 20px; width: 70%;">
+                        <li>
+                        <p>Work with the NumFOCUS leadership on the creation of a EU branch or separate EU entity.</p>
+                        <img alt="eu" src="eu.png" width="70px;" style="display: block; margin-right: auto; margin-left: auto;"/>
+                        </li>
+                        <li>
+                        <p>Creation the PyData Paris meetup.</p>
+                        <img alt="pydata" src="pydata-logo.png" width="150px;" style="display: block; margin-right: auto; margin-left: auto;"/>
+                        </li>
+                        <li>
+                        <p>What next?</p>
+                        </li>
+                    </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li>NumFOCUS</li>
+                            <li>PyData Paris
+                                <ul>
+                                    <li>Travis Oliphant, Gael Varoquaux</li>
+                                    <li>50 percent academia, 50 percent industry</li>
+                                </ul>
+                            </li>
+                            <li>But we must <strong>do more</strong>:
+                                <ul>
+                                    <li>Community engagement</li>
+                                    <li>collaboration between academia and industry on sustainability.</li>
+                                    <li>Advocating for the ecosystem behind closed doors.</li>
+                                    <li>Building businesses providing support and service based on this software.</li>
+                                </ul>
+                            It takes a village
+                            </li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section data-background-image="matlab.png">
+                    <h3>The language war</h3>
+                    <ul style="width: 70%;">
+                        <li style="margin-top: 20px;">What happens when you say "Java" in a C++ conference?</li>
+                        <li style="margin-top: 20px;">What happens when you say "MatLab or R" in a Python conference?</li>
+                    </ul>
+                    <aside class="notes">
+                    Chances are that you will be boo-ed.
+                    </aside>
+                </section>
+
+                <section>
+                    <div style="top: -290px;">
+                    <img alt="giskard" src="giskard.png" width="60%"/>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>The language war</h3>
+                    <div style="text-align: left; width: 70%; margin-left: auto; margin-right: auto; font-size: 30px; ">
+                    <p>There is no reason for R, Julia and Python to be in competition. They have very similar communities</p>
+                    <p>Duplication of effort hurts sustainability and inter-operability.</p>
+                    <ul>
+                        <li>Package management</li>
+                        <li>IDEs, developer tools</li>
+                        <li>In-browser data visualization tools</li>
+                        <li>Data structures</li>
+                    </ul>
+                    </div>
+                    <p>All these require collaboration <em>beyond language boundaries.</em></p>
+                </section>
+
+                <section>
+                    <img alt="fernando" src="fernando.jpg" width="35%" style="float: left;">
+                    <div style="text-align: left; font-size: 25px; line-height: 25px; margin: 100px 30px 100px 30px;">
+                    <em>
+                    My advisor had a heavily customized awk/sed/bash workflow to manage job submissions and postprocessing of C codes for supercomputing runs... So I used her scripts to run my jobs, and on top of that has added my own layer of Perl, plus a hefty amount of Gnuplot, IDL and Mathematica.
+                    </em>
+                    <p style="text-align: right;">- Fernando Perez</p>
+                    </div>
+
+                    <aside class="notes">
+                    Wow, this sounds almost as bad as my PhD!
+                    </aside>
+                </section>
+
+                <section data-background-color="#EFEFEF">
+                    <img alt="jupyter" src="jupyter.png" width="40%" style="box-shadow: none;">
+                    <aside class="notes">
+                    Jupyter is meant to fix this situation
+                    <ul>
+                       <li>a consistent set of tools facilitating the workflow of engineers, scientists</li>
+                       <li>from the exploratory phase of their work</p>
+                       <li>to the presentation of their result</li>
+                       <li>including all the intermediary phase, HPC, visualization, debugging</li>
+                       <li>making the experience actually FUN</li>
+                    </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Poll</h2>
+                    <p>Raise your rand if you</p>
+                    <div style="width: 70%; margin-top: 30px;">
+                    <ul>
+                        <li class="fragment">Have heard of IPython or Jupyter</li>
+                        <li class="fragment">Have used IPython or Jupyter</li>
+                        <li class="fragment">Have used the Jupyter notebook</li>
+                        <li class="fragment">Have used interactive widgets in the notebook</li>
+                    </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>IPython: Interactive Python, 2001</h2>
+                    <div>
+                    <img alt="fernando-brian" src="fernando-brian.png" width="50%;">
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Jupyter Team</h2>
+                    <div>
+                    <img alt="village" src="village.png" width="70%;">
+                    <p>and 500+ more contributors</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Sponsors</h2>
+                    <div>
+                    <img alt="sponsors" src="sponsors.png" width="50%;">
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Jupyter notebook</h2>
+                    <ul style="font-size: 30px;">
+                        <li><strong>Interactive</strong> browser-based computing environment</li>
+                        <li><strong>Exploratory</strong> data science, ML, visualization, analysis, stats</li>
+                        <li><strong>Reproducible</strong> document format:
+                            <ul>
+                                <li>Code</li>
+                                <li>Narrative text (markdown)</li>
+                                <li>Equations (LaTeX)</li>
+                                <li>Images, visualizations</li>
+                            </ul>
+                        </li>
+                        <li>Over 50 programming languages</li>
+                        <li>Everything open-source (BSD license)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>The Jupyter Notebook</h2>
+                    <img alt="notebook" src="notebook-screenshot.png" width="40%">
+                </section>
+
+                <section>
+                    <h2>Kernels</h2>
+                    <div>
+                    <img alt="kernels" src="kernels.png" width="50%">
+                    <p style="text-align: right; margin-right: 150px;">... more than 70 different kernels</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Adoption</h2>
+                    <p style="font-size: 40px;">2015 IBM survey: 3M users</p>
+                    <img alt="adoption" src="adoption.png" width="17%">
+                </section>
+
+                <section>
+                    <h2>Measuring Adoption</h2>
+                    <p style="font-size: 40px;">Approximately 600k notebooks on GitHub</p>
+                    <img alt="trending" src="trending.png" width="30%">
+                </section>
+
+                <section>
+                    <h2>Commercial Offering</h2>
+                    <ul>
+                        <li>Google DataLab</li>
+                        <li>Microsoft Azure</li>
+                        <li>AWS</li>
+                        <li>CoCalc (SageMathCloud)</li>
+                        <li>Wakari.io</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Other Large-Scale Deployments</h3>
+                    <div style="font-size: 30px; width: 70%; margin-left: auto; margin-right: auto;">
+                    <p>Generally using the JupyterHub multi-user server</p>
+                    <ul>
+                        <li>Educational:</li>
+                            <ul>
+                                <li>UC Berkeley</li>
+                                <li>Cal Poly</li>
+                                <li>U. Sheffield</li>
+                                <li>ETH Zurich</li>
+                            </ul>
+                        </li>
+                        <li>NERSC (National Energy Reseach Scientific Computing Center)</li>
+                        <li>San Diego Supercomputing Center</li>
+                        <li>Minnesota, CU Boulder, Compute Canada</li>
+                        <li>CERN</li>
+                        <li>Wikimedia Foundation</li>
+                        <li>Danish e-Infrastructure cooperation.</li>
+                        <li>Mybinder.org</li>
+                    </li>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Enabling Reproducible Science</h3>
+                    <img alt="ligo" src="ligo.png" width="50%">
+                </section>
+
+                <section>
+                    <h3>Enabling Reproducible Journalism</h3>
+                    <img alt="buzzfeed" src="buzzfeed.png" width="50%">
+                </section>
+
+                <section>
+                    <h3>More Than Notebooks</h3>
+                    <img alt="More than notebooks" src="more-than-notebooks.png" width="50%">
+                </section>
+
+                <section>
+                    <h3>Jupyterlab</h3>
+                    <img alt="jupyterlab" src="jupyterlab.png" width="50%">
+                </section>
+
+                <section>
+                    <h2>Demo</h2>
+                </section>
+
+                <section>
+                    <h3>The HTPP of Scientific Computing</h3>
+                    <em>A specification matters a great deal more than any implementation.</em>
+                    <div style="text-align: left; font-size: 36px; width: 70%; margin-left: auto; margin-right: auto;">
+                    <p>Well specified</em>
+                    <ul style="padding-left: 40px;">
+                        <li>Communication protocols</li>
+                        <li>File formats</li>
+                        <li>Serialization Schemas</li>
+                    </ul>
+                    <p>transformed Jupyter in the HTTP of Scientific Computing for</p>
+                    <ul style="padding-left: 40px;">
+                        <li>Exploratory Analysis</li>
+                        <li>Data Visualization</li>
+                        <li>In a language agnostic fashion</li>
+                    </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>What is missing?</h3>
+                    <div style="text-align: left; font-size: 36px; width: 70%; margin-left: auto; margin-right: auto;">
+                    <p>The interface to the REPL has been abstracted out by Jupyter</p>
+                    <p>Interoperability between the languages of scientific computing is still poor</p>
+                    <ul>
+                        <li>Data Structures for Data Sciencess</p>
+                        <li>The scalability Gap</li>
+                    </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <img alt="xtensor" src="xtensor.svg" width="70%" style="box-shadow: none;">
+                </section>
+
+                <section>
+                    <img alt="jupytercon" src="jupytercon.png" width="100%" style="box-shadow: none;">
+                    <div style="width: 60%; margin-left: auto; margin-right: auto">
+                        Tutorials, talks, development and industry training
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Thank you!</h2>
+                    <p style="margin-top: 30px; font-size: 40px; line-height: 40px;">jupyter.org</p>
+                    <p style="margin-top: 30px; font-size: 40px; line-height: 40px;">quantstack.net</p>
+                </section>
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
+                width: "100%",
+                height: "100%",
+                margin: 0,
+                minScale: 1,
+                maxScale: 1,
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
+</html>
