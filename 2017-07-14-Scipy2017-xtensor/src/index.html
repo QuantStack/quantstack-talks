@@ -664,6 +664,57 @@
                             </div>
                         </div>
                     </section>
+
+                </section>
+                <section>
+                    <section>
+                        <div class="splitting"></div>
+                        <p>Iteration</p>
+                        <div style="margin-top: 2%;">
+                            <div class="left-panel">
+                                Row-major iteration over the array <code>for x in np.nditer(a)</code>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                for(auto it=a.xbegin(); it!=a.xend(); ++it)
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div style="margin-top: 2%;">
+                            <div class="left-panel fragment">
+                                 Iterating over <code>a</code> with a prescribed broadcasting shape
+                            </div>
+                            <div class="right-panel fragment">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                a.xbegin({3, 4})
+                                a.xend({3, 4})
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div style="margin-top:2%;">
+                            <div class="left-panel fragment">
+                                 Iterating over <code>a</code> in a column-major fashion
+                            </div>
+                            <div class="right-panel fragment">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                a.template xbegin&lt;layout_type::column_major&gt;()
+                                a.template xend&lt;layout_type::column_major&gt;()
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div style="margin-top:2%;">
+                            <div class="left-panel fragment">
+                                 Iterating over <code>a</code> in a column-major fashion with a prescribed broadcasting shape
+                            </div>
+                            <div class="right-panel fragment">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                a.template xbegin&lt;layout_type::column_major&gt;({3, 4})
+                                a.template xend&lt;layout_type::column_major&gt;({3, 4})
+                                </code></pre>
+                            </div>
+                        </div>
+                    </section>
+                </section>
                 </section>
                 <section>
                     <section>
@@ -1083,12 +1134,27 @@ xtensor_r_test::sum_of_sines(arr)
                         <li>Packaging boilerplate (setup.py, build.jl)</li>
                     </ul>
                 </section>
+
+                <section>
+                    <img alt="xtensor-robot" src="robot.png" width="20%"/>
+                    <p>Scientific computing in a polyglot world with xtensor</p>
+                    <ul>
+                        <li>Write a native extension once, operating on xtensor expressions</li>
+                        <li>Get free bindings to R, Julia and Python</li>
+                        <li>For more details about the best practices, see
+                            <p>
+                            <a href="http://quantstack.net/c++/2017/05/30/polyglot-scientific-computing-with-xtensor.html">http://quantstack.net/c++/2017/05/30/polyglot-scientific-computing-with-xtensor.html</a>
+                            </p>
+                        </li>
+                    </ul>
+                </section>
+
                 <section>
                     <p>Bindings with BLAS libraries</p>
                     <img alt="xtensor-blas" src="xtensor-blas.svg" width="55%"/>
-                    <p>BLAS-based implementation of <code>numpy.linalg</code> module are implemented in xtensor-blas.</p>
+                    <p>BLAS-based implementation of <code>numpy.linalg</code></p>
                     <ul>
-                        <li>ISO results with numpy.linalg is main goal</li>
+                        <li>ISO results with <code>numpy.linalg</code> is main goal</li>
                         <li>Seeking adoption by Python to C++ compilers (Pythran, Jet)</li>
                         <li>Works with any BLAS implementation (openblas, mkl, netlib)</li>
                         <li>See the <a href="http://xtensor.readthedocs.io/en/latest/numpy.html">numpy to xtensor cheat sheet</a></li>
@@ -1097,7 +1163,7 @@ xtensor_r_test::sum_of_sines(arr)
 
                 <section>
                     <p>SIMD acceleration</p>
-                    <img alt="xsimd" src="xsimd.svg" width="55%"/>
+                    <img alt="xsimd" src="xsimd.svg" width="35%"/>
                     <ul>
                         <li>Unified high-level API to AVX, SSE, Neon with arithmetic operations</li>
                         <li>Accelerated mathematical functions</li>
@@ -1105,9 +1171,9 @@ xtensor_r_test::sum_of_sines(arr)
                     </ul>
                 </section>
                 <section>
-                    <p>Assuming that AVX is supported</p>
+                    <p>xsimd example (Assuming that AVX is supported)</p>
 <pre class="panel">
-<code class="julia">
+<code class="cpp">
 #include &lt;iostream&gt;
 #include "xsimd/xsimd.hpp"
 
@@ -1122,11 +1188,11 @@ int main(int argc, char* argv[])
     return 0;
 }
 </code>
-<pre>
+</pre>
                 </section>
                 <section>
-                    <p>Accelerating loops</p>
-                    <p>This applies to processing including basic math functions from cmath.</p>
+                    <p>xsimd: accelerating loops</p>
+                    <p>(This applies to processing including basic math functions from cmath.)</p>
 <pre class="panel">
 <code class="julia">
 #include &lt;cstddef&gt;
@@ -1156,17 +1222,18 @@ void mean(const vector_type&amp; a, const vector_type&amp; b, vector_type&amp; r
     }
 }
 </code>
-<pre>
+</pre>
                 </section>
 
                 <section>
                     <p>What is coming?</p>
                     <div style="margin-top: 5%; margin-bottom: 10%;">
                         <ul>
-                            <li>Pluging xsimd into xtensor for SIMD acceleration</li>
-                            <li class="fragment" style="margin-top: 5%;">Bindings with Apache Arrow</li>
+                            <li>Plugging xsimd into xtensor for SIMD acceleration</li>
+                            <li class="fragment" style="margin-top: 5%;">Bindings with Apache Arrow, HDF5, FITS, NetCDF</li>
                             <li class="fragment" style="margin-top: 5%;">GPU acceleration</li>
-                            <li class="fragment" style="margin-top: 5%;">ODBC-databases backed expressions</li>
+                            <li class="fragment" style="margin-top: 5%;">Expressions backed wit ODBC-databases</li>
+                            <li class="fragment" style="margin-top: 5%;">Arrays with labeled dimensions</li>
                             <li class="fragment" style="margin-top: 5%;">World domination</li>
                         </ul>
                     </div>
@@ -1238,6 +1305,47 @@ void mean(const vector_type&amp; a, const vector_type&amp; b, vector_type&amp; r
                                 </a>
                             </div>
                         </div>
+                    </div>
+                </section>
+                <section>
+                    <h2>The End</h2>
+                </section>
+                <section>
+                    <h3>Aliasing (Appendix)</h3>
+                    <div style="width: 70%; margin-left: auto; margin-right: auto; text-align: left;">
+                    <p>In an assignment, aliasing occurs when the LHS refers to the same memory as a member of the RHS expression</p>
+<pre class="panel">
+<code class="cpp">
+a = b + c.dot(a);
+</code>
+</pre>
+                    <p>By default, xtensor will solve that issue by assigning the result to a temporary variable that is then <em>moved</em> to the left-hand side.</p>
+                    <p>If the user <em>knows</em> that no aliasing accurs in an assignment, we can save this extra-allocation with the <code>noalias</code> function.</p>
+<pre class="panel">
+<code class="cpp">
+noalias(a) = b + c.dot(d);
+</code>
+</pre>
+                </section>
+                <section>
+                    <h3>Static and dynamic dimensionality (Appendix)</h3>
+                    <div style="width: 70%; margin-left: auto; margin-right: auto; text-align: left; font-size: 30px;">
+                    <p>
+                    The xtensor library provides too container types:
+                    </p>
+                    <ul>
+                        <li><code>xarray<double></code></li>
+                        <li><code>xtensor<double, N></code></li>
+                    </ul>
+                    <p>The latter encodes the number of dimensions in the type:</p>
+                    <ul>
+                        <li>Stack-allocated shapes and strides.</li>
+                        <li>Faster iteration.</li>
+                    </ul>
+                    <p>What about expressions?</p>
+                    <ul>
+                        <li>The compile-time <code>promote_shape</code> mechanism selects the optimal shape type for an expression at compile time.</li>
+                    </ul>
                     </div>
                 </section>
             </div>
