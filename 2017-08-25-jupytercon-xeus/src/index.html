@@ -131,7 +131,7 @@
         <div class="reveal">
             <div class="slides">
                 <section>
-                    <img alt="xeus" src="xeus.svg" width="80%"/>
+                    <img alt="xeus" src="xeus.svg" width="50%"/>
                     <p>Native implementation of the Jupyter protocol</p>
                 </section>
                 <section>
@@ -228,7 +228,7 @@
                 </section>
 
                 <section>
-                    <img alt="xeus" src="xeus.svg" width="80%"/>
+                    <img alt="xeus" src="xeus.svg" width="50%"/>
                     <ul style="max-width: 50%;">
                         <li>A modern C++ implementation of the Jupyter protocol</li>
                         <li>Enabling kernel authors to create new kernels without having to deal with the protocol.</li>
@@ -266,9 +266,9 @@
                 <section>
                     <section>
                         <h2>Scientific computing in the C++ notebook with xtensor</h2>
+                        <img alt="xtensor" src="xtensor.svg" style="width: 25%;" />
                         <div style="margin-left: auto; margin-right: auto; width: 70%;">
                         <ul>
-                            <p>What is xtensor?</p>
                             <li class="fragment">
                                 <p>A C++ template library for multi-dimensional array manipulation</p>
                                 <img alt="xtensor" src="xtensor.svg" width="12%"/>
@@ -559,226 +559,19 @@
                         </div>
                     </section>
                 </section>
-                <section>
-                    <section>
-                        <div class="splitting"></div>
-                        <p>Broadcasting</p>
-                        <div class="fragment" style="margin-top: 5%;">
-                            <div class="left-panel">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                    xarray&lt;int&gt; a = {{1,  2,  3,  4},
-                                                     {5,  6,  7,  8},
-                                                     {9, 10, 11, 12}};
-                                    xarray&lt;int&gt; b = { 1, 3, 5, 7};
-                                </code></pre>
-                            </div>
-                            <div class="right-panel">
-                                <img alt="broadcasting4.svg" src="broadcasting4.svg" width="70%"/>
-                            </div>
-                        </div>
-                        <div class="fragment" style="margin-top: 5%;">
-                            <div class="left-panel">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                    xarray&lt;int&gt; res = a + b;
-                                </code></pre>
-                            </div>
-                            <div class="right-panel">
-                                <img alt="broadcasting5.svg" src="broadcasting5.svg" width="70%"/>
-                            </div>
-                        </div>
-                    </section>
-                    <section>
-                        <div class="splitting"></div>
-                        <p>Broadcasting</p>
-                        <div style="margin-top: 2%;">
-                            <div class="left-panel">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                    xarray&lt;double&gt; a = {1., 2., 3., 4.};
-                                </code></pre>
-                            </div>
-                            <div class="right-panel">
-                                <img alt="broadcasting1.svg" src="broadcasting1.svg" width="30%"/>
-                            </div>
-                        </div>
-                        <div style="margin-top: 2%;">
-                            <div class="left-panel fragment">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                    auto res = xt::broadcast(a, {3, 4});
-                                </code></pre>
-                            </div>
-                            <div class="right-panel fragment">
-                                <img alt="broadcasting2.svg" src="broadcasting2.svg" width="30%"/>
-                            </div>
-                        </div>
-                        <div style="margin-top:2%;">
-                            <div class="left-panel fragment">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                    xarray&lt;double&gt; a, b, c;
-                                    // ... initialization of a, b, and c ...
-                                    auto res = broadcast(a + b * c, {3, 4});
-                                </code></pre>
-                            </div>
-                            <div class="right-panel fragment">
-                                <img alt="broadcasting3.svg" src="broadcasting3.svg" width="30%"/>
-                            </div>
-                        </div>
-                    </section>
-
                 </section>
                 <section>
                     <section>
-                        <div class="splitting"></div>
-                        <p>Iteration</p>
-                        <div style="margin-top: 2%;">
-                            <div class="left-panel">
-                                Row-major iteration over the array <code>for x in np.nditer(a)</code>
-                            </div>
-                            <div class="right-panel">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                for(auto it=a.xbegin(); it!=a.xend(); ++it)
-                                </code></pre>
-                            </div>
-                        </div>
-                        <div style="margin-top: 2%;">
-                            <div class="left-panel fragment">
-                                 Iterating over <code>a</code> with a prescribed broadcasting shape
-                            </div>
-                            <div class="right-panel fragment">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                a.xbegin({3, 4})
-                                a.xend({3, 4})
-                                </code></pre>
-                            </div>
-                        </div>
-                        <div style="margin-top:2%;">
-                            <div class="left-panel fragment">
-                                 Iterating over <code>a</code> in a column-major fashion
-                            </div>
-                            <div class="right-panel fragment">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                a.template xbegin&lt;layout_type::column_major&gt;()
-                                a.template xend&lt;layout_type::column_major&gt;()
-                                </code></pre>
-                            </div>
-                        </div>
-                        <div style="margin-top:2%;">
-                            <div class="left-panel fragment">
-                                 Iterating over <code>a</code> in a column-major fashion with a prescribed broadcasting shape
-                            </div>
-                            <div class="right-panel fragment">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                a.template xbegin&lt;layout_type::column_major&gt;({3, 4})
-                                a.template xend&lt;layout_type::column_major&gt;({3, 4})
-                                </code></pre>
-                            </div>
-                        </div>
-                    </section>
-                </section>
-                </section>
-                <section>
-                    <section>
-                        <div class="splitting"></div>
-                        <p>Views</p>
-                        <div style="margin-top: 4%;" class="fragment">
-                            <div class="left-panel">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                    xarray&lt;int&gt; a = {{1,  2,  3,  4},
-                                                     {5,  6,  7,  8},
-                                                     {9, 10, 11, 12}};
-                                    auto res = view(a, range(0, 3, 2),
-                                                       range(0, 3, 2));
-                                </code></pre>
-                            </div>
-                            <div class="right-panel">
-                                <img alt="view1.svg" src="view1.svg" width="30%"/>
-                            </div>
-                        </div>
-                        <div style="margin-top: 4%;" class="fragment">
-                            <div class="left-panel">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                    a(0, 0) = 0;
-                                    assert(res(0, 0) == 0);
-
-                                    res(1, 1) = 20;
-                                    assert(a(2, 2)) == 20);
-                                </code></pre>
-                            </div>
-                            <div class="right-panel">
-                                <img alt="view2.svg" src="view2.svg" width="30%"/>
-                            </div>
-                        </div>
-                    </section>
-                    <section>
-                        <div class="splitting"></div>
-                        <p>Views</p>
-                        <div style="margin-top: 4%;">
-                            <div class="left-panel">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                    xarray&lt;int&gt; a = {{1,  2,  3,  4},
-                                                     {5,  6,  7,  8},
-                                                     {9, 10, 11, 12}};
-                                    auto res = view(a, 1, all());
-                                </code></pre>
-                            </div>
-                            <div class="right-panel">
-                                <img alt="view3.svg" src="view3.svg" width="30%"/>
-                            </div>
-                        </div>
-                        <div style="margin-top: 4%;" class="fragment">
-                            <div class="left-panel">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                    xarray&lt;int&gt; a = {{1,  2,  3,  4},
-                                                     {5,  6,  7,  8},
-                                                     {9, 10, 11, 12}};
-                                    auto res = view(a, 1, range(1, _));
-                                </code></pre>
-                            </div>
-                            <div class="right-panel">
-                                <img alt="view4.svg" src="view4.svg" width="30%"/>
-                            </div>
-                        </div>
-                    </section>
-                    <section>
-                        <div class="splitting"></div>
-                        <p>Views</p>
-                        <div>
-                            <div class="left-panel">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                    xarray&lt;int&gt; a = {{21,  2,  3,  4},
-                                                     { 5,  6, 27,  8},
-                                                     { 9, 10, 31, 12}};
-                                    auto res = indexview(a, {{0, 0}, 
-                                                             {1, 2},
-                                                             {2, 2}});
-                                </code></pre>
-                            </div>
-                            <div class="right-panel">
-                                <img alt="view5.svg" src="view5.svg" width="60%"/>
-                            </div>
-                        </div>
-                        <div class="fragment">
-                            <div class="left-panel">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                    xarray&lt;int&gt; a = {{21,  2,  3,  4},
-                                                     { 5,  6, 27,  8},
-                                                     { 9, 10, 31, 12}};
-                                    auto res = filter(a, a &gt; 20); 
-                                </code></pre>
-                            </div>
-                            <div class="right-panel">
-                                <img alt="view5.svg" src="view5.svg" width="60%"/>
-                            </div>
-                        </div>
-                        <div class="fragment">
-                            <div class="left-panel">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                    res += 5; 
-                                </code></pre>
-                            </div>
-                            <div class="right-panel">
-                                <img alt="view6.svg" src="view6.svg" width="60%"/>
-                            </div>
-                        </div>
+                        <p>And much more</p>
+                        <ul>
+                            <li>Missing values</li>
+                            <li>Fancy indexing</li>
+                            <li>Broadcasting and universal functions</li>
+                            <li>Linear algebra</li>
+                            <li>Language bindings</li>
+                            <li>Lazy computing</li>
+                            <li>Views on array expressions</li>
+                        </ul>
                     </section>
                 </section>
 
@@ -799,6 +592,14 @@
                 <section>
                     <p>Jupyter interactive widgets: thick front-end and thin back-end</p>
                     <img alt="model-declaration" src="model-declaration.png" width="60%;"/>
+                </section>
+
+                <section>
+                     <p>The foundations for a C++ backend for Jupyter interactive widgets</p>
+                     <ul>
+			 <li>An implementation of the observer pattern (traitlets): xproperty</li>
+                         <li>The implementation of the Jupyter widgets communication protocol: xwidgets</li>
+                     </ul>
                 </section>
 
                 <section>
@@ -858,6 +659,38 @@
                         </div>
                     </div>
                 </section>
+                <section>
+                    <h2>Resources:</h2>
+                    <p>GitHub</p>
+                    <ul>
+                        <li>xeus: https://github.com/QuantStack/xeus/</li>
+                        <li>xeus-cling: https://github.com/QuantStack/xeus-cling/</li>
+                        <li>xproperty: https://github.com/QuantStack/xproperty/</li>
+                        <li>xtensor: https://github.com/QuantStack/xtensor/</li>
+                        <li>xtensor-blas: https://github.com/QuantStack/xtensor-blas/</li>
+                        <li>xtensor-python: https://github.com/QuantStack/xtensor-python/</li>
+                        <li>xtensor-r: https://github.com/QuantStack/xtensor-r/</li>
+                        <li>xtensor-julia: https://github.com/QuantStack/xtensor-julia/</li>
+                        <li>xsimd: https://github.com/QuantStack/xsimd/</li>
+                        <li>xtensor-fftw: https://github.com/egpbos/xtensor-fftw/</li>
+                        <li>xwidgets: https://github.com/QuantStack/xwidgets/</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Resources:</h2>
+                    <p>Documentation</p>
+                    <ul>
+                        <li>https://xeus.readthedocs.io/en/latest/</li>
+                        <li>https://xproperty.readthedocs.io/en/latest/</li>
+                        <li>https://xtensor.readthedocs.io/en/latest/</li>
+                        <li>https://xtensor-python.readthedocs.io/en/latest/</li>
+                        <li>https://xtensor-julia.readthedocs.io/en/latest/</li>
+                        <li>https://xtensor-r.readthedocs.io/en/latest/</li>
+                        <li>https://xsimd.readthedocs.io/en/latest/</li>
+                    </ul>
+                </section>
+
                 <section>
                     <h2>The End</h2>
                 </section>
