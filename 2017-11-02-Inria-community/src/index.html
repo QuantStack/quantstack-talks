@@ -1,0 +1,623 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>reveal.js</title>
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css">
+        <link rel="stylesheet" href="genericons.css">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+        <style>
+        .reveal section img {
+            border: none;
+            background-color: initial;
+            margin: 10px;
+        }
+        .reveal .normal-paragraph {
+            text-align: left;
+            margin: 0 auto 0 auto;
+            width: 60%;
+        }
+        .reveal .normal-paragraph p {
+            text-align: left;
+        }
+        .header-left {
+            position: absolute;
+            top: 2%;
+            left: 2%;
+        }
+        .header-right {
+            position: absolute;
+            top: 2%;
+            right: 2%;
+        }
+        .footer-left {
+            position: absolute;
+            bottom: 2%;
+            left: 2%;
+        }
+        .reveal .genericon {
+          font-family: "genericons";
+        }
+
+        .reveal .bio-card {
+          background: #333;
+          border-radius: 2px;
+          display: inline-block;
+          width: 260px;
+          margin: 1rem;
+          position: relative;
+          font-size: 20px;
+        }
+
+        .reveal .card-photo {
+          display: block;
+          width: 200px;
+          border-top-left-radius: 2px;
+          border-top-right-radius: 2px;
+          margin: 28px auto 0 auto;
+        }
+
+        .reveal .card-header {
+          width: 100%;
+          font-size: 20px;
+          margin-top: 10px;
+          text-align: center;
+        }
+
+        .reveal .card-info {
+          width: 100%;
+          float: left;
+          font-size: 20px;
+          margin-top: 0;
+          padding: 0 4px;
+          text-align: center;
+        }
+
+        .reveal .card-info a {
+          text-decoration: none;
+          color: #999;
+        }
+
+        .reveal .card-info em {
+          vertical-align: top;
+        }
+
+        .revral .card-info a .genericon {
+          vertical-align: middle;
+        }
+
+        .reveal .bio-social a {
+          text-decoration: none;
+        }
+
+        .reveal .bio-photo {
+          width: 200px;
+          margin: 0 40px 40px -40px;
+          float: left;
+        }
+
+        .reveal section img {
+            box-shadow: none;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="common" style="z-index: 2;">
+            <div class="header-left">
+                <img alt="QuantStack" src="quantstack-white.svg" width="30%"/>
+            </div>
+            <div class="footer-left">
+                <div style="color: white; font-family: Source Sans Pro, Helvetica, sans-serif;">
+                <img alt="Twitter" src="twitter-white.svg" height="20px"/>
+                <img alt="GitHub" src="github-white.svg" height="20px"/>
+                <p style="display: inline; vertical-align: top; margin-left: 4px; font-size: 20px;">@JohanMabille @QuantStack</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1>Animating a community</h1>
+                    <h2>Around a open source software</h2>
+                </section>
+                <section>
+                    <img alt="QuantStack" src="quantstack-white.svg" width="55%">
+                    <div class="team-section-content">
+                        <div style="display: inline-block; width: 45%; margin: 30px; vertical-align: top;">
+                            <img class="card-photo" alt="Avatar picture" src="johan.jpg">
+                            <p class="card-header">Johan Mabille</p>
+                            <div style="font-size: 20px; text-align: justify; margin: 30px;">
+                            <ul>
+                                <li>Scientific software developer @QuantStack</li>
+                                <li>Adjunct Faculty @Dauphine</li>
+                                <li>Formerly quant developer at HSBC</li>
+                                <li>Co-author of xtensor, xsimd, xeus</li>
+                            </ul>
+                            </div>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://github.com/JohanMabille" target="_blank">
+                                    <span class="genericon genericon-github"></span>
+                                    <em>@JohanMabille</em>
+                                </a>
+                            </div>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://twitter.com/JohanMabille" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@JohanMabille</em>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <section>
+                        <img alt="fernando" src="fernando.jpg" width="35%" style="float: left;">
+                        <div style="text-align: left; font-size: 25px; line-height: 25px; margin: 100px 30px 100px 30px;">
+                        <em>
+                        My advisor had a heavily customized awk/sed/bash workflow to manage job submissions and postprocessing of C codes for supercomputing runs... So I used her scripts to run my jobs, and on top of that has added my own layer of Perl, plus a hefty amount of Gnuplot, IDL and Mathematica.
+                        </em>
+                        <p style="text-align: right;">- Fernando Perez</p>
+                        </div>
+
+                        <aside class="notes">
+                        Wow, this sounds almost as bad as my PhD!
+                        </aside>
+                    </section>
+                    <section>
+                        <p>Objectives of the tools @QuantStack</p>
+                        <p class="fragment">Simplify workflows of scientific software users</p>
+                    </section>
+                    <section>
+                        <p>We are</p>
+                        <ul>
+                            <li class="fragment">Core developers of project Jupyter</li>
+                            <li class="fragment">Core developers of the xtensor stack</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>What is xtensor?</h2>
+                        <ul>
+                            <li class="fragment">
+                                <p>A C++ template library for multi-dimensional array manipulation</p>
+                                <img alt="xtensor" src="xtensor.svg" width="12%"/>
+                                <ul>
+                                    <li>
+                                        <p>Followings the idioms of the C++ STL</p>
+                                        <p>(iterator pairs, clear value semantics)</p>
+                                    </li>
+                                    <li>But also an API similar to that of numpy</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>What is xtensor?</h2>
+                        <div style="margin-left: auto; margin-right: auto; width: 70%;">
+                        <ul>
+                            <li class="fragment">
+                                <p>Python bindings to enable xtensor APIs on numpy arrays.</p>
+                                <img alt="xtensor-python" src="xtensor-python.svg" width="20%"/>
+                            </li>
+                            <li class="fragment">
+                                <p>Julia bindings to enable xtensor APIs on Julia arrays.</p>
+                                <img alt="xtensor-julia" src="xtensor-julia.svg" width="20%"/>
+                            </li>
+                            <li class="fragment">
+                                <p>R bindings to enable xtensor APIs on R arrays.</p>
+                                <img alt="xtensor-r" src="xtensor-r.svg" width="20%"/>
+                            </li>
+                            <li class="fragment">
+                                <p>Cookiecutter projects for authoring of Python, Julia, and R extensions.</p>
+                                <img alt="xtensor-cookiecutter" src="xtensor-cookiecutter.svg" width="20%"/>
+                            </li>
+                        </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>What is xtensor?</h2>
+                        <div style="margin-left: auto; margin-right: auto; width: 70%;">
+                        <ul>
+                            <li class="fragment">
+                                <p>BLAS bindings to enable BLAS operations on xtensor expressions.</p>
+                                <img alt="xtensor-blas" src="xtensor-blas.svg" width="20%"/>
+                            </li>
+                            <li class="fragment">
+                                <p>SIMD acceleration kernels.</p>
+                                <img alt="xsimd" src="xsimd.svg" width="20%"/>
+                            </li>
+                            <li class="fragment">All open-source (BSD License).</li>
+                        </ul>
+                        </div>
+                    </section>
+                    <style>
+                        div.splitting {
+                            background-color: rgb(20, 98, 135);
+                            width: 50%;
+                            height: 800%;
+                            position: absolute;
+                            top: -200%;
+                            left: 0;
+                            z-index: -1;
+                        }
+
+                        div.left-panel {
+                            width: 45%;
+                            display: inline-block;
+                            margin-right: 5%;
+                            vertical-align: top;
+                        }
+
+                        div.right-panel {
+                            width: 45%;
+                            display: inline-block;
+                        }
+
+                        code.panel {
+                            background-color: initial;
+                        }
+
+                        pre.panel {
+                            box-shadow: none;
+                        }
+                    </style>
+                    <section>
+                        <div class="splitting"></div>
+                        <div>
+                            <p style="text-align: center; vertical-align: top;">Ever heard of numpy ?</p>
+                        </div>
+                        <div>
+                            <div class="left-panel">
+                                <p style="text-align: center;"><b>Python 3 - numpy</b></p>
+                            </div>
+                            <div class="right-panel">
+                                <p style="text-align: center;"><b>C++ 14 - xtensor</b></p>
+                            </div>
+                        </div>
+                        <div class="fragment">
+                            <div class="left-panel">
+                                <pre class="panel"><code class="python panel" data-trim>
+                                    np.array([[3, 4], [5, 6]])
+
+                                    arr.reshape([3, 4])
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xt::xarray&lt;double&gt;({{3, 4}, {5, 6}})
+                                    xt::xtensor&lt;double, 2&gt;({{3, 4}, {5, 6}})
+                                    arr.reshape({3, 4});
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div class="fragment">
+                            <div class="left-panel">
+                                <pre class="panel"><code class="python panel" data-trim>
+                                    np.linspace(1.0, 10.0, 100)
+                                    np.logspace(1.0, 10.0, 100)
+                                    np.arange(3, 7)
+                                    np.eye(4)
+                                    np.zeros([3, 4])
+                                    np.ones([3, 4])
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xt::linspace&lt;double&gt;(1.0, 10.0, 100)
+                                    xt::logspace&lt;double&gt;(1.0, 10.0, 100)
+                                    xt::arange(3, 7)
+                                    xt::eye(4)
+                                    xt::zeros&lt;double&gt;({3, 4})
+                                    xt::ones&lt;double&gt;({3, 4})
+                                </code></pre>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="splitting"></div>
+                        <div>
+                            <div class="left-panel">
+                                <p style="text-align: center;"><b>Python 3 - numpy</b></p>
+                            </div>
+                            <div class="right-panel">
+                                <p style="text-align: center;"><b>C++ 14 - xtensor</b></p>
+                            </div>
+                            <div class="left-panel">
+                                <pre class="panel"><code class="python panel" data-trim>
+                                    a[:, np.newaxis]
+                                    a[:5, 1:]
+                                    a[5:1:-1, :]
+                                    np.broadcast(a, [4, 5, 7])
+                                    np.vectorize(f)
+                                    a[a &gt; 5]
+                                    a[[0, 1], [0, 0]]
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xt::view(a, xt::all(), xt::newaxis())
+                                    xt::view(a, xt::range(_, 5), xt::range(1, _))
+                                    xt::view(a, xt::range(5, 1, -1), xt::all())
+                                    xt::broadcast(a, {4, 5, 7})
+                                    xt::vectorize(f)
+                                    xt::filter(a, a &gt; 5)
+                                    xt::index_view(a, {{0, 0}, {1, 0}})
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div class="fragment">
+                            <div class="left-panel">
+                                <pre class="panel"><code class="python panel" data-trim>
+                                    np.sum(a, axis=[0, 1])
+                                    np.sum(a)
+                                    np.prod(a, axis=1)
+                                    np.prod(a)
+                                    np.mean(a, axis=1)
+                                    np.mean(a)
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xt::sum(a, {0, 1})
+                                    xt::sum(a)
+                                    xt::prod(a, {1})
+                                    xt::prod(a)
+                                    xt::mean(a, {1})
+                                    xt::mean(a)
+                                </code></pre>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="splitting"></div>
+                        <div>
+                            <div class="left-panel">
+                                <p style="text-align: center;"><b>Python 3 - numpy</b></p>
+                            </div>
+                            <div class="right-panel">
+                                <p style="text-align: center;"><b>C++ 14 - xtensor</b></p>
+                            </div>
+                            <div class="left-panel">
+                                <pre class="panel"><code class="python panel" data-trim>
+                                    np.where(a &gt; 5, a, b)
+                                    np.where(a &gt; 5)
+                                    np.any(a)
+                                    np.all(a)
+                                    np.logical_and(a, b)
+                                    np.logical_or(a, b)
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xt::where(a &gt; 5, a, b)
+                                    xt::where(a &gt; 5)
+                                    xt::any(a)
+                                    xt::all(a)
+                                    a &amp;&amp; b
+                                    a || b
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div class="fragment">
+                            <div class="left-panel">
+                                <pre class="panel"><code class="python panel" data-trim>
+                                    np.absolute(a)
+                                    np.exp(a)
+                                    np.sqrt(a)
+                                    np.cos(a)
+                                    np.cosh(a)
+                                    scipy.special.erf(a)
+                                    np.isnan(a)
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xt::abs(a)
+                                    xt::exp(a)
+                                    xt::sqrt(a)
+                                    xt::cos(a)
+                                    xt::cosh(a)
+                                    xt::erf(a)
+                                    xt::isnan(a)
+                                </code></pre>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>The Jupyter Architecture</h2>
+                        <img alt="Jupyter Architecture" src="jupyter-arch.svg" width="55%"/>
+                        <div>
+                        <ul>
+                            <li>A well defined protocol</li>
+                            <li>Implemented for more than 40 languages</li>
+                        </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Implementations of the protocol</h2>
+                        <ul>
+                            <li>Some kernels have their own implementation of the protocol
+                            <ul>
+                                <li>Python (ipykernel)</li>
+                                <li>R (IRkernel)</li>
+                                <li>Julia (IJulia)</li>
+                            </ul>
+                            </li>
+                            <li>Many others make use of the wrapper kernel approach
+                            <ul>
+                                <li>The Octave and Matlab kernels</li>
+                            </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>On the wrapper kernel approach</h2>
+                        <ul style="max-width: 50%;">
+                            <li>Dependency on the Python runtime</li>
+                            <li>The wrapped interpreter may not have a usable Python API</li>
+                            <li>We may need to expose the API of the wrapper to enable widgets</li>
+                        </ul>
+                        <p style="width: 75%; text-align: left; margin-left: auto; margin-right: auto;">In fact, a kernel is merely an executable
+                        implementing an inter-process communication protocol.
+                        <strong>It should not need a Python runtime.</strong>
+                        </p>
+                    </section>
+                    <section>
+                        <img alt="xeus" src="xeus.svg" width="50%"/>
+                        <ul style="max-width: 50%;">
+                            <li>A modern C++ implementation of the Jupyter protocol</li>
+                            <li>Enabling kernel authors to create new kernels without having to deal with the protocol.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Example: Implementing an echo kernel</h2>
+                        <img alt="echo-kernel" src="echo-kernel.png" width="40%"/>
+                    </section>
+                    <section>
+                        <h2>What can you do with Xeus?</h2>
+                            <p>A kernel for the C++ programming language based on cling</p>
+                        <div>
+                            <img alt="root-logo" src="root-logo.png" width="50%"/>
+                        </div>
+                        <div>
+                        <div class="team-section-content" style="width: 85%; margin-left: auto; margin-right: auto;">
+                            <div style="display: inline-block; width: 35%; margin: 30px; vertical-align: top;">
+                                <img class="card-photo" alt="Avatar picture" src="axel.jpg">
+                                <p class="card-header">Axel Naumann</p>
+                            </div>
+                            <div style="display: inline-block; width: 35%; margin: 30px; vertical-align: top;">
+                                <img class="card-photo" alt="Avatar picture" src="vassil.jpg">
+                                <p class="card-header">Vassil Vassilev</p>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>xtensor and xeus developers</h2>
+                        <ul>
+                            <li>QuantStack</li>
+                            <li>Ullrich Koethe, Loic Gouarin</li>
+                            <li>Patrick Bos</li>
+                            <li>Ghislain Antony Vaillant</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>xtensor and xeus developers</h2>
+                        <ul>
+                            <li>Academics</li>
+                            <li>Private companies</li>
+                            <li>Aligned interests</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Adoption of xtensor</h2>
+                        <ul>
+                            <li>~25k downloads on anaconda cloud</li>
+                            <li>tiny-dnn</li>
+                            <li>vigra (code developer conributing)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Adoption of xeus</h2>
+                        <ul>
+                            <li>Very new</li>
+                            <li>Deployed at Saclay and Dauphine</li>
+                            <li>~400 students working on a beta</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Building and animating the community</h2>
+                        <ul>
+                            <li class="fragment">Github issues</li>
+                            <li class="fragment">Gitter</li>
+                            <li class="fragment">Twitter</li>
+                            <li class="fragment">Conferences</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Larger role in the community</h2>
+                        <ul>
+                            <li>PyData Paris organizers</li>
+                            <li>Leadership in Jupyter project</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Community values</h2>
+                        <ul>
+                            <li class="fragment">Inclusiveness</li>
+                            <li class="fragment">Be positive</li>
+                            <li class="fragment">Develop in the open</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Develop in the open</h2>
+                        <ul>
+                            <li>Clear decision making (no important decision left behind the doors)</li>
+                            <li>No private communication channels</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Business model</h2>
+                        <ul>
+                            <li class="fragment">Not a freemium</li>
+                            <li class="fragment">Not a dual licensing</li>
+                            <li class="fragment">BSD: impossible to revert</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Business model</h2>
+                        <ul>
+                            <li>Sponsored development + features in OS projects we are associated with</li>
+                            <li>We bet on high adoption of xtensor and xeus</li>
+                        </ul>
+                    </section>
+                </section>
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
+                width: "100%",
+                height: "100%",
+                margin: 0,
+                minScale: 1,
+                maxScale: 1,
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
+</html>
