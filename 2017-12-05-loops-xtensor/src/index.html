@@ -1,0 +1,1439 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>reveal.js</title>
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css">
+        <link rel="stylesheet" href="genericons.css">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+        <style>
+        .reveal section img {
+            border: none;
+            background-color: initial;
+            margin: 10px;
+        }
+        .reveal .normal-paragraph {
+            text-align: left;
+            margin: 0 auto 0 auto;
+            width: 60%;
+        }
+        .reveal .normal-paragraph p {
+            text-align: left;
+        }
+        .header-left {
+            position: absolute;
+            top: 2%;
+            left: 2%;
+        }
+        .header-right {
+            position: absolute;
+            top: 2%;
+            right: 2%;
+        }
+        .footer-left {
+            position: absolute;
+            bottom: 2%;
+            left: 2%;
+        }
+        .reveal .genericon {
+          font-family: "genericons";
+        }
+
+        .reveal .bio-card {
+          background: #333;
+          border-radius: 2px;
+          display: inline-block;
+          width: 260px;
+          margin: 1rem;
+          position: relative;
+          font-size: 20px;
+        }
+
+        .reveal .card-photo {
+          display: block;
+          width: 200px;
+          border-top-left-radius: 2px;
+          border-top-right-radius: 2px;
+          margin: 28px auto 0 auto;
+        }
+
+        .reveal .card-header {
+          width: 100%;
+          font-size: 20px;
+          margin-top: 10px;
+          text-align: center;
+        }
+
+        .reveal .card-info {
+          width: 100%;
+          float: left;
+          font-size: 20px;
+          margin-top: 0;
+          padding: 0 4px;
+          text-align: center;
+        }
+
+        .reveal .card-info a {
+          text-decoration: none;
+          color: #999;
+        }
+
+        .reveal .card-info em {
+          vertical-align: top;
+        }
+
+        .revral .card-info a .genericon {
+          vertical-align: middle;
+        }
+
+        .reveal .bio-social a {
+          text-decoration: none;
+        }
+
+        .reveal .bio-photo {
+          width: 200px;
+          margin: 0 40px 40px -40px;
+          float: left;
+        }
+
+        .reveal section img {
+            box-shadow: none;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="common" style="z-index: 2;">
+            <div class="header-left">
+                <img alt="QuantStack" src="quantstack-white.svg" width="30%"/>
+            </div>
+            <div class="footer-left">
+                <div style="color: white; font-family: Source Sans Pro, Helvetica, sans-serif;">
+                <img alt="Twitter" src="twitter-white.svg" height="20px"/>
+                <img alt="GitHub" src="github-white.svg" height="20px"/>
+                <p style="display: inline; vertical-align: top; margin-left: 4px; font-size: 20px;">@SylvainCorlay @QuantStack</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <img alt="xtensor" src="xtensor.svg" width="80%"/>
+                    <p>Data structures for data science</p>
+                </section>
+                <section>
+                    <img alt="QuantStack" src="quantstack-white.svg" width="55%">
+                    <div class="team-section-content">
+                        <div style="display: inline-block; width: 45%; margin: 30px; vertical-align: top;">
+                            <img class="card-photo" alt="Avatar picture" src="sylvain.png">
+                            <p class="card-header">Sylvain Corlay</p>
+                            <div style="font-size: 20px; text-align: justify; margin: 30px;">
+                            <ul>
+                                <li>Scientific software developer, Quant researcher, formerly quant at Bloomberg, and adjunct at Columbia and NYU</li>
+                                <li>Founded QuantStack in 2016</li>
+                                <li>Jupyter core developer (widgets, bqplot, pythreejs)</li>
+                            </ul>
+                            </div>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://github.com/SylvainCorlay" target="_blank">
+                                    <span class="genericon genericon-github"></span>
+                                    <em>@SylvainCorlay</em>
+                                </a>
+                            </div>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://twitter.com/SylvainCorlay" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@SylvainCorlay</em>
+                                </a>
+                            </div>
+                        </div>
+                        <div style="display: inline-block; width: 45%; margin: 30px; vertical-align: top;">
+                            <img class="card-photo" alt="Avatar picture" src="johan.jpg">
+                            <p class="card-header">Johan Mabille</p>
+                            <div style="font-size: 20px; text-align: justify; margin: 30px;">
+                            <ul>
+                                <li>Scientific software developer, Quant developer, formerly quant developer at HSBC</li>
+                                <li>Joined QuantStack in 2016</li>
+                                <li>Co-author of xtensor, xsimd, xeus</li>
+                            </ul>
+                            </div>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://github.com/JohanMabille" target="_blank">
+                                    <span class="genericon genericon-github"></span>
+                                    <em>@JohanMabille</em>
+                                </a>
+                            </div>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://twitter.com/JohanMabille" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@JohanMabille</em>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p>The three main languages of data science</p>
+                    <img alt="Julia" src="JuliaLogo.svg" width="10%"/>
+                    <img alt="Python" src="PythonLogo.svg" width="8%"/>
+                    <img alt="R" src="RLogo.svg" width="10%"/>
+                    <p>all have concepts of</p>
+                    <ul>
+                        <li>N-D arrays</li>
+                        <li>Data frames</li>
+                    </ul>
+                    <p>but with slightly different semantics and  incompatible in-memory representation</p>
+                </section>
+                <section>
+                    <h2>2015 Berkeley Workshop</h2>
+                    <p>Data Structures for Data Science</p>
+                    <div class=".normal-paragraph">
+                        <img alt="Workshop" src="workshop-berkeley.jpg" width="30%" style="float: right;"/>
+                        <p style="text-align: left; margin: 44px;">
+                        On November 9, 2015, key developers from the R and Python ecosystems gathered in Berkeley for a workshop to explore
+                        data structures across programming languages and Packages.
+                        </p>
+                    </div>
+                </section>
+                <section>
+                     <h2>Take aways from the Berkeley workshop</h2>
+                     <div style="width: 70%; margin: auto;">
+                         <ul>
+                             <li>Enforce common formats and protocols to communicate and store these data structures.</li>
+                             <li>Support for these protocols accross all three languages.</li>
+                             <li>Converge on common native C++ implementations of these data structures with bindings for multiple scripting languages.</li>
+                         </ul>
+                     </div>
+                </section>
+                <section>
+                     <h2>One Tensor to Rule Them All</h2>
+                     <img alt="Ring" src="ring.png" width="30%"/>
+                     <p class="fragment">What would it look like?</p>
+                </section>
+                <section>
+                     <h2>One Tensor to Rule Them All: The Requirements</h2>
+                     <div style="text-align: left; margin: auto; width: 70%;">
+                     <ul>
+                         <li>Be as cool as NumPy</li>
+                         <li>Enable use of data structures from existing tensor libraries transparently</li>
+                         <li>Enable transparent use of large tensors backed by database calls or the file system.</li>
+                     </ul>
+                     <p>The One Tensor to Rule them All cannot be just one container implementation.</p>
+                     <p>Instead, it has to be a flexible expression system in which any data structure can be plugged, offering the most expressive and flexible API to the users.</p>
+                     </div>
+                </section>
+                <section>
+                    <img alt="xtensor" src="xtensor.svg" width="80%"/>
+                    <p>The Lazy Tensor Algebra Expression System</p>
+                </section>
+                <section>
+                    <section>
+                        <h2>What is xtensor?</h2>
+                        <div style="margin-left: auto; margin-right: auto; width: 70%;">
+                        <ul>
+                            <li class="fragment">
+                                <p>A C++ template library for multi-dimensional array manipulation</p>
+                                <img alt="xtensor" src="xtensor.svg" width="12%"/>
+                                <ul>
+                                    <li>
+                                        <p>Followings the idioms of the C++ STL</p>
+                                        <p>(iterator pairs, clear value semantics)</p>
+                                    </li>
+                                    <li>But also an API similar to that of numpy</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>What is xtensor?</h2>
+                        <div style="margin-left: auto; margin-right: auto; width: 70%;">
+                        <ul>
+                            <li class="fragment">
+                                <p>Python bindings to enable xtensor APIs on numpy arrays.</p>
+                                <img alt="xtensor-python" src="xtensor-python.svg" width="20%"/>
+                            </li>
+                            <li class="fragment">
+                                <p>Julia bindings to enable xtensor APIs on Julia arrays.</p>
+                                <img alt="xtensor-julia" src="xtensor-julia.svg" width="20%"/>
+                            </li>
+                            <li class="fragment">
+                                <p>R bindings to enable xtensor APIs on R arrays.</p>
+                                <img alt="xtensor-r" src="xtensor-r.svg" width="20%"/>
+                            </li>
+                            <li class="fragment">
+                                <p>Cookiecutter projects for authoring of Python, Julia, and R extensions.</p>
+                                <img alt="xtensor-cookiecutter" src="xtensor-cookiecutter.svg" width="20%"/>
+                            </li>
+                        </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>What is xtensor?</h2>
+                        <div style="margin-left: auto; margin-right: auto; width: 70%;">
+                        <ul>
+                            <li class="fragment">
+                                <p>BLAS bindings to enable BLAS operations on xtensor expressions.</p>
+                                <img alt="xtensor-blas" src="xtensor-blas.svg" width="20%"/>
+                            </li>
+                            <li class="fragment">
+                                <p>SIMD acceleration kernels.</p>
+                                <img alt="xsimd" src="xsimd.svg" width="20%"/>
+                            </li>
+                            <li class="fragment">All open-source (BSD License).</li>
+                        </ul>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <style>
+                        div.splitting {
+                            background-color: rgb(20, 98, 135);
+                            width: 50%;
+                            height: 800%;
+                            position: absolute;
+                            top: -200%;
+                            left: 0;
+                            z-index: -1;
+                        }
+
+                        div.left-panel {
+                            width: 45%;
+                            display: inline-block;
+                            margin-right: 5%;
+                            vertical-align: top;
+                        }
+
+                        div.right-panel {
+                            width: 45%;
+                            display: inline-block;
+                        }
+
+                        code.panel {
+                            background-color: initial;
+                        }
+
+                        pre.panel {
+                            box-shadow: none;
+                        }
+                    </style>
+                    <section>
+                        <div class="splitting"></div>
+                        <div>
+                            <p style="text-align: center; vertical-align: top;">Ever heard of numpy ?</p>
+                        </div>
+                        <div>
+                            <div class="left-panel">
+                                <p style="text-align: center;"><b>Python 3 - numpy</b></p>
+                            </div>
+                            <div class="right-panel">
+                                <p style="text-align: center;"><b>C++ 14 - xtensor</b></p>
+                            </div>
+                        </div>
+                        <div class="fragment">
+                            <div class="left-panel">
+                                <pre class="panel"><code class="python panel" data-trim>
+                                    np.array([[3, 4], [5, 6]])
+
+                                    arr.reshape([3, 4])
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xt::xarray&lt;double&gt;({{3, 4}, {5, 6}})
+                                    xt::xtensor&lt;double, 2&gt;({{3, 4}, {5, 6}})
+                                    arr.reshape({3, 4});
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div class="fragment">
+                            <div class="left-panel">
+                                <pre class="panel"><code class="python panel" data-trim>
+                                    np.linspace(1.0, 10.0, 100)
+                                    np.logspace(1.0, 10.0, 100)
+                                    np.arange(3, 7)
+                                    np.eye(4)
+                                    np.zeros([3, 4])
+                                    np.ones([3, 4])
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xt::linspace&lt;double&gt;(1.0, 10.0, 100)
+                                    xt::logspace&lt;double&gt;(1.0, 10.0, 100)
+                                    xt::arange(3, 7)
+                                    xt::eye(4)
+                                    xt::zeros&lt;double&gt;({3, 4})
+                                    xt::ones&lt;double&gt;({3, 4})
+                                </code></pre>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="splitting"></div>
+                        <div>
+                            <div class="left-panel">
+                                <p style="text-align: center;"><b>Python 3 - numpy</b></p>
+                            </div>
+                            <div class="right-panel">
+                                <p style="text-align: center;"><b>C++ 14 - xtensor</b></p>
+                            </div>
+                            <div class="left-panel">
+                                <pre class="panel"><code class="python panel" data-trim>
+                                    a[:, np.newaxis]
+                                    a[:5, 1:]
+                                    a[5:1:-1, :]
+                                    np.broadcast(a, [4, 5, 7])
+                                    np.vectorize(f)
+                                    a[a &gt; 5]
+                                    a[[0, 1], [0, 0]]
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xt::view(a, xt::all(), xt::newaxis())
+                                    xt::view(a, xt::range(_, 5), xt::range(1, _))
+                                    xt::view(a, xt::range(5, 1, -1), xt::all())
+                                    xt::broadcast(a, {4, 5, 7})
+                                    xt::vectorize(f)
+                                    xt::filter(a, a &gt; 5)
+                                    xt::index_view(a, {{0, 0}, {1, 0}})
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div class="fragment">
+                            <div class="left-panel">
+                                <pre class="panel"><code class="python panel" data-trim>
+                                    np.sum(a, axis=[0, 1])
+                                    np.sum(a)
+                                    np.prod(a, axis=1)
+                                    np.prod(a)
+                                    np.mean(a, axis=1)
+                                    np.mean(a)
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xt::sum(a, {0, 1})
+                                    xt::sum(a)
+                                    xt::prod(a, {1})
+                                    xt::prod(a)
+                                    xt::mean(a, {1})
+                                    xt::mean(a)
+                                </code></pre>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="splitting"></div>
+                        <div>
+                            <div class="left-panel">
+                                <p style="text-align: center;"><b>Python 3 - numpy</b></p>
+                            </div>
+                            <div class="right-panel">
+                                <p style="text-align: center;"><b>C++ 14 - xtensor</b></p>
+                            </div>
+                            <div class="left-panel">
+                                <pre class="panel"><code class="python panel" data-trim>
+                                    np.where(a &gt; 5, a, b)
+                                    np.where(a &gt; 5)
+                                    np.any(a)
+                                    np.all(a)
+                                    np.logical_and(a, b)
+                                    np.logical_or(a, b)
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xt::where(a &gt; 5, a, b)
+                                    xt::where(a &gt; 5)
+                                    xt::any(a)
+                                    xt::all(a)
+                                    a &amp;&amp; b
+                                    a || b
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div class="fragment">
+                            <div class="left-panel">
+                                <pre class="panel"><code class="python panel" data-trim>
+                                    np.absolute(a)
+                                    np.exp(a)
+                                    np.sqrt(a)
+                                    np.cos(a)
+                                    np.cosh(a)
+                                    scipy.special.erf(a)
+                                    np.isnan(a)
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xt::abs(a)
+                                    xt::exp(a)
+                                    xt::sqrt(a)
+                                    xt::cos(a)
+                                    xt::cosh(a)
+                                    xt::erf(a)
+                                    xt::isnan(a)
+                                </code></pre>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="splitting"></div>
+                        <div>
+                            <div class="left-panel">
+                                <p style="text-align: center;"><b>Python 3 - numpy</b></p>
+                            </div>
+                            <div class="right-panel">
+                                <p style="text-align: center;"><b>C++ 14 - xtensor</b></p>
+                            </div>
+                            <div class="left-panel">
+                                <pre class="panel"><code class="python panel" data-trim>
+                                    np.random.seed(0)
+                                    np.random.randn(10, 10)
+                                    np.random.randint(10, 10)
+                                    np.random.rand(3, 4)
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xt::random::seed(0)
+                                    xt::random::randn&lt;double&gt;({10, 10})
+                                    xt::random::randint&lt;int&gt;({10, 10}})
+                                    xt::random::rand&lt;double&gt;({3, 4}})
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div class="fragment">
+                            <div class="left-panel">
+                                <pre class="panel"><code class="python panel" data-trim>
+                                    np.stack([a, b, c], axis=1)
+                                    np.concatenate([a, b, c], axis=1)
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xt::stack(xtuple(a, b, c), 1)
+                                    xt::concatenate(xtuple(a, b, c), 1)
+                                </code></pre>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <div class="splitting"></div>
+                        <p style="vertical-align: top;">Lazy evaluation</p>
+                        <div style="margin-top: 5%;">
+                            <div class="left-panel fragment" data-fragment-index="2">
+                                <p>res does not hold any value, nothing is evaluated ...</p>
+                            </div>
+                            <div class="right-panel fragment" data-fragment-index="1">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xarray&lt;double&gt; a, b, c;
+                                    // ... initialization of a, b and c ... 
+                                    auto res = sqrt(cos(a) + sin(b)) * c;
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div class="fragment" style="margin-top: 5%;">
+                            <div class="left-panel" data-fragment-index="3">
+                                <p>... until assigned to a container ...</p>
+                            </div>
+                            <div class="right-panel" data-fragment-index="4">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                xarray&lt;double&gt; d = res;
+                                // or
+                                xarray&lt;double&gt; d = sqrt(cos(a) + sin(b)) * c;
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div class="fragment" style="margin-top: 5%;">
+                            <div class="left-panel" data-fragment-index="5">
+                                <p>... or upon access</p>
+                            </div>
+                            <div class="right-panel" data-fragment-index="6">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    // Assuming res is a 2D tensor
+                                    double d = res(4, 2);
+                                </code></pre>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                            <p><code>res</code> is an <em>expression</em></p>
+                        <img alt="expression.svg" src="expression.svg" width="50%"/>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <div class="splitting"></div>
+                        <p>Expression system</p>
+                        <div>
+                            <div class="left-panel">
+                                <p style="text-align: right;">Client code</p> 
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xarray&lt;double&gt; a, b, c;
+                                    // ... initialization of a, b and c ... 
+                                    xarray&lt;double&gt; res = sqrt(cos(a) + sin(b)) * c;
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div class="fragment" style="margin-top: 3%">
+                            <div class="left-panel">
+                                <p style="text-align: right;">Traditional implementation</p>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xarray&lt;double&gt; tmp1 = cos(a);
+                                    xarray&lt;double&gt; tmp2 = sin(b);
+                                    xarray&lt;double&gt; tmp3 = tmp1 + tmp2;
+                                    xarray&lt;double&gt; tmp4 = sqrt(tmp3);
+                                    xarray&lt;double&gt; res = tmp4 * c;
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div class="fragment" style="margin-top: 3%;">
+                            <div class="left-panel">
+                                <p style="text-align: right;">xtensor generated implementation</p>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xarray&lt;double&gt; res(broadcast_shape(a, b, c));
+                                    for(size_t i = 0; i < res.shape()[0]; ++i)
+                                        res(i) = sqrt(cos(a(i)) + sin(b(i))) * c(i);
+                                </code></pre>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="splitting"></div>
+                        <p>Expression system</p>
+                        <div>
+                            <div class="left-panel">
+                                <p style="text-align: right;">Client code</p> 
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xarray&lt;double&gt; a, b, c;
+                                    // ... initialization of a, b and c ... 
+                                    double res = (sqrt(cos(a) + sin(b)) * c)(4, 2);
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div class="fragment" style="margin-top: 3%">
+                            <div class="left-panel">
+                                <p style="text-align: right;">The traditional implementation is equivalent to</p>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xarray&lt;double&gt; tmp1 = cos(a);
+                                    xarray&lt;double&gt; tmp2 = sin(b);
+                                    xarray&lt;double&gt; tmp3 = tmp1 + tmp2;
+                                    xarray&lt;double&gt; tmp4 = sqrt(tmp3);
+                                    xarray&lt;double&gt; tmp5 = tmp4 * c;
+                                    double d = tmp5(4, 2);
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div class="fragment" style="margin-top: 3%;">
+                            <div class="left-panel">
+                                <p style="text-align: right;">The xtensor generated assembly is equivalent to</p>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    double d = sqrt(cos(a(4, 2)) + sin(b(4, 2)))
+                                               * c(4, 2);
+                                </code></pre>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <div class="splitting"></div>
+                        <p>Broadcasting</p>
+                        <div class="fragment" style="margin-top: 5%;">
+                            <div class="left-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xarray&lt;int&gt; a = {{1,  2,  3,  4},
+                                                     {5,  6,  7,  8},
+                                                     {9, 10, 11, 12}};
+                                    xarray&lt;int&gt; b = { 1, 3, 5, 7};
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <img alt="broadcasting4.svg" src="broadcasting4.svg" width="70%"/>
+                            </div>
+                        </div>
+                        <div class="fragment" style="margin-top: 5%;">
+                            <div class="left-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xarray&lt;int&gt; res = a + b;
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <img alt="broadcasting5.svg" src="broadcasting5.svg" width="70%"/>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="splitting"></div>
+                        <p>Broadcasting</p>
+                        <div style="margin-top: 2%;">
+                            <div class="left-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xarray&lt;double&gt; a = {1., 2., 3., 4.};
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <img alt="broadcasting1.svg" src="broadcasting1.svg" width="30%"/>
+                            </div>
+                        </div>
+                        <div style="margin-top: 2%;">
+                            <div class="left-panel fragment">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    auto res = xt::broadcast(a, {3, 4});
+                                </code></pre>
+                            </div>
+                            <div class="right-panel fragment">
+                                <img alt="broadcasting2.svg" src="broadcasting2.svg" width="30%"/>
+                            </div>
+                        </div>
+                        <div style="margin-top:2%;">
+                            <div class="left-panel fragment">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xarray&lt;double&gt; a, b, c;
+                                    // ... initialization of a, b, and c ...
+                                    auto res = broadcast(a + b * c, {3, 4});
+                                </code></pre>
+                            </div>
+                            <div class="right-panel fragment">
+                                <img alt="broadcasting3.svg" src="broadcasting3.svg" width="30%"/>
+                            </div>
+                        </div>
+                    </section>
+
+                </section>
+                <section>
+                    <section>
+                        <div class="splitting"></div>
+                        <p>Iteration</p>
+                        <div style="margin-top: 2%;">
+                            <div class="left-panel">
+                                Row-major iteration over the array <code>for x in np.nditer(a)</code>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                for(auto it=a.begin(); it!=a.end(); ++it)
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div style="margin-top: 2%;">
+                            <div class="left-panel fragment">
+                                 Iterating over <code>a</code> with a prescribed broadcasting shape
+                            </div>
+                            <div class="right-panel fragment">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                a.begin({3, 4})
+                                a.end({3, 4})
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div style="margin-top:2%;">
+                            <div class="left-panel fragment">
+                                 Iterating over <code>a</code> in a column-major fashion
+                            </div>
+                            <div class="right-panel fragment">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                a.template begin&lt;layout_type::column_major&gt;()
+                                a.template end&lt;layout_type::column_major&gt;()
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div style="margin-top:2%;">
+                            <div class="left-panel fragment">
+                                 Iterating over <code>a</code> in a column-major fashion with a prescribed broadcasting shape
+                            </div>
+                            <div class="right-panel fragment">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                a.template begin&lt;layout_type::column_major&gt;({3, 4})
+                                a.template end&lt;layout_type::column_major&gt;({3, 4})
+                                </code></pre>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                </section>
+                <section>
+                    <section>
+                        <div class="splitting"></div>
+                        <p>Views</p>
+                        <div style="margin-top: 4%;" class="fragment">
+                            <div class="left-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xarray&lt;int&gt; a = {{1,  2,  3,  4},
+                                                     {5,  6,  7,  8},
+                                                     {9, 10, 11, 12}};
+                                    auto res = view(a, range(0, 3, 2),
+                                                       range(0, 3, 2));
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <img alt="view1.svg" src="view1.svg" width="30%"/>
+                            </div>
+                        </div>
+                        <div style="margin-top: 4%;" class="fragment">
+                            <div class="left-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    a(0, 0) = 0;
+                                    assert(res(0, 0) == 0);
+
+                                    res(1, 1) = 20;
+                                    assert(a(2, 2)) == 20);
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <img alt="view2.svg" src="view2.svg" width="30%"/>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="splitting"></div>
+                        <p>Views</p>
+                        <div style="margin-top: 4%;">
+                            <div class="left-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xarray&lt;int&gt; a = {{1,  2,  3,  4},
+                                                     {5,  6,  7,  8},
+                                                     {9, 10, 11, 12}};
+                                    auto res = view(a, 1, all());
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <img alt="view3.svg" src="view3.svg" width="30%"/>
+                            </div>
+                        </div>
+                        <div style="margin-top: 4%;" class="fragment">
+                            <div class="left-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xarray&lt;int&gt; a = {{1,  2,  3,  4},
+                                                     {5,  6,  7,  8},
+                                                     {9, 10, 11, 12}};
+                                    auto res = view(a, 1, range(1, _));
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <img alt="view4.svg" src="view4.svg" width="30%"/>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="splitting"></div>
+                        <p>Views</p>
+                        <div>
+                            <div class="left-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xarray&lt;int&gt; a = {{21,  2,  3,  4},
+                                                     { 5,  6, 27,  8},
+                                                     { 9, 10, 31, 12}};
+                                    auto res = indexview(a, {{0, 0}, 
+                                                             {1, 2},
+                                                             {2, 2}});
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <img alt="view5.svg" src="view5.svg" width="60%"/>
+                            </div>
+                        </div>
+                        <div class="fragment">
+                            <div class="left-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xarray&lt;int&gt; a = {{21,  2,  3,  4},
+                                                     { 5,  6, 27,  8},
+                                                     { 9, 10, 31, 12}};
+                                    auto res = filter(a, a &gt; 20); 
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <img alt="view5.svg" src="view5.svg" width="60%"/>
+                            </div>
+                        </div>
+                        <div class="fragment">
+                            <div class="left-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    res += 5; 
+                                </code></pre>
+                            </div>
+                            <div class="right-panel">
+                                <img alt="view6.svg" src="view6.svg" width="60%"/>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <div class="splitting"></div>
+                    <p>Missing values</p>
+                    <div class="fragment" style="margin-top: 5%;">
+                        <div class="left-panel">
+                            <pre class="panel"><code class="cpp panel" data-trim>
+                                xtensor_optional&lt;int&gt; a =
+                                    {{ 1,       2        },
+                                     { 3, missing&lt;int&gt;() }};
+                                xtensor&lt;int&gt; b = {{ 1, 2 },
+                                                  { 3, 4 }};
+                            </code></pre>
+                        </div>
+                        <div class="right-panel">
+                            <img alt="missing_values1.svg" src="missing_values1.svg" width="60%"/>
+                        </div>
+                    </div>
+                    <div class="fragment" style="margin-top: 5%;">
+                        <div class="left-panel">
+                            <pre class="panel"><code class="cpp panel" data-trim>
+                                auto res = a + b;
+                                auto hv = has_value(a + b);
+                            </code></pre>
+                        </div>
+                        <div class="right-panel">
+                            <img alt="missing_values2.svg" src="missing_values2.svg" width="60%"/>
+                        </div>
+                    </div>
+                    <div class="fragment" style="margin-top: 5%;">
+                        <div class="left-panel">
+                        </div>
+                        <div class="right-panel">
+                            <div class="panel" style="font-size: 20px;">
+                                <ul>
+                                  <li>Using a reference proxy technique abstracting the underlying optionality implementation.</li>
+                                  <li>An opiniated way of dealing with cases such as <code>false || missing&lt;bool&gt;</code>.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h4>How do I get it?</h4>
+                    <div style="width: 70%; margin: auto;">
+                        <div>
+                        <img alt="conda.svg" src="conda.svg" width="40px" style="float: left;"/>
+                        <p style="text-align: left;">With conda</p>
+                        <pre class="panel">
+                        <code class="python panel" data-trim>
+                        conda install xtensor -c conda-forge
+                        </code>
+                        </pre>
+                        </div>
+                        <div>
+                        <img alt="debian.svg" src="debian.svg" width="40px" style="float: left;"/>
+                        <p style="text-align: left;">With Debian</p>
+                        <pre class="panel">
+                        <code class="python panel" data-trim>
+                        apt-get install xtensor-dev
+                        </code>
+                        </pre>
+                        </div>
+                        <div>
+                        <img alt="cmake.svg" src="cmake.svg" width="40px" style="float: left;"/>
+                        <p style="text-align: left;">From source with cmake</p>
+                        <pre class="panel">
+                        <code class="python panel" data-trim>
+                        cmake -DCMAKE_INSTALL_PREFIX=/path/to/prefix /source/dir
+                        make install
+                        </code>
+                        </pre>
+                    </div>
+                </section>
+                <section>
+                    <h3>How do I try it without installing anything?</h3>
+                    <p>http://quantstack.net/xtensor</pre>
+                    <div>
+                    <img alt="QuantStack website" src="website.png" width="55%"/>
+                    </div>
+                </section>
+                <section>
+                    <h3>Live demo</h3>
+                </section>
+                <section>
+                    <section>
+                        <h3>Language bindings with xtensor</h3>
+                        <img alt="Python bingings" src="xtensor-python.svg" width="55%"/>
+                        <img alt="JuliaLang bindings" src="xtensor-julia.svg" width="55%"/>
+                        <img alt="R bindings" src="xtensor-r.svg" width="55%"/>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <img alt="Python bingings" src="xtensor-python.svg" width="55%"/>
+                        <h3>A Simple Python extension (1/2)</h3>
+                        <p>C++: Using an algorithm from the STL on a numpy array</p>
+<pre class="panel">
+<code class="cpp">
+#include &lt;numeric&gt;                        // Standard library import for std::accumulate
+#include "pybind11/pybind11.h"            // Pybind11 import to define Python bindings
+#include "xtensor/xmath.hpp"              // xtensor import for the C++ universal functions
+#define FORCE_IMPORT_ARRAY                // numpy C api loading
+#include "xtensor-python/pyarray.hpp"     // Numpy bindings
+
+double sum_of_sines(xt::pyarray&lt;double&gt; &m)
+{
+    auto sines = xt::sin(m);
+    // sines does not actually hold any value, which are only computed upon access
+    return std::accumulate(sines.begin(), sines.end(), 0.0);
+}
+
+PYBIND11_PLUGIN(xtensor_python_test)
+{
+    xt::import_numpy();
+    pybind11::module m("xtensor_python_test", "Test module for xtensor python bindings");
+
+    m.def("sum_of_sines", sum_of_sines,
+        "Computes the sum of the sines of the values of the input array");
+
+    return m.ptr();
+}
+</code>
+</pre>
+                    </section>
+                    <section>
+                        <img alt="Python bingings" src="xtensor-python.svg" width="55%"/>
+                        <h3>A simple Python extension (1/2)</h3>
+                        <p>Python: Using an algorithm from the STL on a numpy array</p>
+<pre class="panel">
+<code class="python">
+import numpy as np
+import xtensor_python_test as xt
+
+a = np.arange(15).reshape(3, 5)
+xt.sum_of_sines(v)
+</code>
+</pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <img alt="Python bingings" src="xtensor-python.svg" width="55%"/>
+                        <h3>A simple Python extension (2/2)</h3>
+                        <p>C++: Create a universal function from a C++ scalar function</p>
+<pre class="panel">
+<code class="cpp">
+#include "pybind11/pybind11.h"
+#define FORCE_IMPORT_ARRAY
+#include "xtensor-python/pyvectorize.hpp"
+#include &lt;numeric&gt;
+#include &lt;cmath&gt;
+
+namespace py = pybind11;
+
+double scalar_func(double i, double j)
+{
+    return std::sin(i) - std::cos(j);
+}
+
+PYBIND11_PLUGIN(xtensor_python_test)
+{
+    xt::import_numpy();
+    py::module m("xtensor_python_test", "Test module for xtensor python bindings");
+
+    m.def("vectorized_func", xt::pyvectorize(scalar_func), "");
+
+    return m.ptr();
+}
+</code>
+</pre>
+                    </section>
+                    <section>
+                        <img alt="Python bingings" src="xtensor-python.svg" width="55%"/>
+                        <h3>A simple Python extension (2/2)</h3>
+                        <p>Python: Create a numpy-style universal function from a C++ scalar function</p>
+<pre class="panel">
+<code class="python">
+import numpy as np
+import xtensor_python_test as xt
+
+x = np.arange(15).reshape(3, 5)
+y = [1, 2, 3, 4, 5]
+xt.vectorized_func(x, y)
+</code>
+</pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <img alt="Julia bingings" src="xtensor-julia.svg" width="55%"/>
+                        <h3>A Simple Julia extension (1/2)</h3>
+                        <p>C++: Using an algorithm from the STL on a Julia array</p>
+<pre class="panel">
+<code class="cpp">
+#include &lt;numeric&gt;                        // Standard library import for std::accumulate
+#include "jlcxx/jlcxx.hpp¨                // CxxWrap import to define Julia bindings
+#include "xtensor-julia/jltensor.hpp"     // Import the jltensor container definition
+#include "xtensor/xmath.hpp"              // xtensor import for the C++ universal functions
+
+double sum_of_sines(xt::jltensor&lt;double, 2&gt; m)
+{
+    auto sines = xt::sin(m);  // sines does not actually hold values.
+    return std::accumulate(sines.cbegin(), sines.cend(), 0.0);
+}
+
+JULIA_CPP_MODULE_BEGIN(registry)
+    jlcxx::Module mod = registry.create_module("xtensor_julia_test");
+    mod.method("sum_of_sines", sum_of_sines);
+JULIA_CPP_MODULE_END
+</code>
+</pre>
+                    </section>
+                    <section>
+                        <img alt="Julia bingings" src="xtensor-julia.svg" width="55%"/>
+                        <h3>A simple Julia extension (1/2)</h3>
+                        <p>Julia: Using an algorithm from the STL on a Julia array</p>
+<pre class="panel">
+<code class="julia">
+using xtensor_julia_test
+
+arr = [[1.0 2.0]
+       [3.0 4.0]]
+
+sum_of_sines(arr)
+</code>
+</pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <img alt="Julia bingings" src="xtensor-julia.svg" width="55%"/>
+                        <h3>A simple Julia extension (2/2)</h3>
+                        <p>C++: Create a numpy-style universal function from a C++ scalar function</p>
+<pre class="panel">
+<code class="cpp">
+#include "jlcxx/jlcxx.hpp"
+#include "xtensor-julia/jlvectorize.hpp"
+
+double scalar_func(double i, double j)
+{
+    return std::sin(i) - std::cos(j);
+}
+
+JULIA_CPP_MODULE_BEGIN(registry)
+    jlcxx::Module mod = registry.create_module("xtensor_julia_test");
+    mod.method("vectorized_func", xt::jlvectorize(scalar_func));
+JULIA_CPP_MODULE_END
+</code>
+</pre>
+                    </section>
+                    <section>
+                        <img alt="Julia bingings" src="xtensor-julia.svg" width="55%"/>
+                        <h3>A simple Julia extension (2/2)</h3>
+                        <p>Julia: Create a numpy-style universal function from a C++ scalar function</p>
+<pre class="panel">
+<code class="julia">
+using xtensor_julia_test
+
+x = [[ 0.0  1.0  2.0  3.0  4.0]
+     [ 5.0  6.0  7.0  8.0  9.0]
+     [10.0 11.0 12.0 13.0 14.0]]
+y = [1.0, 2.0, 3.0, 4.0, 5.0]
+xt.vectorized_func(x, y)
+</code>
+</pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <img alt="R bingings" src="xtensor-r.svg" width="55%"/>
+                        <h3>A Simple R extension</h3>
+                        <p>C++: Using an algorithm from the STL on a R array</p>
+<pre class="panel">
+<code class="cpp">
+// [[Rcpp::export]]
+double sum_of_sines(xt::rarray<int> m)
+{
+    auto sines = xt::sin(m);  // sines does not actually hold values.
+    return std::accumulate(sines.cbegin(), sines.cend(), 0.0);
+}
+</code>
+</pre>
+                    </section>
+                    <section>
+                        <img alt="R bingings" src="xtensor-r.svg" width="55%"/>
+                        <h3>A simple R extension</h3>
+                        <p>R: Using an algorithm from the STL on a R array</p>
+<pre class="panel">
+<code class="R">
+library('xtensor_r_test')
+
+arr &lt;- array(c(c(1, 2), c(3, 4)), dim = c(2, 2)
+
+xtensor_r_test::sum_of_sines(arr)
+</code>
+</pre>
+                    </section>
+                </section>
+
+                <section>
+                    <img alt="xtensor-cookiecutter" src="xtensor-cookiecutter.svg" width="70%"/>
+                    <p>Generate your packaged xtensor extension</p>
+                    <ul>
+                        <li>With a few examples from the documentation</li>
+                        <li>Unit-tests</li>
+                        <li>HTML documentation</li>
+                        <li>Packaging boilerplate (setup.py, build.jl)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <img alt="xtensor-robot" src="robot.png" width="20%"/>
+                    <p>Scientific computing in a polyglot world with xtensor</p>
+                    <ul>
+                        <li>Write a native extension once, operating on xtensor expressions</li>
+                        <li>Get free bindings to R, Julia and Python</li>
+                        <li>For more details about the best practices, see
+                            <p>
+                            <a href="http://quantstack.net/c++/2017/05/30/polyglot-scientific-computing-with-xtensor.html">http://quantstack.net/c++/2017/05/30/polyglot-scientific-computing-with-xtensor.html</a>
+                            </p>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p>Bindings with BLAS libraries</p>
+                    <img alt="xtensor-blas" src="xtensor-blas.svg" width="55%"/>
+                    <p>BLAS-based implementation of <code>numpy.linalg</code></p>
+                    <ul>
+                        <li>ISO results with <code>numpy.linalg</code> is main goal</li>
+                        <li>Seeking adoption by Python to C++ compilers (Pythran, Jet)</li>
+                        <li>Works with any BLAS implementation (openblas, mkl, netlib)</li>
+                        <li>See the <a href="http://xtensor.readthedocs.io/en/latest/numpy.html">numpy to xtensor cheat sheet</a></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p>SIMD acceleration</p>
+                    <img alt="xsimd" src="xsimd.svg" width="35%"/>
+                    <ul>
+                        <li>Unified high-level API to AVX, SSE, Neon with arithmetic operations</li>
+                        <li>Accelerated mathematical functions</li>
+                        <li>Aligned memory allocation</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>xsimd example (Assuming that AVX is supported)</p>
+<pre class="panel">
+<code class="cpp">
+#include &lt;iostream&gt;
+#include "xsimd/xsimd.hpp"
+
+namespace xs = xsimd;
+
+int main(int argc, char* argv[])
+{
+    xs::batch&lt;double, 4&gt; a(1.5, 2.5, 3.5, 4.5);
+    xs::batch&lt;double, 4&gt; b(2.5, 3.5, 4.5, 5.5);
+    auto mean = (a + b) / 2;
+    std::cout &lt;&lt; mean &lt;&lt; std::endl;
+    return 0;
+}
+</code>
+</pre>
+                </section>
+                <section>
+                    <p>xsimd: accelerating loops</p>
+                    <p>(This applies to processing including basic math functions from cmath.)</p>
+<pre class="panel">
+<code class="julia">
+#include &lt;cstddef&gt;
+#include &lt;vector&gt;
+
+#include "xsimd/xsimd.hpp"
+
+namespace xs = xsimd;
+using vector_type = std::vector&lt;double, xsimd::aligned_allocator&lt;double, XSIMD_DEFAULT_ALIGNMENT&gt;;
+
+void mean(const vector_type&amp; a, const vector_type&amp; b, vector_type&amp; res)
+{
+    std::size_t size = a.size();
+    constexpr std::size_t simd_size = xsimd::simd_type&lt;double&gt;::size;
+    std::size_t vec_size = size - size % simd_size;
+
+    for(std::size_t i = 0; i &lt; vec_size; i += simd_size)
+    {
+        auto ba = xs::load_aligned(&amp;a[i]);
+        auto bb = xs::load_aligned(&amp;b[i]);
+        auto bres = (ba + bb) / 2;
+        bres.store_aligned(&amp;res[i]);
+    }
+    for(std::size_t i = vec_size; i &lt; size; ++i)
+    {
+        res[i] = (a[i] + b[i]) / 2;
+    }
+}
+</code>
+</pre>
+                </section>
+
+                <section>
+                    <p>What is coming?</p>
+                    <div style="margin-top: 5%; margin-bottom: 10%;">
+                        <ul>
+                            <li class="fragment" style="margin-top: 5%;">Bindings with Apache Arrow, HDF5, FITS, NetCDF</li>
+                            <li class="fragment" style="margin-top: 5%;">Parallelization of the assign loop</li>
+                            <li class="fragment" style="margin-top: 5%;">GPU acceleration</li>
+                            <li class="fragment" style="margin-top: 5%;">Expressions backed wit ODBC-databases</li>
+                            <li class="fragment" style="margin-top: 5%;">Arrays with labeled dimensions</li>
+                            <li class="fragment" style="margin-top: 5%;">World domination</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <p>Credits</p>
+                    <div class="team-section-content">
+                        <div class="bio-card">
+                            <img class="card-photo" alt="Avatar picture" src="sylvain.png">
+                            <p class="card-header">Sylvain Corlay</p>
+                            <div class="card-info">
+                                <a href="https://github.com/SylvainCorlay" target="_blank">
+                                    <span class="genericon genericon-github"></span>
+                                    <em>@SylvainCorlay</em>
+                                </a>
+                            </div>
+                            <div class="card-info">
+                                <a href="https://twitter.com/SylvainCorlay" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@SylvainCorlay</em>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bio-card">
+                            <img class="card-photo" alt="Avatar picture" src="johan.jpg">
+                            <p class="card-header">Johan Mabille</p>
+                            <div class="card-info">
+                                <a href="https://github.com/JohanMabille" target="_blank">
+                                    <span class="genericon genericon-github"></span>
+                                    <em>@JohanMabille</em>
+                                </a>
+                            </div>
+                            <div class="card-info">
+                                <a href="https://twitter.com/JohanMabille" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@JohanMabille</em>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bio-card">
+                            <img class="card-photo" alt="Avatar picture" src="wolf.jpg">
+                            <p class="card-header">Wolf Vollprecht</p>
+                            <div class="card-info">
+                                <a href="https://github.com/wolfv" target="_blank">
+                                    <span class="genericon genericon-github"></span>
+                                    <em>@wolfv</em>
+                                </a>
+                            </div>
+                            <div class="card-info">
+                                <a href="https://twitter.com/wuoulf" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@wuoulf</em>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bio-card">
+                            <img class="card-photo" alt="Avatar picture" src="ghislain.jpg">
+                            <p class="card-header">Ghislain Antony Vaillant</p>
+                            <div class="card-info">
+                                <a href="https://github.com/ghisvail" target="_blank">
+                                    <span class="genericon genericon-github"></span>
+                                    <em>@ghisvail</em>
+                                </a>
+                            </div>
+                            <div class="card-info">
+                                <a href="https://twitter.com/ghisvail" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@ghisvail</em>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h2>The End</h2>
+                </section>
+                <section>
+                    <h3>Aliasing (Appendix)</h3>
+                    <div style="width: 70%; margin-left: auto; margin-right: auto; text-align: left;">
+                    <p>In an assignment, aliasing occurs when the LHS refers to the same memory as a member of the RHS expression</p>
+<pre class="panel">
+<code class="cpp">
+a = b + c.dot(a);
+</code>
+</pre>
+                    <p>By default, xtensor will solve that issue by assigning the result to a temporary variable that is then <em>moved</em> to the left-hand side.</p>
+                    <p>If the user <em>knows</em> that no aliasing accurs in an assignment, we can save this extra-allocation with the <code>noalias</code> function.</p>
+<pre class="panel">
+<code class="cpp">
+noalias(a) = b + c.dot(d);
+</code>
+</pre>
+                </section>
+                <section>
+                    <h3>Static and dynamic dimensionality (Appendix)</h3>
+                    <div style="width: 70%; margin-left: auto; margin-right: auto; text-align: left; font-size: 30px;">
+                    <p>
+                    The xtensor library provides too container types:
+                    </p>
+                    <ul>
+                        <li><code>xarray<double></code></li>
+                        <li><code>xtensor<double, N></code></li>
+                    </ul>
+                    <p>The latter encodes the number of dimensions in the type:</p>
+                    <ul>
+                        <li>Stack-allocated shapes and strides.</li>
+                        <li>Faster iteration.</li>
+                    </ul>
+                    <p>What about expressions?</p>
+                    <ul>
+                        <li>The compile-time <code>promote_shape</code> mechanism selects the optimal shape type for an expression at compile time.</li>
+                    </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
+                width: "100%",
+                height: "100%",
+                margin: 0,
+                minScale: 1,
+                maxScale: 1,
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
+</html>
