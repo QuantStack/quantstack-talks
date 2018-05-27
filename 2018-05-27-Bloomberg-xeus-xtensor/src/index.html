@@ -244,25 +244,25 @@
                     <img alt="bqplot" src="bqplot-election.gif" width="40%;"/>
                 </section>
                 <section>
-                    <p>Jupyter interactive widgets: thick front-end and thin back-end</p>
+                    <p>Jupyter Widgets: MVC pattern</p>
                     <img alt="widgets-arch" src="widgets-arch.png" width="50%;"/>
                 </section>
                 <section>
-                    <p>Jupyter interactive widgets: thick front-end and thin back-end</p>
-                    <img alt="model-declaration" src="model-declaration.png" width="50%;"/>
+                    <p>Jupyter Widgets: A thick front-end and a thin back-end</p>
+                    <img alt="model-declaration" src="model-declaration.png" width="70%;"/>
                 </section>
                 <section>
-                    <div style="width: 70%; text-align: left;">
+                    <div style="width: 70%; text-align: left; margin:auto;">
                     <p>The foundations for a C++ backend for Jupyter interactive widgets</p>
                     <ul>
-			            <li>Observer pattern implementation (replacement for traitlets): xproperty</li>
-                        <li>Jupyter widgets communication protocol: xwidgets</li>
+                        <li>Observer pattern implementation (replacement for traitlets): <pre style="display: inline;">xproperty</pre></li>
+                        <li>Jupyter widgets communication protocol: <pre style="display: inline;">xwidgets</pre></li>
                     </ul>
                     </div>
                 </section>
                 <section>
                     <img alt="xwidgets" src="xwidgets.svg" width="80%"/>
-                    <p>demo of xwidgets</p>
+                    <p>live demo of xwidgets</p>
                 </section>
 
                 <section>
@@ -284,8 +284,62 @@
                 </section>
 
                 <section>
+                    <div style="text-align: left;">
                     <img alt="xproperty" src="xproperty.svg" width="80%"/>
-                    <p>diving into xproperty</p>
+                    <p><pre style="display: inline;">xproperty</pre> is the implementation of the observer pattern powering <pre style="display: inline;">xwidgets</pre>.</p>
+                    <p>It is to xwidgets what traitlets are to ipywidgets.</p>
+                    <p>live demo of xproperty</p>
+                    </div>
+                </section>
+
+                <section>
+                <h2 style="font-size: 20px;">Resources</h2>
+                    <div style="font-size: 20px; line-height: 20px;">
+                    <table>
+                        <tr>
+                            <td>xeus</td>
+                            <td><a href="https://github.com/QuantStack/xeus">https://github.com/QuantStack/xeus</a></td>
+                            <td><a href="https://xeus.readthedocs.io">https://xeus.readthedocs.io</a></td>
+                        </tr>
+                        <tr>
+                            <td>xeus-cling</td>
+                            <td><a href="https://github.com/QuantStack/xeus-cling">https://github.com/QuantStack/xeus-cling</a></td>
+                            <td><a href="https://xeus-cling.readthedocs.io">https://xeus-cling.readthedocs.io</a></td>
+                        </tr>
+                        <tr>
+                            <td>xproperty</td>
+                            <td><a href="https://github.com/QuantStack/xproperty">https://github.com/QuantStack/xproperty</a></td>
+                            <td><a href="https://xproperty.readthedocs.io">https://xproperty.readthedocs.io</a></td>
+                        </tr>
+                        <tr>
+                            <td>xwidgets</td>
+                            <td><a href="https://github.com/QuantStack/xwidgets">https://github.com/QuantStack/xwidgets</a></td>
+                            <td><a href="https://xwidgets.readthedocs.io">https://xwidgets.readthedocs.io</a></td>
+                        </tr>
+                        <tr>
+                            <td>xleaflet</td>
+                            <td><a href="https://github.com/QuantStack/xleaflet">https://github.com/QuantStack/xleaflet</a></td>
+                            <td><a href="https://xleaflet.readthedocs.io">https://xleaflet.readthedocs.io</a></td>
+                        </tr>
+                        <tr>
+                            <td>xplot</td>
+                            <td><a href="https://github.com/QuantStack/xplot">https://github.com/QuantStack/xplot</a></td>
+                            <td><a href="https://xplot.readthedocs.io">https://xplot.readthedocs.io</a></td>
+                        </tr>
+                        <tr>
+                            <td>xthreejs (alpha)</td>
+                            <td><a href="https://github.com/QuantStack/xthreejs">https://github.com/QuantStack/xthreejs</a></td>
+                        </tr>
+                        <tr>
+                            <td>xwebrtc (alpha)</td>
+                            <td><a href="https://github.com/QuantStack/xwebrtc">https://github.com/QuantStack/xwebrtc</a></td>
+                        </tr>
+                        <tr>
+                            <td>xvolume (alpha)</td>
+                            <td>(upcoming)</td>
+                        </tr>
+                    </table>
+                    </div>
                 </section>
 
                 <section>
@@ -293,56 +347,26 @@
                 </section>
 
                 <section>
-                <h2 style="font-size: 20px;">Resources</h2>
-                    <div style="font-size: 18px; line-height: 18px;">
-                    <table>
-                        <tr>
-                            <td>xeus</td>
-                            <td><p>https://github.com/QuantStack/xeus</p><p>https://xeus.readthedocs.io</p></td>
-                        </tr>
-                        <tr>
-                            <td>xeus-cling</td>
-                            <td><p>https://github.com/QuantStack/xeus-cling</p><p>https://xeus-cling.readthedocs.io</p></td>
-                        </tr>
-                        <tr>
-                            <td>xproperty</td>
-                            <td><p>https://github.com/QuantStack/xproperty</p><p>https://xproperty.readthedocs.io</p></td>
-                        </tr>
-                        <tr>
-                            <td>xwidgets</td>
-                            <td><p>https://github.com/QuantStack/xwidgets</p><p>https://xwidgets.readthedocs.io</p></td>
-                        </tr>
-                        <tr>
-                            <td>xleaflet</td>
-                            <td><p>https://github.com/QuantStack/xleaflet</p><p>https://xleaflet.readthedocs.io</p></td>
-                        </tr>
-                    </table>
-                    </div>
+                    <h2>Juniper: a kernel for R based on xeus</h2>
+                    <p>By Spencer Aiello</p>
+                    <img src="spencer.png" style="width: 20%;"/>
+                    <img src="juniper.png" style="width: 50%;"/>
                 </section>
 
                 <section>
-                <h2 style="font-size: 20px;">Resources</h2>
-                    <div style="font-size: 18px; line-height: 18px;">
-                    <table>
-                        <tr>
-                            <td>xplot</td>
-                            <td><p>https://github.com/QuantStack/xplot</p><p>https://xplot.readthedocs.io</p></td>
-                        </tr>
-                        <tr>
-                            <td>xthreejs (alpha)</td>
-                            <td><p>https://github.com/QuantStack/xthreejs</p></td>
-                        </tr>
-                        <tr>
-                            <td>xwebrtc (alpha)</td>
-                            <td><p>https://github.com/QuantStack/xwebrtc</p></td>
-                        </tr>
-                    </table>
+                    <h2>Adoption of xeus-cling</h2>
+                    <div style="width: 70%; text-align: left; margin: auto;">
+                        <ul>
+                            <li>Orsay: CS class of 400 students.</li>
+                            <li>CoCalc</li>
+                            <li>CERN NSF grant application (through DIANA-HEP) on xeus</li>
+                        </ul>
                     </div>
                 </section>
 
                 <section>
                     <img alt="xtensor" src="xtensor.svg" width="80%"/>
-                    <p>Data structures for data science</p>
+                    <h2>Data structures for data science</h2>
                 </section>
                 <section>
                     <p>The three main languages of data science</p>
@@ -419,7 +443,7 @@
                     </section>
                     <section>
                         <h2>What is xtensor?</h2>
-                        <div style="margin-left: auto; margin-right: auto; width: 70%;">
+                        <div style="margin: auto; width: 80%; font-size: 18px;">
                         <ul>
                             <li class="fragment">
                                 <p>Python bindings to enable xtensor APIs on numpy arrays.</p>
@@ -1448,7 +1472,7 @@ void mean(const vector_type&amp; a, const vector_type&amp; b, vector_type&amp; r
 
                 <section>
                     <p>What is coming?</p>
-                    <div style="margin-top: 5%; margin-bottom: 10%;">
+                    <div style="margin-top: 5%; margin-bottom: 10%; font-size: 25px;">
                         <ul>
                             <li class="fragment" style="margin-top: 5%;">Bindings with Apache Arrow, HDF5, FITS, NetCDF</li>
                             <li class="fragment" style="margin-top: 5%;">Parallelization of the assign loop</li>
@@ -1460,6 +1484,78 @@ void mean(const vector_type&amp; a, const vector_type&amp; b, vector_type&amp; r
                     </div>
                 </section>
                 <section>
+                    <img alt="xstack" src="xstack.svg" width="100%"/>
+                </section>
+                <section>
+                    <h2>Resources</h2>
+                    <div style="font-size: 20px; line-height: 20px;">
+                    <table>
+                        <tr>
+                            <td>xtensor</td>
+                            <td><a href="https://github.com/QuantStack/xtensor">https://github.com/QuantStack/xtensor</a></td>
+                            <td><a href="https://xtensor.readthedocs.io">https://xtensor.readthedocs.io</a></td>
+                        </tr>
+                        <tr>
+                            <td>xsimd</td>
+                            <td><a href="https://github.com/QuantStack/xsimd">https://github.com/QuantStack/xsimd</a></td>
+                            <td><a href="https://xsimd.readthedocs.io">https://xsimd.readthedocs.io</a></td>
+                        </tr>
+                        <tr>
+                            <td>xtl</td>
+                            <td><a href="https://github.com/QuantStack/xtl">https://github.com/QuantStack/xtl</a></td>
+                            <td><a href="https://xtl.readthedocs.io">https://xtl.readthedocs.io</a></td>
+                        </tr>
+                        <tr>
+                            <td>xtensor-blas</td>
+                            <td><a href="https://github.com/QuantStack/xtensor-blas">https://github.com/QuantStack/xtensor-blas</a></td>
+                            <td><a href="https://xtensor-blas.readthedocs.io">https://xtensor-blas.readthedocs.io</a></td>
+                        </tr>
+                        <tr>
+                            <td>xtensor-python</td>
+                            <td><a href="https://github.com/QuantStack/xtensor-python">https://github.com/QuantStack/xtensor-python</a></td>
+                            <td><a href="https://xtensor-python.readthedocs.io">https://xtensor-python.readthedocs.io</a></td>
+                        </tr>
+                        <tr>
+                            <td>xtensor-julia</td>
+                            <td><a href="https://github.com/QuantStack/Xtensor.jl">https://github.com/QuantStack/xtensor-julia</a></td>
+                            <td><a href="https://xtensor-julia.readthedocs.io">https://xtensor-julia.readthedocs.io</a></td>
+                        </tr>
+                        <tr>
+                            <td>xtensor-r</td>
+                            <td><a href="https://github.com/QuantStack/xtensor-r">https://github.com/QuantStack/xtensor-r</a></td>
+                            <td><a href="https://xtensor-r.readthedocs.io">https://xtensor-r.readthedocs.io</a></td>
+                        </tr>
+                        <tr>
+                            <td>xtensor-fftw</td>
+                            <td><a href="https://github.com/egpbos/xtensor-fftw">https://github.com/egpbos/xtensor-fftw</a></td>
+                        </tr>
+                        <tr>
+                            <td>xtensor-ros</td>
+                            <td><a href="https://github.com/wolfv/xtensor_ros">https://github.com/wolfv/xtensor_ros</a></td>
+                        </tr>
+                    </table>
+                    </div>
+                </section>
+                <section>
+                    <div style="width: 70%; text-align: left; margin: auto;">
+                    <h2 style="font-size: 40px;">Adoption of xtensor</h2>
+                        <ul style="font-size: 30px;">
+                            <li>Dependency on xtensor in xwidgets-based visualization libraries</li>
+                            <li>tiny-dnn deep learning library</li>
+                            <li>xvigra computer graphics library</li>
+                            <li>GSOC project on xtensor from LAL laboratory</li>
+                        </ul>
+                    <h2 style="font-size: 40px;">Adoption of xsimd</h2>
+                    <div>
+                        <ul style="font-size: 30px;">
+                            <li>Surprising high adoption of xsimd due to migration from boost.simd</li>
+                            <li>Pythran C++ transpiler migrating to xsimd</li>
+                        </ul>
+                    </div>
+                    </div>
+                </section>
+                <section>
+                    <h2>The End</h2>
                     <p>Credits</p>
                     <div class="team-section-content">
                         <div class="bio-card">
@@ -1527,47 +1623,6 @@ void mean(const vector_type&amp; a, const vector_type&amp; b, vector_type&amp; r
                             </div>
                         </div>
                     </div>
-                </section>
-                <section>
-                    <h2>Resources (1/2):</h2>
-                    <table>
-                        <tr>
-                            <td>xtensor</td>
-                            <td>https://github.com/QuantStack/xtensor</td>
-                        </tr>
-                        <tr>
-                            <td>xsimd</td>
-                            <td>https://github.com/QuantStack/xsimd</td>
-                        </tr>
-                        <tr>
-                            <td>xtl</td>
-                            <td>https://github.com/QuantStack/xtl</td>
-                        </tr>
-                        <tr>
-                            <td>xtensor-blas</td>
-                            <td>https://github.com/QuantStack/xtensor-blas</td>
-                        </tr>
-                        <tr>
-                            <td>xtensor-python</td>
-                            <td>https://github.com/QuantStack/xtensor-python</td>
-                        </tr>
-                        <tr>
-                            <td>xtensor-julia</td>
-                            <td>https://github.com/QuantStack/xtensor-julia</td>
-                        </tr>
-                        <tr>
-                            <td>xtensor-r</td>
-                            <td>https://github.com/QuantStack/xtensor-r</td>
-                        </tr>
-                        <tr>
-                            <td>xtensor-fftw</td>
-                            <td>https://github.com/QuantStack/xtensor-fftw</td>
-                        </tr>
-                    </table>
-                </section>
-                <section>
-                    <h2>The End</h2>
-                </section>
                 </section>
             </div>
         </div>
