@@ -131,7 +131,9 @@
         <div class="reveal">
             <div class="slides">
                 <section>
-                    <h2 style="margin-bottom: 50px;">Scientific Computing in a Polyglot World</h2>
+                    <h2 style="margin-bottom: 50px;">Scientific Computing</h2>
+                    <h2>in a Polyglot World</h2>
+                    <p>&nbsp;</p>
                     <p>Bloomberg LP</p>
                     <p>Sylvain Corlay</p>
                 </section>
@@ -155,7 +157,7 @@
                     <img alt="Jupyter Architecture" src="jupyter-arch.svg" width="35%"/>
                     <div style="max-width: 80%; text-align: left; margin: auto;">
                     <ul>
-                        <li>A well-specified protocol built upon standards</li>
+                        <li>A well-specified protocol built upon web standards</li>
                         <li>Implemented for more than 40 languages</li>
                     </ul>
                     </ul>
@@ -163,15 +165,15 @@
                 <section>
                     <h2>Implementations of the protocol</h2>
                     <ul>
-                        <li>Some kernels have their own implementation of the protocol"
-                        <ul>
+                        <li>Some kernels have their own implementation of the protocol
+                        <ul style="font-size: 28px;">
                             <li>Python (ipykernel)</li>
                             <li>R (IRkernel)</li>
                             <li>Julia (IJulia)</li>
                         </ul>
                         </li>
                         <li>Many others make use of the <strong>wrapper kernel</strong> approach
-                        <ul>
+                        <ul style="font-size: 28px;">
                             <li>The Octave and Matlab kernels</li>
                         </ul>
                         </li>
@@ -179,7 +181,8 @@
                 </section>
                 <section>
                     <h2>On the wrapper kernel approach</h2>
-                    <ul style="max-width: 50%;">
+                    <div style="max-width: 50%; font-size: 28px; margin: auto; text-align: left;">
+                    <ul>
                         <li>Dependency on the Python runtime</li>
                         <li>The wrapped interpreter generally does not have a Python API.
                             <ul>
@@ -192,10 +195,11 @@
                     implementing an inter-process communication protocol.
                     <p><strong>Non-python kernels should not require the Python runtime.</strong></p>
                     </p>
+                    </div>
                 </section>
                 <section>
                     <h2>On the reference implementation</h2>
-                    <div style="margin: auto; text-align: left; max-width: 75%;">
+                    <div style="margin: auto; text-align: left; max-width: 75%; font-size: 28px;">
                     <p>The current implementation of ipykernel cannot process <strong>control</strong> messages while code is being executed.</p>
                     <ul>
                         <li>This prevents addition of new control messages such as a <strong>debugging protocol</strong></li>
@@ -203,8 +207,9 @@
                     </div>
                 </section>
                 <section>
-                    <img alt="xeus" src="xeus.svg" width="50%"/>
-                    <ul style="max-width: 50%;">
+                    <img alt="xeus" src="xeus.svg" width="40%"/>
+                    <p>&nbsp;</p>
+                    <ul style="max-width: 60%; font-size: 30px;">
                         <li>A modern C++ implementation of the Jupyter protocol</li>
                         <li>Enabling kernel authors to create new kernels without having to deal with the details of the Jupyter protocol.</li>
                     </ul>
@@ -267,9 +272,9 @@
 
                 <section>
                     <h2>C++ backends to other Jupyter widgets libraries</h2>
-                    <table>
+                    <table style="vertical-align: top;">
                         <tr>
-                            <td>bqplot</td><td><img alt="xplot" src="xplot.svg" style="height: 30px;"/></td>
+                            <td>bqplot</td><td><img alt="xplot" src="xplot.svg" style="height: 36px;"/></td>
                         </tr>
                         <tr>
                             <td>ipyleaflet</td><td><img alt="xleaflet" src="xleaflet.svg" style="height: 30px;"/></td>
@@ -284,7 +289,7 @@
                 </section>
 
                 <section>
-                    <div style="text-align: left;">
+                    <div style="text-align: left; max-width: 80%;">
                     <img alt="xproperty" src="xproperty.svg" width="80%"/>
                     <p><pre style="display: inline;">xproperty</pre> is the implementation of the observer pattern powering <pre style="display: inline;">xwidgets</pre>.</p>
                     <p>It is to xwidgets what traitlets are to ipywidgets.</p>
@@ -361,6 +366,9 @@
                             <li>CoCalc</li>
                             <li>CERN NSF grant application (through DIANA-HEP) on xeus</li>
                         </ul>
+                        <p>See also the blog post on Project Jupyter's blog:
+                        <a href="https://blog.jupyter.org/interactive-workflows-for-c-with-jupyter-fe9b54227d92">Interactive Workflows for C++ with Jupyter</a>
+                        </p>
                     </div>
                 </section>
 
@@ -368,6 +376,7 @@
                     <img alt="xtensor" src="xtensor.svg" width="80%"/>
                     <h2>Data structures for data science</h2>
                 </section>
+
                 <section>
                     <p>The three main languages of data science</p>
                     <img alt="Julia" src="JuliaLogo.svg" width="10%"/>
@@ -378,22 +387,22 @@
                         <li>N-D arrays</li>
                         <li>Data frames</li>
                     </ul>
-                    <p>but with slightly different semantics and  incompatible in-memory representation</p>
+                    <p style="text-align: left;">but with slightly different semantics and incompatible in-memory representation</p>
                 </section>
                 <section>
                     <h2>2015 Berkeley Workshop</h2>
                     <p>Data Structures for Data Science</p>
                     <div class=".normal-paragraph">
                         <img alt="Workshop" src="workshop-berkeley.jpg" width="30%" style="float: right;"/>
-                        <p style="text-align: left; margin: 44px;">
-                        On November 9, 2015, key developers from the R and Python ecosystems gathered in Berkeley for a workshop to explore
+                        <p style="text-align: left; margin: 44px; font-size: 24px;">
+                        On November 9th, 2015, key developers from the R and Python ecosystems gathered in Berkeley for a workshop to explore
                         data structures across programming languages and Packages.
                         </p>
                     </div>
                 </section>
                 <section>
                      <h2>Take aways from the Berkeley workshop</h2>
-                     <div style="width: 70%; margin: auto;">
+                     <div style="width: 70%; margin: auto; font-size: 24px;">
                          <ul>
                              <li>Enforce common formats and protocols to communicate and store these data structures.</li>
                              <li>Support for these protocols accross all three languages.</li>
@@ -408,7 +417,7 @@
                 </section>
                 <section>
                      <h2>One Tensor to Rule Them All: The Requirements</h2>
-                     <div style="text-align: left; margin: auto; width: 70%;">
+                     <div style="text-align: left; margin: auto; width: 70%; font-size: 24px;">
                      <ul>
                          <li>Be as cool as NumPy</li>
                          <li>Enable use of data structures from existing tensor libraries transparently</li>
@@ -425,7 +434,7 @@
                 <section>
                     <section>
                         <h2>What is xtensor?</h2>
-                        <div style="margin-left: auto; margin-right: auto; width: 70%;">
+                        <div style="margin-left: auto; margin-right: auto; width: 70%; font-size: 24px;">
                         <ul>
                             <li class="fragment">
                                 <p>A C++ template library for multi-dimensional array manipulation</p>
@@ -443,7 +452,7 @@
                     </section>
                     <section>
                         <h2>What is xtensor?</h2>
-                        <div style="margin: auto; width: 80%; font-size: 18px;">
+                        <div style="margin: auto; width: 80%; font-size: 24px;">
                         <ul>
                             <li class="fragment">
                                 <p>Python bindings to enable xtensor APIs on numpy arrays.</p>
@@ -466,7 +475,7 @@
                     </section>
                     <section>
                         <h2>What is xtensor?</h2>
-                        <div style="margin-left: auto; margin-right: auto; width: 70%;">
+                        <div style="margin-left: auto; margin-right: auto; width: 70%; font-size: 24px;">
                         <ul>
                             <li class="fragment">
                                 <p>BLAS bindings to enable BLAS operations on xtensor expressions.</p>
@@ -721,7 +730,7 @@
                     <section>
                         <div class="splitting"></div>
                         <p style="vertical-align: top;">Lazy evaluation</p>
-                        <div style="margin-top: 5%;">
+                        <div class="fragment">
                             <div class="left-panel fragment" data-fragment-index="2">
                                 <p>res does not hold any value, nothing is evaluated ...</p>
                             </div>
@@ -733,7 +742,7 @@
                                 </code></pre>
                             </div>
                         </div>
-                        <div class="fragment" style="margin-top: 5%;">
+                        <div class="fragment" style="margin-top: 1%;">
                             <div class="left-panel" data-fragment-index="3">
                                 <p>... until assigned to a container ...</p>
                             </div>
@@ -745,7 +754,7 @@
                                 </code></pre>
                             </div>
                         </div>
-                        <div class="fragment" style="margin-top: 5%;">
+                        <div class="fragment" style="margin-top: 1%;">
                             <div class="left-panel" data-fragment-index="5">
                                 <p>... or upon access</p>
                             </div>
@@ -758,8 +767,8 @@
                         </div>
                     </section>
                     <section>
-                            <p><code>res</code> is an <em>expression</em></p>
-                        <img alt="expression.svg" src="expression.svg" width="50%"/>
+                        <p><code>res</code> is an <em>expression</em></p>
+                        <img alt="expression.svg" src="expression.svg" width="40%"/>
                     </section>
                 </section>
                 <section>
@@ -1073,7 +1082,7 @@
                 <section>
                     <div class="splitting"></div>
                     <p>Missing values</p>
-                    <div class="fragment" style="margin-top: 5%;">
+                    <div class="fragment">
                         <div class="left-panel">
                             <pre class="panel"><code class="cpp panel" data-trim>
                                 xtensor_optional&lt;int&gt; a =
@@ -1084,10 +1093,10 @@
                             </code></pre>
                         </div>
                         <div class="right-panel">
-                            <img alt="missing_values1.svg" src="missing_values1.svg" width="60%"/>
+                            <img alt="missing_values1.svg" src="missing_values1.svg" width="50%"/>
                         </div>
                     </div>
-                    <div class="fragment" style="margin-top: 5%;">
+                    <div class="fragment" style="margin-top: 1%;">
                         <div class="left-panel">
                             <pre class="panel"><code class="cpp panel" data-trim>
                                 auto res = a + b;
@@ -1095,10 +1104,10 @@
                             </code></pre>
                         </div>
                         <div class="right-panel">
-                            <img alt="missing_values2.svg" src="missing_values2.svg" width="60%"/>
+                            <img alt="missing_values2.svg" src="missing_values2.svg" width="50%"/>
                         </div>
                     </div>
-                    <div class="fragment" style="margin-top: 5%;">
+                    <div class="fragment" style="margin-top: 1%;">
                         <div class="left-panel">
                         </div>
                         <div class="right-panel">
@@ -1156,15 +1165,16 @@
                 <section>
                     <section>
                         <h3>Language bindings with xtensor</h3>
-                        <img alt="Python bingings" src="xtensor-python.svg" width="55%"/>
-                        <img alt="JuliaLang bindings" src="xtensor-julia.svg" width="55%"/>
-                        <img alt="R bindings" src="xtensor-r.svg" width="55%"/>
+                        <div><img alt="Python bingings" src="xtensor-python.svg" width="35%"/></div>
+                        <div><img alt="JuliaLang bindings" src="xtensor-julia.svg" width="35%"/></div>
+                        <div><img alt="R bindings" src="xtensor-r.svg" width="35%"/></div>
                     </section>
                 </section>
                 <section>
                     <section>
-                        <img alt="Python bingings" src="xtensor-python.svg" width="55%"/>
+                        <img alt="Python bingings" src="xtensor-python.svg" width="35%"/>
                         <h3>A Simple Python extension (1/2)</h3>
+                        <div style="font-size: 20px;">
                         <p>C++: Using an algorithm from the STL on a numpy array</p>
 <pre class="panel">
 <code class="cpp">
@@ -1174,7 +1184,7 @@
 #define FORCE_IMPORT_ARRAY                // numpy C api loading
 #include "xtensor-python/pyarray.hpp"     // Numpy bindings
 
-double sum_of_sines(xt::pyarray&lt;double&gt; &m)
+double sum_of_sines(xt::pyarray&lt;double&gt;& m)
 {
     auto sines = xt::sin(m);
     // sines does not actually hold any value, which are only computed upon access
@@ -1193,10 +1203,12 @@ PYBIND11_PLUGIN(xtensor_python_test)
 }
 </code>
 </pre>
+                    </div>
                     </section>
                     <section>
                         <img alt="Python bingings" src="xtensor-python.svg" width="55%"/>
                         <h3>A simple Python extension (1/2)</h3>
+                        <div style="font-size: 20px;">
                         <p>Python: Using an algorithm from the STL on a numpy array</p>
 <pre class="panel">
 <code class="python">
@@ -1207,12 +1219,14 @@ a = np.arange(15).reshape(3, 5)
 xt.sum_of_sines(v)
 </code>
 </pre>
+                       </div>
                     </section>
                 </section>
                 <section>
                     <section>
                         <img alt="Python bingings" src="xtensor-python.svg" width="55%"/>
                         <h3>A simple Python extension (2/2)</h3>
+                        <div style="font-size: 20px;">
                         <p>C++: Create a universal function from a C++ scalar function</p>
 <pre class="panel">
 <code class="cpp">
@@ -1240,10 +1254,12 @@ PYBIND11_PLUGIN(xtensor_python_test)
 }
 </code>
 </pre>
+                        </div>
                     </section>
                     <section>
                         <img alt="Python bingings" src="xtensor-python.svg" width="55%"/>
                         <h3>A simple Python extension (2/2)</h3>
+                        <div style="font-size: 20px;">
                         <p>Python: Create a numpy-style universal function from a C++ scalar function</p>
 <pre class="panel">
 <code class="python">
@@ -1255,12 +1271,14 @@ y = [1, 2, 3, 4, 5]
 xt.vectorized_func(x, y)
 </code>
 </pre>
+                        </div>
                     </section>
                 </section>
                 <section>
                     <section>
                         <img alt="Julia bingings" src="xtensor-julia.svg" width="55%"/>
                         <h3>A Simple Julia extension (1/2)</h3>
+                        <div style="font-size: 20px;">
                         <p>C++: Using an algorithm from the STL on a Julia array</p>
 <pre class="panel">
 <code class="cpp">
@@ -1281,10 +1299,12 @@ JULIA_CPP_MODULE_BEGIN(registry)
 JULIA_CPP_MODULE_END
 </code>
 </pre>
+                        </div>
                     </section>
                     <section>
                         <img alt="Julia bingings" src="xtensor-julia.svg" width="55%"/>
                         <h3>A simple Julia extension (1/2)</h3>
+                        <div style="font-size: 20px;">
                         <p>Julia: Using an algorithm from the STL on a Julia array</p>
 <pre class="panel">
 <code class="julia">
@@ -1296,12 +1316,14 @@ arr = [[1.0 2.0]
 sum_of_sines(arr)
 </code>
 </pre>
+                        </div>
                     </section>
                 </section>
                 <section>
                     <section>
                         <img alt="Julia bingings" src="xtensor-julia.svg" width="55%"/>
                         <h3>A simple Julia extension (2/2)</h3>
+                        <div style="font-size: 20px;">
                         <p>C++: Create a numpy-style universal function from a C++ scalar function</p>
 <pre class="panel">
 <code class="cpp">
@@ -1319,10 +1341,12 @@ JULIA_CPP_MODULE_BEGIN(registry)
 JULIA_CPP_MODULE_END
 </code>
 </pre>
+                        </div>
                     </section>
                     <section>
                         <img alt="Julia bingings" src="xtensor-julia.svg" width="55%"/>
                         <h3>A simple Julia extension (2/2)</h3>
+                        <div style="font-size: 20px;">
                         <p>Julia: Create a numpy-style universal function from a C++ scalar function</p>
 <pre class="panel">
 <code class="julia">
@@ -1335,27 +1359,31 @@ y = [1.0, 2.0, 3.0, 4.0, 5.0]
 xt.vectorized_func(x, y)
 </code>
 </pre>
+                        </div>
                     </section>
                 </section>
                 <section>
                     <section>
                         <img alt="R bingings" src="xtensor-r.svg" width="55%"/>
                         <h3>A Simple R extension</h3>
+                        <div style="font-size: 20px;">
                         <p>C++: Using an algorithm from the STL on a R array</p>
 <pre class="panel">
 <code class="cpp">
 // [[Rcpp::export]]
-double sum_of_sines(xt::rarray<int> m)
+double sum_of_sines(xt::rarray&lt;int&gt; m)
 {
     auto sines = xt::sin(m);  // sines does not actually hold values.
     return std::accumulate(sines.cbegin(), sines.cend(), 0.0);
 }
 </code>
 </pre>
+                        </div>
                     </section>
                     <section>
                         <img alt="R bingings" src="xtensor-r.svg" width="55%"/>
                         <h3>A simple R extension</h3>
+                        <div style="font-size: 20px;">
                         <p>R: Using an algorithm from the STL on a R array</p>
 <pre class="panel">
 <code class="R">
@@ -1366,11 +1394,13 @@ arr &lt;- array(c(c(1, 2), c(3, 4)), dim = c(2, 2)
 xtensor_r_test::sum_of_sines(arr)
 </code>
 </pre>
+                        </div>
                     </section>
                 </section>
 
                 <section>
                     <img alt="xtensor-cookiecutter" src="xtensor-cookiecutter.svg" width="70%"/>
+                    <div style="font-size: 24px;">
                     <p>Generate your packaged xtensor extension</p>
                     <ul>
                         <li>With a few examples from the documentation</li>
@@ -1378,10 +1408,12 @@ xtensor_r_test::sum_of_sines(arr)
                         <li>HTML documentation</li>
                         <li>Packaging boilerplate (setup.py, build.jl)</li>
                     </ul>
+                    </div>
                 </section>
 
                 <section>
                     <img alt="xtensor-robot" src="robot.png" width="20%"/>
+                    <div style="font-size: 24px;">
                     <p>Scientific computing in a polyglot world with xtensor</p>
                     <ul>
                         <li>Write a native extension once, operating on xtensor expressions</li>
@@ -1392,11 +1424,13 @@ xtensor_r_test::sum_of_sines(arr)
                             </p>
                         </li>
                     </ul>
+                    </div>
                 </section>
 
                 <section>
                     <p>Bindings with BLAS libraries</p>
                     <img alt="xtensor-blas" src="xtensor-blas.svg" width="55%"/>
+                    <div style="font-size: 24px;">
                     <p>BLAS-based implementation of <code>numpy.linalg</code></p>
                     <ul>
                         <li>ISO results with <code>numpy.linalg</code> is main goal</li>
@@ -1404,19 +1438,23 @@ xtensor_r_test::sum_of_sines(arr)
                         <li>Works with any BLAS implementation (openblas, mkl, netlib)</li>
                         <li>See the <a href="http://xtensor.readthedocs.io/en/latest/numpy.html">numpy to xtensor cheat sheet</a></li>
                     </ul>
+                    </div>
                 </section>
 
                 <section>
                     <p>SIMD acceleration</p>
                     <img alt="xsimd" src="xsimd.svg" width="35%"/>
+                    <div style="font-size: 24px;">
                     <ul>
                         <li>Unified high-level API to AVX, SSE, Neon with arithmetic operations</li>
                         <li>Accelerated mathematical functions</li>
                         <li>Aligned memory allocation</li>
                     </ul>
+                    </div>
                 </section>
                 <section>
                     <p>xsimd example (Assuming that AVX is supported)</p>
+                    <div style="font-size: 24px;">
 <pre class="panel">
 <code class="cpp">
 #include &lt;iostream&gt;
@@ -1434,10 +1472,12 @@ int main(int argc, char* argv[])
 }
 </code>
 </pre>
+                </div>
                 </section>
                 <section>
                     <p>xsimd: accelerating loops</p>
-                    <p>(This applies to processing including basic math functions from cmath.)</p>
+                    <p style="font-size: 20px;">(This applies to processing including basic math functions from cmath.)</p>
+                    <div style="font-size: 24px;">
 <pre class="panel">
 <code class="julia">
 #include &lt;cstddef&gt;
@@ -1468,6 +1508,34 @@ void mean(const vector_type&amp; a, const vector_type&amp; b, vector_type&amp; r
 }
 </code>
 </pre>
+                </div>
+                </section>
+
+                <section>
+                    <img alt="xframe" src="xframe.svg" width="80%"/>
+                    <h2>Data structures for data science</h2>
+                </section>
+
+                <section>
+                    <p>Generalization of the dataframe data structure</p>
+                    <img alt="xframe-diagram" src="xframe-diagram.png" width="70%"></img>
+                    <div style="max-width: 70px;">
+                    <ul style="text-align: left; font-size: 28px;">
+                        <li>A collection of N-D variables (instead of 1-D columns)</li>
+                        <li>Each variable is a tensor with named dimensions and labeledd coordinates</li>
+                        <li>Each named dimension corresponds to (instead of a single index for the dataframe)</li>
+                    </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>A dataframe expression system</h2>
+                    <ul>
+                        <li>xframe is to xtensor what pandas and xarray are to numpy</li>
+                        <li>Like with xtensor, operations on xframe are lazy and only evaluated upon access or assignment</li>
+                        <li>The Data model of xframe is very close to that of PyData's xarray</li>
+                    </ul>
+                    <p>Live demo</p>
                 </section>
 
                 <section>
@@ -1475,7 +1543,7 @@ void mean(const vector_type&amp; a, const vector_type&amp; b, vector_type&amp; r
                     <div style="margin-top: 5%; margin-bottom: 10%; font-size: 25px;">
                         <ul>
                             <li class="fragment" style="margin-top: 5%;">Bindings with Apache Arrow, HDF5, FITS, NetCDF</li>
-                            <li class="fragment" style="margin-top: 5%;">Parallelization of the assign loop</li>
+                            <li class="fragment" style="margin-top: 5%;">Parallelization of the assign loop of xtensor / xframe</li>
                             <li class="fragment" style="margin-top: 5%;">GPU acceleration</li>
                             <li class="fragment" style="margin-top: 5%;">Expressions backed wit ODBC-databases</li>
                             <li class="fragment" style="margin-top: 5%;">Arrays with labeled dimensions</li>
@@ -1488,7 +1556,7 @@ void mean(const vector_type&amp; a, const vector_type&amp; b, vector_type&amp; r
                 </section>
                 <section>
                     <h2>Resources</h2>
-                    <div style="font-size: 20px; line-height: 20px;">
+                    <div style="font-size: 20px; line-height: 24px;">
                     <table>
                         <tr>
                             <td>xtensor</td>
@@ -1533,6 +1601,10 @@ void mean(const vector_type&amp; a, const vector_type&amp; b, vector_type&amp; r
                             <td>xtensor-ros</td>
                             <td><a href="https://github.com/wolfv/xtensor_ros">https://github.com/wolfv/xtensor_ros</a></td>
                         </tr>
+                        <tr>
+                            <td>xframe</td>
+                            <td><a href="https://github.com/QuantStack/xframe">https://github.com/QuantStack/xframe</a></td>
+                        </tr>
                     </table>
                     </div>
                 </section>
@@ -1549,10 +1621,13 @@ void mean(const vector_type&amp; a, const vector_type&amp; b, vector_type&amp; r
                     <div>
                         <ul style="font-size: 30px;">
                             <li>Surprising high adoption of xsimd due to migration from boost.simd</li>
-                            <li>Pythran C++ transpiler migrating to xsimd</li>
+                            <li>Pythran C++ transpiler migrating from boost.simd to xsimd</li>
                         </ul>
                     </div>
                     </div>
+                </section>
+                <section>
+
                 </section>
                 <section>
                     <h2>The End</h2>
