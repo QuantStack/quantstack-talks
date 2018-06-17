@@ -1,0 +1,340 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>reveal.js</title>
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css">
+        <link rel="stylesheet" href="genericons.css">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+        <style>
+        .reveal section img {
+            border: none;
+            background-color: initial;
+            margin: 10px;
+        }
+        .reveal .normal-paragraph {
+            text-align: left;
+            margin: 0 auto 0 auto;
+            width: 60%;
+        }
+        .reveal .normal-paragraph p {
+            text-align: left;
+        }
+        .header-left {
+            position: absolute;
+            top: 2%;
+            left: 2%;
+        }
+        .header-right {
+            position: absolute;
+            top: 2%;
+            right: 2%;
+        }
+        .footer-left {
+            position: absolute;
+            bottom: 2%;
+            left: 2%;
+        }
+        .reveal .genericon {
+          font-family: "genericons";
+        }
+
+        .reveal .bio-card {
+          background: #333;
+          border-radius: 2px;
+          display: inline-block;
+          width: 260px;
+          margin: 1rem;
+          position: relative;
+          font-size: 20px;
+        }
+
+        .reveal .card-photo {
+          display: block;
+          width: 200px;
+          border-top-left-radius: 2px;
+          border-top-right-radius: 2px;
+          margin: 28px auto 0 auto;
+        }
+
+        .reveal .card-header {
+          width: 100%;
+          font-size: 20px;
+          margin-top: 10px;
+          text-align: center;
+        }
+
+        .reveal .card-info {
+          width: 100%;
+          float: left;
+          font-size: 20px;
+          margin-top: 0;
+          padding: 0 4px;
+          text-align: center;
+        }
+
+        .reveal .card-info a {
+          text-decoration: none;
+          color: #999;
+        }
+
+        .reveal .card-info em {
+          vertical-align: top;
+        }
+
+        .revral .card-info a .genericon {
+          vertical-align: middle;
+        }
+
+        .reveal .bio-social a {
+          text-decoration: none;
+        }
+
+        .reveal .bio-photo {
+          width: 200px;
+          margin: 0 40px 40px -40px;
+          float: left;
+        }
+
+        .reveal section img {
+            box-shadow: none;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="common" style="z-index: 2;">
+            <div class="header-left">
+                <img alt="QuantStack" src="quantstack-white.svg" width="30%"/>
+            </div>
+            <div class="footer-left">
+                <div style="color: white; font-family: Source Sans Pro, Helvetica, sans-serif;">
+                <img alt="Twitter" src="twitter-white.svg" height="20px"/>
+                <img alt="GitHub" src="github-white.svg" height="20px"/>
+                <p style="display: inline; vertical-align: top; margin-left: 4px; font-size: 20px;">@SylvainCorlay @QuantStack @PyDataParis @ProjectJupyter</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <div style="position: relative; margin: auto; height: 428px; width: 971px;">
+                        <img style="position: absolute; top: 0; left: 0; height: 428px;" src="circle1.svg">
+                        <img style="position: absolute; top: 0; left: 0; height: 428px;" src="circle2.svg">
+                        <img style="position: absolute; top: 0; left: 0; height: 428px;" src="circle3.svg">
+                        <img style="position: absolute; top: 0; left: 320px; height: 428px;" src="main-logo.svg">
+                    </div>
+                    <div style="height: 40px;">
+                    </div>
+                    <p>Getting involved</p>
+                </section>
+
+                <section>
+                    <h3>A piece of career advice for newcomers</h3>
+                    <div style="width: 70%; margin-left: auto; margin-left: auto; margin-right: auto; font-size: 28px;">
+                    <img alt="My 2 cents" src="two-cents.png" width="8%" style="box-shadow: none;"/>
+                    <p>
+                    Get involved in open-source early in your carrer
+                    </p>
+                    <ul style="margin-top: 40px; margin-bottom: 40px;">
+                        <li>Contribute to a large project that you are already using.</li>
+                        <li>Start a small project on your own, that may be useful for others.</li>
+                    </ul>
+                    <p>In both cases, <em>start small</em>.</p>
+                    </div>
+                    <aside class="notes">
+                        <p>
+                        You will receive feedback with some of the <strong>smartest folks</strong> you will ever get to work with who may have a <strong>much broader perspective</strong> than the people working closer to you.
+                        </p>
+                        <p>
+                        You will be working with people having experience <strong>building software at the internet scale</strong>, for millions of users.
+                        </p>
+                        <p>
+                        </p>
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>You can have <strong>a lot</strong> of impact</h3>
+                    <ul style="max-width: 70%; margin-top: 40px; font-size: 28px;">
+                        <li>A simple CSS fix in Jupyter can impact tens of thousands of users.</li>
+                        <li>Smooth ramp of complexity from the drop-by contributions to becoming core contributors to major packages</li>
+                        <li>Another dimension for growth than climbing the corporate ladder</li>
+                    </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li>There are other means to grow in your career than climbing the corporate ladder to management. You can grow as a tech leader and an expert in your community, and be appreciated for your technical skills.</li>
+                            <li>The skills you will learn and the work you will have done are transposable to other jobs.</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <img alt="Adapters" src="adapters.jpg" width="25%" style="float: left;"/>
+                    <p>Finally you will find some of the most inclusive and diverse communities.</p>
+                    <ul style="margin-top: 25px; font-size: 28px;">
+                        <li style="margin-top: 25px;">Jupyter</li>
+                        <li style="margin-top: 25px;">Scipy</li>
+                        <li style="margin-top: 25px;">nteract</li>
+                        <li style="margin-top: 25px;">Django</li>
+                        <li style="margin-top: 25px;">Sage</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>A piece of advice for employers</h3>
+                    <div style="width: 70%; margin-right: auto; margin-left: auto;">
+                    <img alt="My 2 cents" src="two-cents.png" width="8%" style="box-shadow: none;"/>
+                    <ul style="font-size: 28px;">
+                        <li>Encourage employees to contribute to the software they rely upon in their work.</li>
+                        <li>In their free time, let them contribute to anything unrelated!</li>
+                        <li>This gives a new dimension to grow for your engineering. Other career perspective than becoming a manager.</li>
+                        <li>Help you recruit people, show off the quality of your tech teams.</li>
+                    </ul>
+                    </div>
+                    <aside class="notes">
+                    <ul>
+                        <li>You already do rely on opensource in all of the aspects of your operations.</li>
+                        <li><strong>Poll:</strong>Is there anyone in the audience who think that they don't?</li>
+                        <li>They will grow in expertise</li>
+                        <li>If I had to walk around without a shirt all the time, I would probably go a lot more to the gym). The same holds for the code that we write. We have higher standards for what everyone can see on the internet than <strong>code buried in the obscure back office of a large corporation.</strong></li>
+                        <li>So if it is not <em>secret sauce</em>, give it away.</li>
+                        <li>Building a trust relationship with the upstream community will help when you encounter issues that compromise your operations and need help from them.</li>
+                    </ul>
+                    </aside>
+                </section>
+                <section data-background-image="roads.jpg">
+                    <h3>Roads and bridges</h3>
+                    <ul style="width: 70%; margin-left: auto; margin-right: auto; font-size: 28px;">
+                        <li>Open source is not for crazy hippies and closed-source software is not evil.</li>
+                        <li>Open source is the backbone of scientific computing.
+                            <ul>
+                                <li>compilers, interpreters, OSs, scientific libraries, package managers.</li>
+                                <li>You cannot afford to redo all of that yourself.</li>
+                            </ul>
+                        </li>
+                        <li>Open source is common infrastructure used by everyone</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p>What happens when infrastructure breaks?</p>
+                    <div style="width: 70%; margin-right: auto; margin-left: auto;">
+                        <p>The case of <em>OpenSSL</em></p>
+                        <div style="text-align: left; margin-top: 20px; margin-bottom: 20px; font-size: 20px;">
+                        <em>
+                        Having worked with the Department of Defense, Marquess saw how
+                        critical OpenSSL was, not just to their software, but to other industries
+                        around the world, from enterprise to aeronautics to health care.
+                        Until that moment, he had “always assumed, (as had the rest of the
+                        world) that the OpenSSL team was large, active, and well resourced.” In
+                        reality, OpenSSL wasn’t even able to support one person’s work.
+                        </em>
+                        <p>-- Nadia Eghbal</p>
+                        </div>
+                        <p>Now what happens when <em>numpy, jupyter or scipy</em> breaks?</p>
+                        <div style="font-size: 24px;">
+                        <ul>
+                            <li>There is a single developers working on Pandas full time world wide</li>
+                            <li>No full-time developer working on NumPy at the moment</li>
+                        </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Organize!</h3>
+                    <img alt="numfocus" src="numfocus.png" width="50%" style="box-shadow: none;">
+                    <div style="text-align: left; font-size: 24px; line-height: 24px; width: 65%; margin-left: auto; margin-right: auto;">
+                    <em>
+                    The mission of NumFOCUS is to promote sustainable high-level programming languages, open code development, and reproducible scientific research. We accomplish this mission through our educational programs and events as well as through fiscal sponsorship of open source data science projects. We aim to increase collaboration and communication within the scientific computing community.
+                    </em>
+                    </div>
+
+                    <aside class="notes">
+                    <ul>
+                    <li>But having good roads requires <strong>more than cleaning up</strong> in front of your home. We need  to organize and collaborate at a larger scale.</li>
+                    <li>This is something that a number of companies in Europe have understood, and as I relocated in France, two large companies based in France contacted me (as a member of the Jupyter team) and <strong>offered to make a donation</strong> to help the project grow, for a total of around 100k euros.</li>
+                    <li>One issue is that we did not even know how to take the money. we don't have a single non-profit legal entity that could be a recipent to such a donation in France, and could make it tax deductible.</li>
+                    <li>This is what the <strong>NumFOCUS foundation</strong> is about: serving as an umbrella organization for a large number of open-source projects to receive corporate and public funding, mutualising the administrative cost accross multiple projects.</li>
+                    <li>Even on opensource projects that have most of their core developers located in Europe, <strong>leadership and governance</strong> often are located in the US. Why? Because we don't have the equivalent to NumFOCUS. Now it is clear that we need it - and we are now already working on it with the leadership of several open-source projects to make it happen sooner rather than later.</li>
+                    </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>Our action</h3>
+                    <ul style="margin-top: 24px; width: 70%; font-size: 28px;">
+                        <li>
+                        <p>Work with the NumFOCUS leadership on the creation of a EU branch or separate EU entity.</p>
+                        <img alt="eu" src="eu.png" width="70px;" style="display: block; margin-right: auto; margin-left: auto;"/>
+                        </li>
+                        <li>
+                        <p>Creation the PyData Paris meetup.</p>
+                        <img alt="pydata" src="pydata-logo.png" width="150px;" style="display: block; margin-right: auto; margin-left: auto;"/>
+                        </li>
+                        <li>
+                        <p>What next?</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p>We can you do as an individual</p>
+                    <ul style="font-size: 24px;">
+                        <li>Engage with the community and contribute</li>
+                        <li>Support the non-profits supporting the ecosystem</li>
+                        <li>Volunteer to help the community (organizing events, workshops)</li>
+                        <li>Advocate for the ecosystem behind closed doors</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p>We can you do as an organization</p>
+                    <ul style="font-size: 24px;">
+                        <li>Improve community engagement of your work force</li>
+                        <li>Collaborate with academia on <i>Software</i> supporting science</li>
+                        <li>Support and express support for NumFOCUS (become a founding sponsor of NumFOCUS EU?)</li>
+                        <li>Partner with other organizations supporting common infrastructure</li>
+                        <li>Host conferences and Meetups for the community</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
+                width: "100%",
+                height: "100%",
+                margin: 0,
+                minScale: 1,
+                maxScale: 1,
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
+</html>
