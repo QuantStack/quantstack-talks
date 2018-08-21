@@ -203,50 +203,11 @@
                         </div>
                     </div>
                 </section>
-                <!-- <section>
-                    <h2>The Jupyter Architecture</h2>
-                    <img alt="Jupyter Architecture" src="jupyter-arch.svg" width="55%"/>
+
+                <section>
                     <div>
-                    <ul>
-                        <li>A well defined protocol</li>
-                        <li>Implemented for more than 40 languages</li>
-                    </ul>
+                        <img alt="xeus" src="xeus.svg" width="25%"/>
                     </div>
-                </section>
-
-                <section>
-                    <h2>Implementations of the protocol</h2>
-                    <ul>
-                        <li>Some kernels have their own implementation of the protocol
-                        <ul>
-                            <li>Python (ipykernel)</li>
-                            <li>R (IRkernel)</li>
-                            <li>Julia (IJulia)</li>
-                        </ul>
-                        </li>
-                        <li>Many others make use of the wrapper kernel approach
-                        <ul>
-                            <li>The Octave and Matlab kernels</li>
-                        </ul>
-                        </li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>On the wrapper kernel approach</h2>
-                    <ul style="max-width: 50%;">
-                        <li>Dependency on the Python runtime</li>
-                        <li>The wrapped interpreter may not have a usable Python API</li>
-                        <li>We may need to expose the API of the wrapper to enable widgets</li>
-                    </ul>
-                    <p style="width: 75%; text-align: left; margin-left: auto; margin-right: auto;">In fact, a kernel is merely an executable
-                    implementing an inter-process communication protocol.
-                    <strong>It should not need a Python runtime.</strong>
-                    </p>
-                </section>
-
-                <section>
-                    <img alt="xeus" src="xeus.svg" width="50%"/>
                     <ul style="max-width: 50%;">
                         <li>A modern C++ implementation of the Jupyter protocol</li>
                         <li>Enabling kernel authors to create new kernels without having to deal with the protocol.</li>
@@ -254,42 +215,23 @@
                 </section>
 
                 <section>
-                    <h2>Example: Implementing an echo kernel</h2>
-                    <img alt="echo-kernel" src="echo-kernel.png" width="40%"/>
-                </section>
-
-                <section>
-                    <h2>What can you do with Xeus?</h2>
-                    <p>A kernel for the C++ programming language based on cling</p>
+                    <p>Example of a kernel using xeus: Xeus-Cling</p>
                     <div>
-                    <img alt="root-logo" src="root-logo.png" width="50%"/>
+                        <img alt="xeus-cling" src="xeus-cling.svg" width="25%"/>
                     </div>
-                    <div>
-                    <div class="team-section-content" style="width: 85%; margin-left: auto; margin-right: auto;">
-                        <div style="display: inline-block; width: 35%; margin: 30px; vertical-align: top;">
-                            <img class="card-photo" alt="Avatar picture" src="axel.jpg">
-                            <p class="card-header">Axel Naumann</p>
-                        </div>
-                        <div style="display: inline-block; width: 35%; margin: 30px; vertical-align: top;">
-                            <img class="card-photo" alt="Avatar picture" src="vassil.jpg">
-                            <p class="card-header">Vassil Vassilev</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
                     <h2>Live demo of Xeus-Cling</h2>
                 </section>
 
                 <section>
                     <section>
+                        <div>
+                            <img alt="xtensor" src="xtensor.svg" width="25%"/>
+                        </div>
                         <h2>Scientific computing in the C++ notebook with xtensor</h2>
-                        <img alt="xtensor" src="xtensor.svg" style="width: 25%;" />
                         <div style="margin-left: auto; margin-right: auto; width: 70%;">
                         <ul>
                             <li class="fragment">
                                 <p>A C++ template library for multi-dimensional array manipulation</p>
-                                <img alt="xtensor" src="xtensor.svg" width="12%"/>
                                 <ul>
                                     <li>
                                         <p>Followings the idioms of the C++ STL</p>
@@ -341,259 +283,11 @@
                         </div>
                     </section>
                 </section>
-                <section>
-                    <style>
-                        div.splitting {
-                            background-color: rgb(20, 98, 135);
-                            width: 50%;
-                            height: 800%;
-                            position: absolute;
-                            top: -200%;
-                            left: 0;
-                            z-index: -1;
-                        }
-
-                        div.left-panel {
-                            width: 45%;
-                            display: inline-block;
-                            margin-right: 5%;
-                            vertical-align: top;
-                        }
-
-                        div.right-panel {
-                            width: 45%;
-                            display: inline-block;
-                        }
-
-                        code.panel {
-                            background-color: initial;
-                        }
-
-                        pre.panel {
-                            box-shadow: none;
-                        }
-                    </style>
-                    <section>
-                        <div class="splitting"></div>
-                        <div>
-                            <p style="text-align: center; vertical-align: top;">Ever heard of numpy?</p>
-                        </div>
-                        <div>
-                            <div class="left-panel">
-                                <p style="text-align: center;"><b>Python 3 - numpy</b></p>
-                            </div>
-                            <div class="right-panel">
-                                <p style="text-align: center;"><b>C++ 14 - xtensor</b></p>
-                            </div>
-                        </div>
-                        <div class="fragment">
-                            <div class="left-panel">
-                                <pre class="panel"><code class="python panel" data-trim>
-                                    np.array([[3, 4], [5, 6]])
-
-                                    arr.reshape([3, 4])
-                                </code></pre>
-                            </div>
-                            <div class="right-panel">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                    xt::xarray&lt;double&gt;({{3, 4}, {5, 6}})
-                                    xt::xtensor&lt;double, 2&gt;({{3, 4}, {5, 6}})
-                                    arr.reshape({3, 4});
-                                </code></pre>
-                            </div>
-                        </div>
-                        <div class="fragment">
-                            <div class="left-panel">
-                                <pre class="panel"><code class="python panel" data-trim>
-                                    np.linspace(1.0, 10.0, 100)
-                                    np.logspace(1.0, 10.0, 100)
-                                    np.arange(3, 7)
-                                    np.eye(4)
-                                    np.zeros([3, 4])
-                                    np.ones([3, 4])
-                                </code></pre>
-                            </div>
-                            <div class="right-panel">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                    xt::linspace&lt;double&gt;(1.0, 10.0, 100)
-                                    xt::logspace&lt;double&gt;(1.0, 10.0, 100)
-                                    xt::arange(3, 7)
-                                    xt::eye(4)
-                                    xt::zeros&lt;double&gt;({3, 4})
-                                    xt::ones&lt;double&gt;({3, 4})
-                                </code></pre>
-                            </div>
-                        </div>
-                    </section>
-                    <section>
-                        <div class="splitting"></div>
-                        <div>
-                            <div class="left-panel">
-                                <p style="text-align: center;"><b>Python 3 - numpy</b></p>
-                            </div>
-                            <div class="right-panel">
-                                <p style="text-align: center;"><b>C++ 14 - xtensor</b></p>
-                            </div>
-                            <div class="left-panel">
-                                <pre class="panel"><code class="python panel" data-trim>
-                                    a[:, np.newaxis]
-                                    a[:5, 1:]
-                                    a[5:1:-1, :]
-                                    np.broadcast(a, [4, 5, 7])
-                                    np.vectorize(f)
-                                    a[a &gt; 5]
-                                    a[[0, 1], [0, 0]]
-                                </code></pre>
-                            </div>
-                            <div class="right-panel">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                    xt::view(a, xt::all(), xt::newaxis())
-                                    xt::view(a, xt::range(_, 5), xt::range(1, _))
-                                    xt::view(a, xt::range(5, 1, -1), xt::all())
-                                    xt::broadcast(a, {4, 5, 7})
-                                    xt::vectorize(f)
-                                    xt::filter(a, a &gt; 5)
-                                    xt::index_view(a, {{0, 0}, {1, 0}})
-                                </code></pre>
-                            </div>
-                        </div>
-                        <div class="fragment">
-                            <div class="left-panel">
-                                <pre class="panel"><code class="python panel" data-trim>
-                                    np.sum(a, axis=[0, 1])
-                                    np.sum(a)
-                                    np.prod(a, axis=1)
-                                    np.prod(a)
-                                    np.mean(a, axis=1)
-                                    np.mean(a)
-                                </code></pre>
-                            </div>
-                            <div class="right-panel">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                    xt::sum(a, {0, 1})
-                                    xt::sum(a)
-                                    xt::prod(a, {1})
-                                    xt::prod(a)
-                                    xt::mean(a, {1})
-                                    xt::mean(a)
-                                </code></pre>
-                            </div>
-                        </div>
-                    </section>
-                    <section>
-                        <div class="splitting"></div>
-                        <div>
-                            <div class="left-panel">
-                                <p style="text-align: center;"><b>Python 3 - numpy</b></p>
-                            </div>
-                            <div class="right-panel">
-                                <p style="text-align: center;"><b>C++ 14 - xtensor</b></p>
-                            </div>
-                            <div class="left-panel">
-                                <pre class="panel"><code class="python panel" data-trim>
-                                    np.where(a &gt; 5, a, b)
-                                    np.where(a &gt; 5)
-                                    np.any(a)
-                                    np.all(a)
-                                    np.logical_and(a, b)
-                                    np.logical_or(a, b)
-                                </code></pre>
-                            </div>
-                            <div class="right-panel">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                    xt::where(a &gt; 5, a, b)
-                                    xt::where(a &gt; 5)
-                                    xt::any(a)
-                                    xt::all(a)
-                                    a &amp;&amp; b
-                                    a || b
-                                </code></pre>
-                            </div>
-                        </div>
-                        <div class="fragment">
-                            <div class="left-panel">
-                                <pre class="panel"><code class="python panel" data-trim>
-                                    np.absolute(a)
-                                    np.exp(a)
-                                    np.sqrt(a)
-                                    np.cos(a)
-                                    np.cosh(a)
-                                    scipy.special.erf(a)
-                                    np.isnan(a)
-                                </code></pre>
-                            </div>
-                            <div class="right-panel">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                    xt::abs(a)
-                                    xt::exp(a)
-                                    xt::sqrt(a)
-                                    xt::cos(a)
-                                    xt::cosh(a)
-                                    xt::erf(a)
-                                    xt::isnan(a)
-                                </code></pre>
-                            </div>
-                        </div>
-                    </section>
-                    <section>
-                        <div class="splitting"></div>
-                        <div>
-                            <div class="left-panel">
-                                <p style="text-align: center;"><b>Python 3 - numpy</b></p>
-                            </div>
-                            <div class="right-panel">
-                                <p style="text-align: center;"><b>C++ 14 - xtensor</b></p>
-                            </div>
-                            <div class="left-panel">
-                                <pre class="panel"><code class="python panel" data-trim>
-                                    np.random.seed(0)
-                                    np.random.randn(10, 10)
-                                    np.random.randint(10, 10)
-                                    np.random.rand(3, 4)
-                                </code></pre>
-                            </div>
-                            <div class="right-panel">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                    xt::random::seed(0)
-                                    xt::random::randn&lt;double&gt;({10, 10})
-                                    xt::random::randint&lt;int&gt;({10, 10}})
-                                    xt::random::rand&lt;double&gt;({3, 4}})
-                                </code></pre>
-                            </div>
-                        </div>
-                        <div class="fragment">
-                            <div class="left-panel">
-                                <pre class="panel"><code class="python panel" data-trim>
-                                    np.stack([a, b, c], axis=1)
-                                    np.concatenate([a, b, c], axis=1)
-                                </code></pre>
-                            </div>
-                            <div class="right-panel">
-                                <pre class="panel"><code class="cpp panel" data-trim>
-                                    xt::stack(xtuple(a, b, c), 1)
-                                    xt::concatenate(xtuple(a, b, c), 1)
-                                </code></pre>
-                            </div>
-                        </div>
-                    </section>
-                </section>
-                </section>
-                <section>
-                    <section>
-                        <p>And much more</p>
-                        <ul>
-                            <li>Missing values</li>
-                            <li>Fancy indexing</li>
-                            <li>Broadcasting and universal functions</li>
-                            <li>Linear algebra</li>
-                            <li>Language bindings</li>
-                            <li>Lazy computing</li>
-                            <li>Views on array expressions</li>
-                        </ul>
-                    </section>
-                </section>
 
                 <section>
+                    <div>
+                        <img alt="xtensor" src="xtensor.svg" width="25%"/>
+                    </div>
                     <h2>Live demo of xtensor + xeus</h2>
                 </section>
 
@@ -615,20 +309,38 @@
                 <section>
                      <p>The foundations for a C++ backend for Jupyter interactive widgets</p>
                      <ul>
-			 <li>An implementation of the observer pattern (traitlets): xproperty</li>
+                         <li>An implementation of the observer pattern (traitlets): xproperty</li>
                          <li>The implementation of the Jupyter widgets communication protocol: xwidgets</li>
                      </ul>
                 </section>
 
                 <section>
-                    <h2>Live demo of xwidgets</h2>
+                    <div>
+                        <img alt="xwidgets" src="xwidgets.svg" width="25%"/>
+                    </div>
+                    <h2>Live demo of xwidgets + xtensor</h2>
+                </section>
+
+                <section>
+                    <p>Using xwidgets it's possible to create other widgets libraries: xplot, xleaflet, xthreejs...</p>
+                    <div>
+                        <img alt="xleaflet" src="xleaflet.svg" width="25%"/>
+                    </div>
+                    <h2>Live demo of xleaflet + xwidgets</h2>
+                </section>
+
+                <section>
+                    <div>
+                        <img alt="xframe" src="xframe.svg" width="25%"/>
+                    </div>
+                    <h2>Live demo of xframe</h2>
                 </section>
 
                 <section>
                     <p>Credits</p>
                     <div class="team-section-content">
                         <div class="bio-card">
-                            <img class="card-photo" alt="Avatar picture" src="sylvain.png">
+                            <img class="card-photo" alt="Avatar picture" src="Sylvain.jpg">
                             <p class="card-header">Sylvain Corlay</p>
                             <div class="card-info">
                                 <a href="https://github.com/SylvainCorlay" target="_blank">
@@ -644,7 +356,7 @@
                             </div>
                         </div>
                         <div class="bio-card">
-                            <img class="card-photo" alt="Avatar picture" src="johan.jpg">
+                            <img class="card-photo" alt="Avatar picture" src="Johan.jpg">
                             <p class="card-header">Johan Mabille</p>
                             <div class="card-info">
                                 <a href="https://github.com/JohanMabille" target="_blank">
@@ -660,23 +372,89 @@
                             </div>
                         </div>
                         <div class="bio-card">
-                            <img class="card-photo" alt="Avatar picture" src="loic.jpg">
-                            <p class="card-header">Loic Gouarin</p>
-                            <div class="card-info">
-                                <a href="https://github.com/gouarin" target="_blank">
+                            <img class="card-photo" alt="Avatar picture" src="Wolf.jpg">
+                            <p class="card-header">Wolf Vollprecht</p>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://github.com/wolfv" target="_blank">
                                     <span class="genericon genericon-github"></span>
-                                    <em>@gouarin</em>
+                                    <em>@wolfv</em>
                                 </a>
                             </div>
-                            <div class="card-info">
-                                <a href="https://twitter.com/lgouarin" target="_blank">
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://twitter.com/wuoulf" target="_blank">
                                     <span class="genericon genericon-twitter"></span>
-                                    <em>@lgouarin</em>
+                                    <em>@wuoulf</em>
                                 </a>
                             </div>
                         </div>
+                        <div>
+                            <div class="bio-card">
+                                <img class="card-photo" alt="Avatar picture" src="Martin.jpg">
+                                <p class="card-header">Martin Renou</p>
+                                <div class="card-info" style="display: inline;">
+                                    <a href="https://github.com/martinRenou" target="_blank">
+                                        <span class="genericon genericon-github"></span>
+                                        <em>@martinRenou</em>
+                                    </a>
+                                </div>
+                                <div class="card-info" style="display: inline;">
+                                    <a href="https://twitter.com/Renou_Martin" target="_blank">
+                                        <span class="genericon genericon-twitter"></span>
+                                        <em>@Renou_Martin</em>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="bio-card">
+                                <img class="card-photo" alt="Avatar picture" src="loic.jpg">
+                                <p class="card-header">Loic Gouarin</p>
+                                <div class="card-info">
+                                    <a href="https://github.com/gouarin" target="_blank">
+                                        <span class="genericon genericon-github"></span>
+                                        <em>@gouarin</em>
+                                    </a>
+                                </div>
+                                <div class="card-info">
+                                    <a href="https://twitter.com/lgouarin" target="_blank">
+                                        <span class="genericon genericon-twitter"></span>
+                                        <em>@lgouarin</em>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="bio-card">
+                                <img class="card-photo" alt="Avatar picture" src="Maarten.jpg">
+                                <p class="card-header">Maarten Breddels</p>
+                                <div class="card-info">
+                                    <a href="https://github.com/maartenbreddels" target="_blank">
+                                        <span class="genericon genericon-github"></span>
+                                        <em>@maartenbreddels</em>
+                                    </a>
+                                </div>
+                                <div class="card-info">
+                                    <a href="https://twitter.com/maartenbreddels" target="_blank">
+                                        <span class="genericon genericon-twitter"></span>
+                                        <em>@maartenbreddels</em>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="bio-card">
+                                <img class="card-photo" alt="Avatar picture" src="Romain.jpg">
+                                <p class="card-header">Romain Menegaux</p>
+                                <div class="card-info">
+                                    <a href="https://github.com/rmenegaux" target="_blank">
+                                        <span class="genericon genericon-github"></span>
+                                        <em>@rmenegaux</em>
+                                    </a>
+                                </div>
+                                <div class="card-info">
+                                    <a href="https://twitter.com/RomainMenegaux" target="_blank">
+                                        <span class="genericon genericon-twitter"></span>
+                                        <em>@RomainMenegaux</em>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </section> -->
+                </section>
                 <section>
                     <h2>Resources:</h2>
                     <p>GitHub</p>
