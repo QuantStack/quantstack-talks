@@ -131,61 +131,79 @@
         <div class="reveal">
             <div class="slides">
                 <section>
-                    <img alt="xeus" src="xeus.svg" width="50%"/>
-                    <p>Native implementation of the Jupyter protocol</p>
+                    <img alt="QuantStack" src="quantstack-white.svg" width="55%">
+                    <p>Going native: C++ as a first-class citizen of the Jupyter ecosystem</p>
                 </section>
                 <section>
-                    <img alt="QuantStack" src="quantstack-white.svg" width="55%">
+                    <p>Speakers</p>
                     <div class="team-section-content">
-                        <div style="display: inline-block; width: 45%; margin: 30px; vertical-align: top;">
-                            <img class="card-photo" alt="Avatar picture" src="sylvain.png">
+                        <div class="bio-card">
+                            <img class="card-photo" alt="Avatar picture" src="Sylvain.jpg">
                             <p class="card-header">Sylvain Corlay</p>
-                            <div style="font-size: 20px; text-align: justify; margin: 30px;">
-                            <ul>
-                                <li>Scientific software developer, Quant researcher, formerly quant at Bloomberg, and adjunct at Columbia and NYU</li>
-                                <li>Founded QuantStack in 2016</li>
-                                <li>Jupyter core developer (widgets, bqplot, pythreejs)</li>
-                            </ul>
-                            </div>
-                            <div class="card-info" style="display: inline;">
+                            <div class="card-info">
                                 <a href="https://github.com/SylvainCorlay" target="_blank">
                                     <span class="genericon genericon-github"></span>
                                     <em>@SylvainCorlay</em>
                                 </a>
                             </div>
-                            <div class="card-info" style="display: inline;">
+                            <div class="card-info">
                                 <a href="https://twitter.com/SylvainCorlay" target="_blank">
                                     <span class="genericon genericon-twitter"></span>
                                     <em>@SylvainCorlay</em>
                                 </a>
                             </div>
                         </div>
-                        <div style="display: inline-block; width: 45%; margin: 30px; vertical-align: top;">
-                            <img class="card-photo" alt="Avatar picture" src="johan.jpg">
+                        <div class="bio-card">
+                            <img class="card-photo" alt="Avatar picture" src="Johan.jpg">
                             <p class="card-header">Johan Mabille</p>
-                            <div style="font-size: 20px; text-align: justify; margin: 30px;">
-                            <ul>
-                                <li>Scientific software developer, Quant developer, formerly quant developer at HSBC</li>
-                                <li>Joined QuantStack in 2016</li>
-                                <li>Co-author of xtensor, xsimd, xeus</li>
-                            </ul>
-                            </div>
-                            <div class="card-info" style="display: inline;">
+                            <div class="card-info">
                                 <a href="https://github.com/JohanMabille" target="_blank">
                                     <span class="genericon genericon-github"></span>
                                     <em>@JohanMabille</em>
                                 </a>
                             </div>
-                            <div class="card-info" style="display: inline;">
+                            <div class="card-info">
                                 <a href="https://twitter.com/JohanMabille" target="_blank">
                                     <span class="genericon genericon-twitter"></span>
                                     <em>@JohanMabille</em>
                                 </a>
                             </div>
                         </div>
+                        <div class="bio-card">
+                            <img class="card-photo" alt="Avatar picture" src="Wolf.jpg">
+                            <p class="card-header">Wolf Vollprecht</p>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://github.com/wolfv" target="_blank">
+                                    <span class="genericon genericon-github"></span>
+                                    <em>@wolfv</em>
+                                </a>
+                            </div>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://twitter.com/wuoulf" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@wuoulf</em>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bio-card">
+                            <img class="card-photo" alt="Avatar picture" src="Martin.jpg">
+                            <p class="card-header">Martin Renou</p>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://github.com/martinRenou" target="_blank">
+                                    <span class="genericon genericon-github"></span>
+                                    <em>@martinRenou</em>
+                                </a>
+                            </div>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://twitter.com/Renou_Martin" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@Renou_Martin</em>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </section>
-                <section>
+                <!-- <section>
                     <h2>The Jupyter Architecture</h2>
                     <img alt="Jupyter Architecture" src="jupyter-arch.svg" width="55%"/>
                     <div>
@@ -658,14 +676,15 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> -->
                 <section>
                     <h2>Resources:</h2>
                     <p>GitHub</p>
-                    <ul>
+                    <ul style="font-size: 25px;">
                         <li>xeus: https://github.com/QuantStack/xeus/</li>
                         <li>xeus-cling: https://github.com/QuantStack/xeus-cling/</li>
                         <li>xproperty: https://github.com/QuantStack/xproperty/</li>
+                        <li>xframe: https://github.com/QuantStack/xframe/</li>
                         <li>xtensor: https://github.com/QuantStack/xtensor/</li>
                         <li>xtensor-blas: https://github.com/QuantStack/xtensor-blas/</li>
                         <li>xtensor-python: https://github.com/QuantStack/xtensor-python/</li>
@@ -674,13 +693,16 @@
                         <li>xsimd: https://github.com/QuantStack/xsimd/</li>
                         <li>xtensor-fftw: https://github.com/egpbos/xtensor-fftw/</li>
                         <li>xwidgets: https://github.com/QuantStack/xwidgets/</li>
+                        <li>xleaflet: https://github.com/QuantStack/xleaflet/</li>
+                        <li>xplot: https://github.com/QuantStack/xplot/</li>
+                        <li>xwebrtc: https://github.com/QuantStack/xwebrtc/</li>
                     </ul>
                 </section>
 
                 <section>
                     <h2>Resources:</h2>
                     <p>Documentation</p>
-                    <ul>
+                    <ul style="font-size: 25px;">
                         <li>https://xeus.readthedocs.io/en/latest/</li>
                         <li>https://xproperty.readthedocs.io/en/latest/</li>
                         <li>https://xtensor.readthedocs.io/en/latest/</li>
@@ -688,6 +710,8 @@
                         <li>https://xtensor-julia.readthedocs.io/en/latest/</li>
                         <li>https://xtensor-r.readthedocs.io/en/latest/</li>
                         <li>https://xsimd.readthedocs.io/en/latest/</li>
+                        <li>https://xplot.readthedocs.io/en/latest/?badge=latest</li>
+                        <li>https://xleaflet.readthedocs.io/en/latest/?badge=latest</li>
                     </ul>
                 </section>
 
