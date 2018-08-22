@@ -123,7 +123,7 @@
                 <div style="color: white; font-family: Source Sans Pro, Helvetica, sans-serif;">
                 <img alt="Twitter" src="twitter-white.svg" height="20px"/>
                 <img alt="GitHub" src="github-white.svg" height="20px"/>
-                <p style="display: inline; vertical-align: top; margin-left: 4px; font-size: 20px;">@SylvainCorlay @QuantStack</p>
+                <p style="display: inline; vertical-align: top; margin-left: 4px; font-size: 20px;">@QuantStack</p>
                 </div>
             </div>
         </div>
@@ -205,90 +205,60 @@
                 </section>
 
                 <section>
-                    <div>
-                        <img alt="xeus" src="xeus.svg" width="25%"/>
-                    </div>
-                    <ul style="max-width: 50%;">
-                        <li>A modern C++ implementation of the Jupyter protocol</li>
-                        <li>Enabling kernel authors to create new kernels without having to deal with the protocol.</li>
+                    <h2>Interactive workflows</h2>
+                    <p>Programming languages are used to</p>
+                    <ul>
+                        <li>build software systems</li>
+                        <div class="fragment">
+                            <li>explore a problem</li>
+                            <li>reason about it</li>
+                        </div>
                     </ul>
                 </section>
 
                 <section>
-                    <p>Example of a kernel using xeus: Xeus-Cling</p>
+                    <h2>Interactive workflow</h2>
+                    <div>
+                        <img alt="workflow" src="workflow.png"/>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>The C++ language</h2>
+                    <ul>
+                        <li>Heterogeneous set of tools...</li>
+                        <li>... that don't play well together</li>
+                        <li>workflow hard to reproduce</li>
+                        <li>language hard to teach</li>
+                    </ul>
+                </section>
+
+                <section>
                     <div>
                         <img alt="xeus-cling" src="xeus-cling.svg" width="25%"/>
                     </div>
+                    <p>A C++ kernel for Jupyter based on</p>
+                    <ul>
+                        <li class="fragment">
+                            <p>A modern C++ implementation of the Jupyter protocol</p>
+                            <img alt="xeus" src="xeus.svg" width="15%"/>
+                        </li>
+                        <li class="fragment">
+                            <p>Cling, a C++ interpreter developped at CERN</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
                     <h2>Live demo of Xeus-Cling</h2>
                 </section>
 
                 <section>
-                    <section>
-                        <div>
-                            <img alt="xtensor" src="xtensor.svg" width="25%"/>
-                        </div>
-                        <h2>Scientific computing in the C++ notebook with xtensor</h2>
-                        <div style="margin-left: auto; margin-right: auto; width: 70%;">
-                        <ul>
-                            <li class="fragment">
-                                <p>A C++ template library for multi-dimensional array manipulation</p>
-                                <ul>
-                                    <li>
-                                        <p>Followings the idioms of the C++ STL</p>
-                                        <p>(iterator pairs, clear value semantics)</p>
-                                    </li>
-                                    <li>But also an API similar to that of numpy</li>
-                                </ul>
-                            </li>
-                        </ul>
-                        </div>
-                    </section>
-                    <section>
-                        <h2>What is xtensor?</h2>
-                        <div style="margin-left: auto; margin-right: auto; width: 70%;">
-                        <ul>
-                            <li class="fragment">
-                                <p>Python bindings to enable xtensor APIs on numpy arrays.</p>
-                                <img alt="xtensor-python" src="xtensor-python.svg" width="15%"/>
-                            </li>
-                            <li class="fragment">
-                                <p>Julia bindings to enable xtensor APIs on Julia arrays.</p>
-                                <img alt="xtensor-julia" src="xtensor-julia.svg" width="15%"/>
-                            </li>
-                            <li class="fragment">
-                                <p>R bindings to enable xtensor APIs on R arrays.</p>
-                                <img alt="xtensor-r" src="xtensor-r.svg" width="15%"/>
-                            </li>
-                            <li class="fragment">
-                                <p>Cookiecutter projects for authoring of Python, Julia, and R extensions.</p>
-                                <img alt="xtensor-cookiecutter" src="xtensor-cookiecutter.svg" width="15%"/>
-                            </li>
-                        </ul>
-                        </div>
-                    </section>
-                    <section>
-                        <h2>What is xtensor?</h2>
-                        <div style="margin-left: auto; margin-right: auto; width: 70%;">
-                        <ul>
-                            <li class="fragment">
-                                <p>BLAS bindings to enable BLAS operations on xtensor expressions.</p>
-                                <img alt="xtensor-blas" src="xtensor-blas.svg" width="15%"/>
-                            </li>
-                            <li class="fragment">
-                                <p>SIMD acceleration kernels.</p>
-                                <img alt="xsimd" src="xsimd.svg" width="15%"/>
-                            </li>
-                            <li class="fragment">All open-source (BSD License).</li>
-                        </ul>
-                        </div>
-                    </section>
+                    <p>INSERT XTENSOR SLIDES HERE</p>
                 </section>
 
                 <section>
-                    <div>
-                        <img alt="xtensor" src="xtensor.svg" width="25%"/>
-                    </div>
-                    <h2>Live demo of xtensor + xeus</h2>
+                    <h2>Live demo of xtensor</h2>
                 </section>
 
                 <section>
