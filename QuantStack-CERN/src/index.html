@@ -218,7 +218,7 @@
                 </section>
 
                 <section>
-                    <p><strong>We lack a good story for interative computing in C++</strong></p>
+                    <p><strong>(Outside of ROOT) We lack a good story for interative computing in C++</strong></p>
                     <div style="width: 60%; margin: auto; font-size: 28px; text-align: left;">
                         <p>This hurts productivity of C++ software developers.</p>
                         <ul>
@@ -241,7 +241,7 @@
                             <img alt="xeus" src="xeus.svg" width="15%"/>
                         </li>
                         <li class="fragment">
-                            <p>Cling, a C++ interpreter developed at CERN</p>
+                            <p>Cling, the C++ interpreter developed at CERN</p>
                         </li>
                     </ul>
                 </section>
@@ -984,17 +984,6 @@ xtensor_r_test::sum_of_sines(arr)
                 </section>
 
                 <section>
-                    <img alt="xtensor-robot" src="robot.png" width="20%"/>
-                    <div style="font-size: 24px;">
-                    <p>Scientific computing in a polyglot world with xtensor</p>
-                    <ul>
-                        <li>Write a native extension once, operating on xtensor expressions</li>
-                        <li>Get free bindings to R, Julia and Python</li>
-                    </ul>
-                    </div>
-                </section>
-
-                <section>
                     <p>Bindings with BLAS libraries</p>
                     <img alt="xtensor-blas" src="xtensor-blas.svg" width="55%"/>
                     <div style="font-size: 24px;">
@@ -1006,77 +995,6 @@ xtensor_r_test::sum_of_sines(arr)
                         <li>See the <a href="http://xtensor.readthedocs.io/en/latest/numpy.html">numpy to xtensor cheat sheet</a></li>
                     </ul>
                     </div>
-                </section>
-
-                <section>
-                    <p>SIMD acceleration</p>
-                    <img alt="xsimd" src="xsimd.svg" width="35%"/>
-                    <div style="font-size: 24px;">
-                    <ul>
-                        <li>Unified high-level API to AVX, SSE, Neon with arithmetic operations</li>
-                        <li>Accelerated mathematical functions</li>
-                        <li>Aligned memory allocation</li>
-                    </ul>
-                    </div>
-                </section>
-                <section>
-                    <p>xsimd example</p>
-                    <p style="font-size: 20px;">(Assuming that AVX is supported)</p>
-                    <div style="font-size: 24px;">
-<pre class="panel">
-<code class="cpp">
-#include &lt;iostream&gt;
-#include "xsimd/xsimd.hpp"
-
-namespace xs = xsimd;
-
-int main(int argc, char* argv[])
-{
-    xs::batch&lt;double, 4&gt; a(1.5, 2.5, 3.5, 4.5);
-    xs::batch&lt;double, 4&gt; b(2.5, 3.5, 4.5, 5.5);
-    auto mean = (a + b) / 2;
-    std::cout &lt;&lt; mean &lt;&lt; std::endl;
-    return 0;
-}
-</code>
-</pre>
-                </div>
-                </section>
-                <section>
-                    <p>xsimd: accelerating loops</p>
-                    <p style="font-size: 20px;">(This applies to processing including basic math functions from cmath.)</p>
-                    <div style="font-size: 24px;">
-<pre class="panel">
-<code class="julia">
-#include &lt;cstddef&gt;
-#include &lt;vector&gt;
-
-#include "xsimd/xsimd.hpp"
-
-namespace xs = xsimd;
-using vector_type = std::vector&lt;double, xsimd::aligned_allocator&lt;double, XSIMD_DEFAULT_ALIGNMENT&gt;;
-
-void mean(const vector_type&amp; a, const vector_type&amp; b, vector_type&amp; res)
-{
-    std::size_t size = a.size();
-    constexpr std::size_t simd_size = xsimd::simd_type&lt;double&gt;::size;
-    std::size_t vec_size = size - size % simd_size;
-
-    for(std::size_t i = 0; i &lt; vec_size; i += simd_size)
-    {
-        auto ba = xs::load_aligned(&amp;a[i]);
-        auto bb = xs::load_aligned(&amp;b[i]);
-        auto bres = (ba + bb) / 2;
-        bres.store_aligned(&amp;res[i]);
-    }
-    for(std::size_t i = vec_size; i &lt; size; ++i)
-    {
-        res[i] = (a[i] + b[i]) / 2;
-    }
-}
-</code>
-</pre>
-
                 </section>
 
                 <section>
