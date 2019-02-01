@@ -1,0 +1,313 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>reveal.js</title>
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css">
+        <link rel="stylesheet" href="genericons.css">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+        <style>
+        .reveal section img {
+            border: none;
+            background-color: initial;
+            margin: 10px;
+        }
+        .reveal .normal-paragraph {
+            text-align: left;
+            margin: 0 auto 0 auto;
+            width: 60%;
+        }
+        .reveal .normal-paragraph p {
+            text-align: left;
+        }
+        .header-left {
+            position: absolute;
+            top: 2%;
+            left: 2%;
+        }
+        .header-right {
+            position: absolute;
+            top: 2%;
+            right: 2%;
+        }
+        .footer-left {
+            position: absolute;
+            bottom: 2%;
+            left: 2%;
+        }
+        .reveal .genericon {
+          font-family: "genericons";
+        }
+
+        .reveal .bio-card {
+          background: #333;
+          border-radius: 2px;
+          display: inline-block;
+          width: 260px;
+          margin: 1rem;
+          position: relative;
+          font-size: 20px;
+        }
+
+        .reveal .card-photo {
+          display: block;
+          width: 200px;
+          border-top-left-radius: 2px;
+          border-top-right-radius: 2px;
+          margin: 28px auto 0 auto;
+        }
+
+        .reveal .card-header {
+          width: 100%;
+          font-size: 20px;
+          margin-top: 10px;
+          text-align: center;
+        }
+
+        .reveal .card-info {
+          width: 100%;
+          float: left;
+          font-size: 20px;
+          margin-top: 0;
+          padding: 0 4px;
+          text-align: center;
+        }
+
+        .reveal .card-info a {
+          text-decoration: none;
+          color: #999;
+        }
+
+        .reveal .card-info em {
+          vertical-align: top;
+        }
+
+        .revral .card-info a .genericon {
+          vertical-align: middle;
+        }
+
+        .reveal .bio-social a {
+          text-decoration: none;
+        }
+
+        .reveal .bio-photo {
+          width: 200px;
+          margin: 0 40px 40px -40px;
+          float: left;
+        }
+
+        .reveal section img {
+            box-shadow: none;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="common" style="z-index: 2;">
+            <div class="header-left">
+                <img alt="QuantStack" src="quantstack-white.svg" width="30%"/>
+            </div>
+            <div class="footer-left">
+                <div style="color: white; font-family: Source Sans Pro, Helvetica, sans-serif;">
+                <img alt="Twitter" src="twitter-white.svg" height="20px"/>
+                <img alt="GitHub" src="github-white.svg" height="20px"/>
+                <p style="display: inline; vertical-align: top; margin-left: 4px; font-size: 20px;">@QuantStack</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <img alt="ipywidgets" src="ipywidgets.svg" width="55%">
+                    <p>Interactive widgets in the Jupyter Notebook</p>
+                </section>
+
+                <section>
+                    <img src="quantstack-white.svg">
+                    <div class="team-section-content">
+                        <div class="bio-card">
+                            <img class="card-photo" alt="Avatar picture" src="Sylvain.jpg">
+                            <p class="card-header">Sylvain Corlay</p>
+                            <div class="card-info">
+                                <a href="https://github.com/SylvainCorlay" target="_blank">
+                                    <span class="genericon genericon-github"></span>
+                                    <em>@SylvainCorlay</em>
+                                </a>
+                            </div>
+                            <div class="card-info">
+                                <a href="https://twitter.com/SylvainCorlay" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@SylvainCorlay</em>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bio-card">
+                            <img class="card-photo" alt="Avatar picture" src="Johan.jpg">
+                            <p class="card-header">Johan Mabille</p>
+                            <div class="card-info">
+                                <a href="https://github.com/JohanMabille" target="_blank">
+                                    <span class="genericon genericon-github"></span>
+                                    <em>@JohanMabille</em>
+                                </a>
+                            </div>
+                            <div class="card-info">
+                                <a href="https://twitter.com/JohanMabille" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@JohanMabille</em>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bio-card">
+                            <img class="card-photo" alt="Avatar picture" src="Wolf.jpg">
+                            <p class="card-header">Wolf Vollprecht</p>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://github.com/wolfv" target="_blank">
+                                    <span class="genericon genericon-github"></span>
+                                    <em>@wolfv</em>
+                                </a>
+                            </div>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://twitter.com/wuoulf" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@wuoulf</em>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bio-card">
+                            <img class="card-photo" alt="Avatar picture" src="Martin.jpg">
+                            <p class="card-header">Martin Renou</p>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://github.com/martinRenou" target="_blank">
+                                    <span class="genericon genericon-github"></span>
+                                    <em>@martinRenou</em>
+                                </a>
+                            </div>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://twitter.com/Renou_Martin" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@Renou_Martin</em>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bio-card">
+                            <img class="card-photo" alt="Avatar picture" src="Maarten.jpg">
+                            <p class="card-header">Maarten Breddels</p>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://github.com/maartenbreddels" target="_blank">
+                                    <span class="genericon genericon-github"></span>
+                                    <em>@maartenbreddels</em>
+                                </a>
+                            </div>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://twitter.com/maartenbreddels" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@maartenbreddels</em>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <img alt="ipywidgets" src="ipywidgets.svg" width="55%">
+                    <p>Interactive widgets in the Jupyter Notebook</p>
+                </section>
+
+                <section>
+                    <img alt="contributors" src="ipywidgets_contrib.gif" width="45%">
+                    <p>119 contributors</p>
+                </section>
+
+                <section>
+                    <p>Demo</p>
+                </section>
+
+                <section>
+                    <h2>Resources:</h2>
+                    <p>GitHub</p>
+                    <ul style="font-size: 25px;">
+                        <li>ipywidgets: github.com/jupyter-widgets/ipywidgets/</li>
+                        <li>bqplot: github.com/bloomberg/bqplot/</li>
+                        <li>ipyleaflet: github.com/jupyter-widgets/ipyleaflet/</li>
+                        <li>jupyterlab-sidecar: github.com/jupyter-widgets/jupyterlab-sidecar/</li>
+                        <li>ipywebrtc: github.com/MaartenBreddels/ipywebrtc/</li>
+                        <li>ipyvolume: github.com/MaartenBreddels/ipyvolume/</li>
+                        <li>voila: github.com/QuantStack/voila/</li>
+                        <li>xeus: github.com/QuantStack/xeus/</li>
+                        <li>xeus-cling: github.com/QuantStack/xeus-cling/</li>
+                        <li>xwidgets: github.com/QuantStack/xwidgets/</li>
+                        <li>xleaflet: github.com/QuantStack/xleaflet/</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Resources:</h2>
+                    <p>Notebooks used during this presentation</p>
+                    <ul style="font-size: 25px;">
+                        <li>github.com/QuantStack/quantstack-talks/tree/master/2018-11-14-PyParis-widgets/notebooks/</li>
+                    </ul>
+                    <p>Documentation</p>
+                    <ul style="font-size: 25px;">
+                        <li>ipywidgets.readthedocs.io</li>
+                        <li>bqplot.readthedocs.io</li>
+                        <li>ipyleaflet.readthedocs.io</li>
+                        <li>ipywebrtc.readthedocs.io</li>
+                        <li>ipyvolume.readthedocs.io</li>
+                        <li>xeus.readthedocs.io</li>
+                        <li>xeus-cling.readthedocs.io</li>
+                        <li>xwidgets.readthedocs.io</li>
+                        <li>xleaflet.readthedocs.io</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>The End</h2>
+                </section>
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
+                width: "100%",
+                height: "100%",
+                margin: 0,
+                minScale: 1,
+                maxScale: 1,
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+
+        <script>
+        	var link = document.createElement( 'link' );
+        	link.rel = 'stylesheet';
+        	link.type = 'text/css';
+        	link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        	document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </body>
+</html>
