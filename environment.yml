@@ -1,0 +1,14 @@
+name: quantstacktalks
+channels:
+  - conda-forge
+dependencies:
+  - xtensor=0.19.2
+  - xtensor-blas=0.15.1
+  - xeus-cling=0.4.11
+  - xwidgets
+  - xtensor-io
+  - xleaflet
+  - xplot
+  - ipyleaflet
+  - bqplot
+  - rise
