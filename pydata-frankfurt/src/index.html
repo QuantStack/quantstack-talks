@@ -1,0 +1,524 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>reveal.js</title>
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css">
+        <link rel="stylesheet" href="genericons.css">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+        <style>
+        .reveal section img {
+            border: none;
+            background-color: initial;
+            margin: 10px;
+        }
+        .reveal .normal-paragraph {
+            text-align: left;
+            margin: 0 auto 0 auto;
+            width: 60%;
+        }
+        .reveal .normal-paragraph p {
+            text-align: left;
+        }
+        .header-left {
+            position: absolute;
+            top: 2%;
+            left: 2%;
+        }
+        .header-right {
+            position: absolute;
+            top: 2%;
+            right: 2%;
+        }
+        .footer-left {
+            position: absolute;
+            bottom: 2%;
+            left: 2%;
+        }
+        .reveal .genericon {
+          font-family: "genericons";
+        }
+
+        .reveal .bio-card {
+          background: #333;
+          border-radius: 2px;
+          display: inline-block;
+          width: 260px;
+          margin: 1rem;
+          position: relative;
+          font-size: 20px;
+        }
+
+        .reveal .card-photo {
+          display: block;
+          width: 200px;
+          border-top-left-radius: 2px;
+          border-top-right-radius: 2px;
+          margin: 28px auto 0 auto;
+        }
+
+        .reveal .card-header {
+          width: 100%;
+          font-size: 20px;
+          margin-top: 10px;
+          text-align: center;
+        }
+
+        .reveal .card-info {
+          width: 100%;
+          float: left;
+          font-size: 20px;
+          margin-top: 0;
+          padding: 0 4px;
+          text-align: center;
+        }
+
+        .reveal .card-info a {
+          text-decoration: none;
+          color: #999;
+        }
+
+        .reveal .card-info em {
+          vertical-align: top;
+        }
+
+        .revral .card-info a .genericon {
+          vertical-align: middle;
+        }
+
+        .reveal .bio-social a {
+          text-decoration: none;
+        }
+
+        .reveal .bio-photo {
+          width: 200px;
+          margin: 0 40px 40px -40px;
+          float: left;
+        }
+
+        .reveal section img {
+            box-shadow: none;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="common" style="z-index: 2;">
+            <div class="header-left">
+                <img alt="QuantStack" src="quantstack-white.svg" width="30%"/>
+            </div>
+            <div class="footer-left">
+                <div style="color: white; font-family: Source Sans Pro, Helvetica, sans-serif;">
+                <img alt="Twitter" src="twitter-white.svg" height="20px"/>
+                <img alt="GitHub" src="github-white.svg" height="20px"/>
+                <p style="display: inline; vertical-align: top; margin-left: 4px; font-size: 20px;">@SylvainCorlay @QuantStack</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <div style="position: relative; margin: auto; height: 428px; width: 971px;">
+                        <img style="position: absolute; top: 0; left: 0; height: 428px;" src="circle1.svg">
+                        <img style="position: absolute; top: 0; left: 0; height: 428px;" src="circle2.svg">
+                        <img style="position: absolute; top: 0; left: 0; height: 428px;" src="circle3.svg">
+                        <img style="position: absolute; top: 0; left: 320px; height: 428px;" src="main-logo.svg">
+                    </div>
+                    <div style="height: 40px;">
+                    </div>
+                    <p>Scientific Computing with Humans in the Loop</p>
+                </section>
+
+                <section>
+                        <div style="display: inline-block; width: 60%; margin: 30px; vertical-align: top;">
+                            <img class="card-photo" alt="Avatar picture" src="sylvain.jpg">
+                            <div style="font-size: 20px; text-align: justify; margin: 30px;">
+                            <ul>
+                                <li>Founder and CEO QuantStack in 2016.</li>
+                                <li>Jupyter contributer and steering committee member.</li>
+                                <li>Member of the board of NumFOCUS</li>
+                            </ul>
+                            </div>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://github.com/SylvainCorlay" target="_blank">
+                                    <span class="genericon genericon-github"></span>
+                                    <em>@SylvainCorlay</em>
+                                </a>
+                            </div>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://twitter.com/SylvainCorlay" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@SylvainCorlay</em>
+                                </a>
+                            </div>
+                        </div>
+                </section>
+
+                <section>
+                    <h4 style="text-align: left; width: 70%; margin: auto;">Why Jupyter?</h4>
+                    <div style="height: 80px;"></div>
+                    <div style="font-size=24px; margin: auto; max-width: 70%">
+                        <i>"The purpose of computing is insight, not numbers."</i>
+                        <p style="text-align: right; font-size: 20px;">- Richard Hamming </p>
+                    </div>
+                </section>
+
+                <section>
+                    <div style="font-size: 28px; margin: auto; max-width: 70%; text-align: left;">
+                    <p>Scientists, engineers not only use programming languages to build systems, but also in <i>interactive workflows</i>, to explore a problem and reason about it.</p>
+                    </div>
+                    <ul style="font-size: 28px; font-family: monospace; margin: auto; max-width: 70%;">
+                        <li>Load data</li>
+                        <li>Run some code</li>
+                        <li>Look at a visualization</li>
+                        <li>Write some more code</li>
+                        <li>Repeat</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Reality</h3>
+                    <div style="max-width: 70%; margin: auto;">
+                    <img alt="fernando" src="fernando.jpg" width="35%" style="float: left;">
+                    <div style="text-align: left; font-size: 24px; margin: 100px 0 100px 0;">
+                    <em>
+                    My advisor had a heavily customized awk/sed/bash workflow to manage job submissions and postprocessing of C codes for supercomputing runs... So I used her scripts to run my jobs, and on top of that has added my own layer of Perl, plus a hefty amount of Gnuplot, IDL and Mathematica.
+                    </em>
+                    <p style="text-align: right;">- Fernando Perez</p>
+                    </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div style="font-size=24px; margin: auto; max-width: 70%">
+                    <p>Most of the progress made in software projects comes from <i>incrementalism</i>.</p>
+                    <div style="height: 40px;"></div>
+                    <p>Obstacles to fast iteration hinder progress.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <img src="jupyter.svg" width="10%" style="box-shadow: none;">
+                    <p>What is Jupyter?</p>
+                    <div style="width: 70%; margin: auto; font-size: 24px;">
+                    <p>Jupyter is a consistent set of tools meant to facilitate the workflow of engineers, scientists</p>
+                    <ul>
+                       <li>from the exploratory phase of their work</p>
+                       <li>to the presentation of their result</li>
+                       <li>including all the intermediary phase, HPC, visualization, debugging</li>
+                       <li>making the experience actually FUN</li>
+                    </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>The Jupyter Notebook</h3>
+                    <ul style="font-size: 24px;">
+                        <li><i>Interactive</i>, browser-based computing environment</p></li>
+                        <li><i>Exploratory</i> data science, ML, visualization, analysis, stats</li>
+                        <li>Reproducible document format:
+                            <ul>
+                            <li>Code</li>
+                            <li>Narrative text (markdown)</li>
+                            <li>Equations (LaTeX)</li>
+                            <li>Images, visualizations</li>
+                            </ul>
+                        </li>
+                        <li>Over 50 programming languages</li>
+                        <li>Everything open-source (BSD license)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>The Jupyter Notebook</h3>
+                    <img src="notebook.png" width="50%">
+                </section>
+
+                <section>
+                    <h3>More Than Notebooks</h3>
+                    <img alt="More than notebooks" src="more-than-notebooks.png" width="50%">
+                </section>
+
+                <section>
+                    <h3>Jupyterlab</h3>
+                    <img alt="jupyterlab" src="jupyterlab.png" width="50%">
+                </section>
+
+                <section>
+                    <h3>The Jupyter Architecture</h3>
+                    <div style="margin: auto; max-width: 70%; text-align: left; font-size: 28px;">
+                    <p>Beyond the Jupyter notebook, Project Jupyter is a
+                    collection of protocols and standards for scientic
+                    computing</p>
+                    <ul>
+                        <li>The notebook file format</li>
+                        <li>The kernel protocol</li>
+                        <li>The rich display system</li>
+                        <li>The widgets protocol</li>
+                    </ul>
+                    <p>The "HTTP" of scientific computing...</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>The HTTP of Scientific Computing</h3>
+                    <div style="text-align: left; font-size: 24px; width: 70%; margin-left: auto; margin-right: auto;">
+                    <i style="font-size: 32px;">A specification matters a great deal more than any implementation.</i>
+                    <p>Well specified</em>
+                    <ul style="padding-left: 40px;">
+                        <li>Communication protocols (Kernels, Widget)</li>
+                        <li>File formats</li>
+                        <li>Serialization Schemas</li>
+                    </ul>
+                    <p>transformed Jupyter in the HTTP of Scientific Computing for</p>
+                    <ul style="padding-left: 40px;">
+                        <li>Exploratory Analysis</li>
+                        <li>Data Visualization</li>
+                        <li>In a language agnostic fashion</li>
+                    </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Adoption</h3>
+                    <p style="font-size: 40px;">2015 IBM survey: 3M users</p>
+                    <img alt="adoption" src="adoption.png" width="12%">
+                    <p style="font-size: 40px;">Today estimated user base: 6M to 10M.</p>
+                </section>
+
+                <section>
+                    <h2>Commercial Deployments</h2>
+                    <ul>
+                        <li>Google DataLab</li>
+                        <li>Azure Notebooks</li>
+                        <li>Amazon Sagemaker</li>
+                        <li>CoCalc (SageMathCloud)</li>
+                        <li>Wakari.io</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>The people behind the technology</h3>
+                    <div>
+                    <img alt="village" src="village.png" width="50%;">
+                    <p>and 500+ more contributors</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Funding sources</h3>
+                    <div>
+                    <img alt="sponsors" src="sponsors.png" width="40%;">
+                    </div>
+                </section>
+
+                 <section>
+                    <h3>Impact: Enabling Reproducible Science</h3>
+                    <img alt="ligo" src="ligo.png" width="40%">
+                </section>
+
+                <section>
+                    <h3>Impact: Enabling Reproducible Journalism</h3>
+                    <img alt="buzzfeed" src="buzzfeed.png" width="40%">
+                </section>
+
+                <section>
+                    <h3>Jupyter 2018 - 2019 update</h3>
+                </section>
+
+                <section>
+                    <div style="display: inline-block; width: 60%; margin: 30px; vertical-align: top;">
+                        <h3>JupyterLab</h3>
+                        <div style="margin: auto; text-align: left; font-size: 28px;">
+                        <p>JupyterLab, the Project Jupyter next-generation web frontend and successor to the Jupyter Notebook.</p>
+                        <div style="font-size: 20px;">
+                        <ul>
+                            <li>JupyterLab is ready for users.</li>
+                            <li>entirely new codebase 4 years in the making.</li>
+                            <li>comes with many tools for a scientific workflow, such as:
+                                <ul>
+                                    <li>Jupyter notebook with Jupyter widgets support.</li>
+                                    <li>console, text editor, terminal, and grid viewer.</li>
+                                </ul>
+                            </li>
+                            <li>We are working on real-time collaborative editing and stabilizing the extension API for JupyterLab core components.</li>
+                        </ul>
+                        </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div style="display: inline-block; width: 60%; margin: 30px; vertical-align: top;">
+                        <h3>Kernels</h3>
+                        <div style="margin: auto; text-align: left; font-size: 28px;">
+                        <p>The Xeus C++ library is a standard implementation of the Jupyter kernel protocol</p>
+                        <div style="font-size: 20px;">
+                        <ul>
+                            <li>A Kernel for interpreted C++, xeus-cling</li>
+                            <li>A new Python kernel, xeus-python</li>
+                            <li>A new R kernel, JuniperKernel</li>
+                        </ul>
+                        </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div style="display: inline-block; width: 60%; margin: 30px; vertical-align: top;">
+                        <h3>JupyterHub & Binder</h3>
+                        <img alt="Jupyterhub" src="hub-logo.svg" width="20%" style="display: inline;"/>
+                        <img alt="Binder" src="binder-logo.png" width="20%" style="display: inline;"/>
+                        <div style="margin: auto; text-align: left; font-size: 20px;">
+                        <p>JupyterHub provides a platform for multi-user scientific computing</p>
+                        <ul>
+                            <li>JupyterHub 1.0 released May 3rd 2019.
+                                <ul>
+                                    <li>Named servers - configurable number of named servers, such as "research" and "teaching"</li>
+                                    <li>Improved spawn behavior</li>
+                                    <li>Total internal encryption</li>
+                                    <li>Authentication expiration and refresh - get new oauth tokens</li>
+                                </ul>
+                            </li>
+                            <li>Binder reaching 100k launches per week. BinderHub out of beta!</li>
+                        </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div style="display: inline-block; width: 60%; margin: 30px; vertical-align: top;">
+                        <h3>Leadership</h3>
+                        <div style="margin: auto; text-align: left; font-size: 28px;">
+                        <p>Jupyter has an open governance lead by a steering council.</p>
+                        <ul>
+                            <li>Ana Ruvalcaba, Afshin Darian, and M Pacer have joined the Jupyter Steering Council.</li>
+                        </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div style="display: inline-block; width: 60%; margin: 30px; vertical-align: top;">
+                        <h3>Community Workshops</h3>
+                        <div style="margin: auto; text-align: left; font-size: 28px;">
+                        <p>We received a $120k grant from Bloomberg to organize Jupyter community workshop, and ran a call for proposals for community workshops.</p>
+                        <div style="font-size: 20px;">
+                        <ul>
+                            <li>Jupyter interactive widgets</li>
+                            <li>Jupyter for scientific user facilities and high-performance computing</li>
+                            <li>Building upon the Jupyter kernel protocol</li>
+                            <li>Nbgrader hackathon/code sprint</li>
+                            <li>South-American Jupyter developers</li>
+                            <li>Jupyter server design and roadmap workshop</li>
+                            <li>Dashboarding in the Jupyter ecosystem</li>
+                            <li>Introduction to Python Coding for Kids, Parents and Teachers</li>
+                        </ul>
+                        </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div style="display: inline-block; width: 60%; margin: 30px; vertical-align: top;">
+                        <h4>ACM Software System Award</h4>
+                        <div style="margin: auto; text-align: left; font-size: 28px;">
+                        <p>Finally, Jupyter was honored to receive the prestigious Association of Computing Machinery 2017 Software System Award. We are humbled to join the list of recipients, including:</p>
+                        <ul>
+                            <li>TeX</li>
+                            <li>The Web</li>
+                            <li>Unix, GCC</li>
+                            <li>PostScript</li>
+                            <li>Java.</li>
+                        </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <img alt="acm-award" src="acm-award.jpg" width="40%">
+                </section>
+
+                <section>
+                    <div style="display: inline-block; width: 60%; margin: 30px; vertical-align: top;">
+                        <h3>What is coming in the next few months?</h3>
+                        <div style="margin: auto; text-align: left; font-size: 28px;">
+                        <ul>
+                            <li>Live collaboration in JupyterLab!</li>
+                            <li>Jupyter-based dashboarding!</li>
+                            <li>Interactive debugging!</li>
+                        </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div style="display: inline-block; width: 60%; margin: 30px; vertical-align: top;">
+                        <h3>How to get involved?</h3>
+                        <ul>
+                            <li>Engage with us through open-source contributions, at conferences</li>
+                            <li>Host conferences, workshops, sponsor meetups</li>
+                            <li>Donate to NumFOCUS</li>
+                            <li>Fund Jupyter developers, for custom features, training</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                        <div style="display: inline-block; width: 60%; margin: 30px; vertical-align: top;">
+                        <h3>Where to find us?</h3>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://twitter.com/SylvainCorlay" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@SylvainCorlay</em>
+                                </a>
+                            </div>
+                            <div class="card-info" style="display: inline;">
+                                <a href="https://twitter.com/QuantStack" target="_blank">
+                                    <span class="genericon genericon-twitter"></span>
+                                    <em>@QuantStack</em>
+                                </a>
+                            </div>
+                        </div>
+                </section>
+
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
+                width: "100%",
+                height: "100%",
+                margin: 0,
+                minScale: 1,
+                maxScale: 1,
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
+</html>
