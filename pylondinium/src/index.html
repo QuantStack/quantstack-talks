@@ -243,11 +243,13 @@
                 <section>
                     <h4>Jupyter Widgets</h4>
                     <img alt="widgets" src="wealth-of-nations.gif" width="50%">
+                    <p>Recreation of Mike Bostock's Wealth of Nations. This was also done by Gapminder. It is originally based on a TED Talk by Hans Rosling.</p>
                 </section>
 
                 <section>
                     <h4>Jupyter Widgets</h4>
                     <img alt="xleaflet" src="xleaflet.gif" width="50%">
+                    <p>A demo of xleaflet, a C++ interactive widgets library for the xeus-cling C++ Jupyter kernel</p>
                 </section>
                 
                 <section>
@@ -313,7 +315,7 @@
                         <p>For a long time, the focus of the Python community was to improve <i>the language</i>, and less importance was given to the Interpreter.</p>
                         <p>The REPL could become a more central project:</p>
                         <ul>
-                            <li>Improving CPython APIs to facilitate building alternative front-ends such as IPython and Jupyter</li>
+                            <li>Improving CPython APIs to facilitate building front-ends such as IPython and Jupyter</li>
                             <li>Including some of Jupyter features into CPython?</li>
                         </ul>
                     </div>
@@ -325,21 +327,21 @@
                     <div style="width: 70%; margin: auto; font-size: 20px; text-align: left;">
                     <ul>
                         <li>Could the rich mime type support of Jupyter be upstreamed into CPython?</li>
-                        <li>IPython currently goes down to the python ast to determine whether to display an object or not</li>
+                        <li>IPython currently goes down to the python ast to determine whether to display an object or not.</li>
                     </ul>
                     </div>
                 </section>
 
                 <section>
                     <h4>Magics</h4>
+                    <p>Commands for Jupyter kernels that are not part of the language</p>
                     <img alt="timeit" src="timeit.png" width="40%">
                     <div style="width: 70%; margin: auto; font-size: 20px; text-align: left;">
-                    <p>Special commands for Jupyter kernels that are not part of the language.</p>
                     <ul>
-                        <li>IPython has an extensible "magics" framework, and over a hundred core commands, allowing to
+                        <li>IPython has an extensible "magics" framework, and over a hundred of such commands in the core library allowing to
                         <ul>
-                            <li>make use of the shell</li>
-                            <li>load files, change current working directory, measure execution time, anotate code, etc.</li>
+                            <li>make use of the shell to delete files, change current working directory</li>
+                            <li>measure execution time, annotate code, completely switch context to another programming language</li>
                         </ul>
                         </li>
                     </ul>
@@ -428,6 +430,28 @@ Out[3]:
                 </section>
 
                 <section>
+                    <div style="margin: auto; width: 971px; background: #AAA;">
+                        <p>The voilà execution model</p>
+                        <img style="width: 428px;" src="voila-execution.png">
+                    </div>
+                </section>
+
+                <section>
+                    <div>
+                        <h4>Custom voilà templates</h4>
+                        <pre>voila --template=foobar</pre>
+                        <pre>
+PREFIX/share/jupyter/voila/templates/foobar/
+|
+├── conf.json                # Template configuration file
+├── nbconvert_templates/     # Custom nbconvert templates
+├── static/                  # Static directory
+└── templates/               # Custom tornado templates
+                        </pre>
+                    </div>
+                </section>
+
+                <section>
                     <div style="margin: auto; width: 971px;">
                         <p>Custom voilà templates</p>
                         <img style="width: 428px;" src="voila-dashboard.gif">
@@ -436,9 +460,21 @@ Out[3]:
                 </section>
 
                 <section>
-                    <div style="margin: auto; width: 971px; background: #AAA;">
-                        <p>The voilà execution model</p>
-                        <img style="width: 428px;" src="voila-execution.png">
+                    <div style="margin: auto; width: 971px;">
+                        <p>Custom voilà templates</p>
+                        <img style="width: 428px;" src="voila-vuetify.gif">
+                        <pre>pip install voila-vuetify</pre>
+                    </div>
+                </section>
+
+                <section>
+                    <h4>How does it compare to other dashboarding systems</h4>
+                    <div style="margin: auto; width: 971px;">
+                        <ul>
+                            <li>Built upon Jupyter protocols, Voilà is language-agnostic.</li>
+                            <li>The main entry point is a notebook document. Voilà is merely another way to look at it.</li>
+                            <li>It allows separating content from the dashboarding layout information.</li>
+                        </ul>
                     </div>
                 </section>
 
@@ -446,9 +482,9 @@ Out[3]:
                     <div style="margin: auto; width: 971px;">
                         <p>Coming soon</p>
                         <ul>
-                            <li>Voila template for slideshows</li>
-                            <li>Voila template for the dock area layout</li>
-                            <li>Progressive rendering of notebooks in voila</li>
+                            <li>A Voilà template for slideshows</li>
+                            <li>A Voilà template for the dock area layout</li>
+                            <li>Progressive rendering of notebooks in voilà</li>
                             <li>Support for the legacy jupyter-dashboards format in voila-gridstack</li>
                         </ul>
                     </div>
