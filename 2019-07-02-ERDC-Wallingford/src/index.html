@@ -1,0 +1,802 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>reveal.js</title>
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css">
+        <link rel="stylesheet" href="genericons.css">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+        <style>
+        .reveal section img {
+            border: none;
+            background-color: initial;
+            margin: 10px;
+        }
+        .reveal .normal-paragraph {
+            text-align: left;
+            margin: 0 auto 0 auto;
+            width: 60%;
+        }
+        .reveal .normal-paragraph p {
+            text-align: left;
+        }
+        .header-left {
+            position: absolute;
+            top: 2%;
+            left: 2%;
+        }
+        .header-right {
+            position: absolute;
+            top: 2%;
+            right: 2%;
+        }
+        .footer-left {
+            position: absolute;
+            bottom: 2%;
+            left: 2%;
+        }
+        .reveal .genericon {
+          font-family: "genericons";
+        }
+
+        .reveal .bio-card {
+          background: #333;
+          border-radius: 2px;
+          display: inline-block;
+          width: 260px;
+          margin: 1rem;
+          position: relative;
+          font-size: 20px;
+        }
+
+        .reveal .card-photo {
+          display: block;
+          width: 200px;
+          border-top-left-radius: 2px;
+          border-top-right-radius: 2px;
+          margin: 28px auto 0 auto;
+        }
+
+        .reveal .card-header {
+          width: 100%;
+          font-size: 20px;
+          margin-top: 10px;
+          text-align: center;
+        }
+
+        .reveal .card-info {
+          width: 100%;
+          float: left;
+          font-size: 20px;
+          margin-top: 0;
+          padding: 0 4px;
+          text-align: center;
+        }
+
+        .reveal .card-info a {
+          text-decoration: none;
+          color: #999;
+        }
+
+        .reveal .card-info em {
+          vertical-align: top;
+        }
+
+        .revral .card-info a .genericon {
+          vertical-align: middle;
+        }
+
+        .reveal .bio-social a {
+          text-decoration: none;
+        }
+
+        .reveal .bio-photo {
+          width: 200px;
+          margin: 0 40px 40px -40px;
+          float: left;
+        }
+
+        .reveal section img {
+            box-shadow: none;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="common" style="z-index: 2;">
+            <div class="header-left">
+                <img alt="QuantStack" src="quantstack-white.svg" width="30%"/>
+            </div>
+            <div class="footer-left">
+                <div style="color: white; font-family: Source Sans Pro, Helvetica, sans-serif;">
+                <img alt="Twitter" src="twitter-white.svg" height="20px"/>
+                <img alt="GitHub" src="github-white.svg" height="20px"/>
+                <p style="display: inline; vertical-align: top; margin-left: 4px; font-size: 20px;">@SylvainCorlay @JohanMabille @QuantStack</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal">
+            <div class="slides">
+
+                <section>
+                    <img alt="QuantStack" src="quantstack-white.svg" width="55%">
+                </section>
+
+                <section>
+                    <p>The QuantStack Team</p>
+                    <div class="team-section-content">
+                        <div>
+                            <div class="bio-card">
+                                <img class="card-photo" alt="Avatar picture" src="Sylvain.jpg">
+                                <p class="card-header">Sylvain Corlay</p>
+                                <div class="card-info">
+                                    <a href="https://github.com/SylvainCorlay" target="_blank">
+                                        <span class="genericon genericon-github"></span>
+                                        <em>@SylvainCorlay</em>
+                                    </a>
+                                </div>
+                                <div class="card-info">
+                                    <a href="https://twitter.com/SylvainCorlay" target="_blank">
+                                        <span class="genericon genericon-twitter"></span>
+                                        <em>@SylvainCorlay</em>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="bio-card">
+                                <img class="card-photo" alt="Avatar picture" src="Johan.jpg">
+                                <p class="card-header">Johan Mabille</p>
+                                <div class="card-info">
+                                    <a href="https://github.com/JohanMabille" target="_blank">
+                                        <span class="genericon genericon-github"></span>
+                                        <em>@JohanMabille</em>
+                                    </a>
+                                </div>
+                                <div class="card-info">
+                                    <a href="https://twitter.com/JohanMabille" target="_blank">
+                                        <span class="genericon genericon-twitter"></span>
+                                        <em>@JohanMabille</em>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="bio-card">
+                                <img class="card-photo" alt="Avatar picture" src="Wolf.jpg">
+                                <p class="card-header">Wolf Vollprecht</p>
+                                <div class="card-info" style="display: inline;">
+                                    <a href="https://github.com/wolfv" target="_blank">
+                                        <span class="genericon genericon-github"></span>
+                                        <em>@wolfv</em>
+                                    </a>
+                                </div>
+                                <div class="card-info" style="display: inline;">
+                                    <a href="https://twitter.com/wuoulf" target="_blank">
+                                        <span class="genericon genericon-twitter"></span>
+                                        <em>@wuoulf</em>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="bio-card">
+                                <img class="card-photo" alt="Avatar picture" src="Martin.jpg">
+                                <p class="card-header">Martin Renou</p>
+                                <div class="card-info" style="display: inline;">
+                                    <a href="https://github.com/martinRenou" target="_blank">
+                                        <span class="genericon genericon-github"></span>
+                                        <em>@martinRenou</em>
+                                    </a>
+                                </div>
+                                <div class="card-info" style="display: inline;">
+                                    <a href="https://twitter.com/Renou_Martin" target="_blank">
+                                        <span class="genericon genericon-twitter"></span>
+                                        <em>@Renou_Martin</em>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="bio-card">
+                                <img class="card-photo" alt="Avatar picture" src="Maarten.jpg">
+                                <p class="card-header">Maarten Breddels</p>
+                                <div class="card-info">
+                                    <a href="https://github.com/maartenbreddels" target="_blank">
+                                        <span class="genericon genericon-github"></span>
+                                        <em>@maartenbreddels</em>
+                                    </a>
+                                </div>
+                                <div class="card-info">
+                                    <a href="https://twitter.com/maartenbreddels" target="_blank">
+                                        <span class="genericon genericon-twitter"></span>
+                                        <em>@maartenbreddels</em>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="bio-card">
+                                <img class="card-photo" alt="Avatar picture" src="Jeremy.jpg">
+                                <p class="card-header">Jeremy Tuloup</p>
+                                <div class="card-info">
+                                    <a href="https://github.com/jtpio" target="_blank">
+                                        <span class="genericon genericon-github"></span>
+                                        <em>@jtpio</em>
+                                    </a>
+                                </div>
+                                <div class="card-info">
+                                    <a href="https://twitter.com/maartenbreddels" target="_blank">
+                                        <span class="genericon genericon-twitter"></span>
+                                        <em>@jtpio</em>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div style="position: relative; margin: auto; height: 428px; width: 971px;">
+                        <img style="position: absolute; top: 0; left: 0; height: 428px;" src="circle1.svg">
+                        <img style="position: absolute; top: 0; left: 0; height: 428px;" src="circle2.svg">
+                        <img style="position: absolute; top: 0; left: 0; height: 428px;" src="circle3.svg">
+                        <img style="position: absolute; top: 0; left: 320px; height: 428px;" src="main-logo.svg">
+                    </div>
+                    <div style="height: 40px;">
+                    </div>
+                    <p>Jupyter: Humans in the Read-Eval-Print-Loop</p>
+                </section>
+
+                <section>
+                    <section>
+                        <img src="jupyter.svg" width="10%" style="box-shadow: none;">
+                        <p>What is Jupyter?</p>
+                        <div style="width: 70%; margin: auto; font-size: 24px;">
+                        <p>A consistent set of tools meant to improve the workflow of engineers, scientists</p>
+                        <ul>
+                           <li>from the <i>exploratory</i> phase of their work</p>
+                           <li>to the <i>communication</i> of their result</li>
+                           <li>including all the intermediary steps</li>
+                        </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h4>The Jupyter Notebook</h4>
+                        <ul style="font-size: 24px;">
+                            <li><i>Interactive</i>, browser-based computing environment</p></li>
+                            <li><i>Exploratory</i> data science, ML, visualization, analysis, stats</li>
+                            <li>Reproducible document format:
+                                <ul>
+                                <li>Code</li>
+                                <li>Narrative text (markdown)</li>
+                                <li>Equations (LaTeX)</li>
+                                <li>Images, visualizations</li>
+                                </ul>
+                           </li>
+                            <li>Over 50 programming languages</li>
+                            <li>Everything open-source (BSD license)</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h4>The Jupyter Notebook</h4>
+                        <img src="notebook.png" width="50%">
+                    </section>
+
+                    <section>
+                        <h4>More Than Notebooks</h4>
+                        <img alt="More than notebooks" src="more-than-notebooks.png" width="50%">
+                    </section>
+
+                    <section>
+                        <h4>Jupyterlab</h4>
+                        <img alt="jupyterlab" src="jupyterlab.png" width="50%">
+                    </section>
+                    
+                    <section>
+                        <h4>Jupyter Widgets</h4>
+                        <img alt="widgets" src="wealth-of-nations.gif" width="50%">
+                        <p>Recreation of Mike Bostock's Wealth of Nations. This was also done by Gapminder. It is originally based on a TED Talk by Hans Rosling.</p>
+                    </section>
+                    
+                    <section>
+                        <h4>Jupyter Widgets</h4>
+                        <img alt="leaflet" src="basemap.gif" width="50%">
+                        <p>A demo of ipyleaflet, a Jupyter - Leaflet.js bridge</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h4>Jupyter Architecture</h4>
+                        <div style="text-align: left; font-size: 24px; width: 70%; margin-left: auto; margin-right: auto;">
+                        <i style="font-size: 24px;">A specification matters a great deal more than any implementation.</i>
+                        <p>Well-specified</em>
+                        <ul style="padding-left: 40px;">
+                            <li>Communication protocols (Kernels, Widgets, Mime Types)</li>
+                            <li>File formats</li>
+                            <li>Serialization Schemas</li>
+                        </ul>
+                        <p>transformed Jupyter in the HTTP of Scientific Computing for</p>
+                        <ul style="padding-left: 40px;">
+                            <li>Exploratory Analysis</li>
+                            <li>Data Visualization</li>
+                            <li>In a language-agnostic fashion</li>
+                        </ul>
+                        </div>
+                    </section>
+                    
+                    <section>
+                        <h2>The Jupyter Kernel Protocol</h2>
+                        <img alt="Jupyter Architecture" src="jupyter-arch.svg" width="35%"/>
+                        <div style="max-width: 80%; text-align: left; margin: auto;">
+                        <ul>
+                            <li>A well-specified protocol built upon web standards</li>
+                            <li>Implemented for more than 40 languages</li>
+                        </ul>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Implementations of the protocol</h2>
+                        <ul>
+                            <li>Some kernels have their own implementation of the protocol
+                            <ul style="font-size: 28px;">
+                                <li>Python (ipykernel)</li>
+                                <li>R (IRkernel)</li>
+                                <li>Julia (IJulia)</li>
+                            </ul>
+                            </li>
+                            <li>Many others make use of the <strong>wrapper kernel</strong> approach
+                            <ul style="font-size: 28px;">
+                                <li>The Octave and Matlab kernels</li>
+                            </ul>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>On the wrapper kernel approach</h2>
+                        <div style="max-width: 50%; font-size: 28px; margin: auto; text-align: left;">
+                        <ul>
+                            <li>Dependency on the Python runtime</li>
+                            <li>The wrapped interpreter generally does not have a Python API.
+                                <ul>
+                                    <li>Typical approach is to capture text output from the interpreter!</li>
+                                    <li>This makes <strong>widgets</strong> and <strong>rich display</strong> impossible</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p style="width: 75%; text-align: left; margin-left: auto; margin-right: auto;">In fact, a kernel is merely an executable
+                        implementing an inter-process communication protocol.
+                        <p><strong>Non-python kernels should not require the Python runtime.</strong></p>
+                        </p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <img alt="xeus" src="xeus.svg" width="40%"/>
+                        <p>&nbsp;</p>
+                        <ul style="max-width: 60%; font-size: 30px;">
+                            <li>A modern C++ implementation of the Jupyter protocol</li>
+                            <li>Enabling kernel authors to create new kernels without having to deal with the details of the Jupyter protocol.</li>
+                            <li>Implements the widgets protocol</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <img alt="xeus-cling" src="xeus-cling.svg" width="50%"/>
+                        <p>A Jupyter kernel for the C++ programming language</p>
+                    </section>
+
+                    <section>
+                        <h4>Jupyter Widgets</h4>
+                        <img alt="widgets" src="widgets.gif" width="50%">
+                        <p>xwidgets, a C++ backend for the Jupyter interactive widgets</p>
+                    </section>
+
+                    <section>
+                        <h4>Jupyter Widgets</h4>
+                        <img alt="widgets" src="xleaflet.gif" width="50%">
+                        <p>xwidgets, a C++ backend for the Jupyter leaflet widgets</p>
+                    </section>
+                </section>
+
+                <section>
+                    <style>
+                        div.splitting {
+                            background-color: rgb(20, 98, 135);
+                            width: 50%;
+                            height: 800%;
+                            position: absolute;
+                            top: -200%;
+                            left: 0;
+                            z-index: -1;
+                        }
+
+                        div.left-panel {
+                            width: 45%;
+                            display: inline-block;
+                            margin-right: 5%;
+                            vertical-align: top;
+                        }
+
+                        div.right-panel {
+                            width: 45%;
+                            display: inline-block;
+                        }
+
+                        code.panel {
+                            background-color: initial;
+                        }
+
+                        pre.panel {
+                            box-shadow: none;
+                        }
+                    </style>
+                    <section>
+                        <img alt="xtensor" src="xtensor.svg" width="80%"/>
+                        <p>The Lazy Tensor Algebra Expression System</p>
+                    </section>
+        
+                    <section>
+                        <h2>What is xtensor?</h2>
+                        <div style="margin-left: auto; margin-right: auto; width: 70%; font-size: 24px;">
+                        <ul>
+                            <li class="fragment">
+                                <p>A C++ template library for multi-dimensional array manipulation</p>
+                                <img alt="xtensor" src="xtensor.svg" width="12%"/>
+                                <ul>
+                                    <li>
+                                        <p>Followings the idioms of the C++ STL</p>
+                                        <p>(iterator pairs, clear value semantics)</p>
+                                    </li>
+                                    <li>But also an API similar to that of numpy</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>What is xtensor?</h2>
+                        <div style="margin: auto; width: 80%; font-size: 24px;">
+                        <ul>
+                            <li class="fragment">
+                                <p>Python bindings to enable xtensor APIs on numpy arrays.</p>
+                                <img alt="xtensor-python" src="xtensor-python.svg" width="20%"/>
+                            </li>
+                            <li class="fragment">
+                                <p>Julia bindings to enable xtensor APIs on Julia arrays.</p>
+                                <img alt="xtensor-julia" src="xtensor-julia.svg" width="20%"/>
+                            </li>
+                            <li class="fragment">
+                                <p>R bindings to enable xtensor APIs on R arrays.</p>
+                                <img alt="xtensor-r" src="xtensor-r.svg" width="20%"/>
+                            </li>
+                            <li class="fragment">
+                                <p>Cookiecutter projects for authoring of Python, Julia, and R extensions.</p>
+                                <img alt="xtensor-cookiecutter" src="xtensor-cookiecutter.svg" width="20%"/>
+                            </li>
+                        </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>What is xtensor?</h2>
+                        <div style="margin-left: auto; margin-right: auto; width: 70%; font-size: 24px;">
+                        <ul>
+                            <li class="fragment">
+                                <p>BLAS bindings to enable BLAS operations on xtensor expressions.</p>
+                                <img alt="xtensor-blas" src="xtensor-blas.svg" width="20%"/>
+                            </li>
+                            <li class="fragment">
+                                <p>SIMD acceleration kernels.</p>
+                                <img alt="xsimd" src="xsimd.svg" width="20%"/>
+                            </li>
+                            <li class="fragment">All open-source (BSD License).</li>
+                        </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="splitting"></div>
+                        <p style="vertical-align: top;">Lazy evaluation</p>
+                        <div class="fragment">
+                            <div class="left-panel fragment" data-fragment-index="2">
+                                <p>res does not hold any value, nothing is evaluated ...</p>
+                            </div>
+                            <div class="right-panel fragment" data-fragment-index="1">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xarray&lt;double&gt; a, b, c;
+                                    // ... initialization of a, b and c ...
+                                    auto res = sqrt(cos(a) + sin(b)) * c;
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div class="fragment" style="margin-top: 1%;">
+                            <div class="left-panel" data-fragment-index="3">
+                                <p>... until assigned to a container ...</p>
+                            </div>
+                            <div class="right-panel" data-fragment-index="4">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                xarray&lt;double&gt; d = res;
+                                // or
+                                xarray&lt;double&gt; d = sqrt(cos(a) + sin(b)) * c;
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div class="fragment" style="margin-top: 1%;">
+                            <div class="left-panel" data-fragment-index="5">
+                                <p>... or upon access</p>
+                            </div>
+                            <div class="right-panel" data-fragment-index="6">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    // Assuming res is a 2D tensor
+                                    double d = res(4, 2);
+                                </code></pre>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <p><code>res</code> is an <em>expression</em></p>
+                        <img alt="expression.svg" src="expression.svg" width="40%"/>
+                    </section>
+ 
+                    <section>
+                        <div class="splitting"></div>
+                        <p>Expression system</p>
+                        <div>
+                            <div class="left-panel">
+                                <p style="text-align: right;">Client code</p>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xarray&lt;double&gt; a, b, c;
+                                    // ... initialization of a, b and c ...
+                                    xarray&lt;double&gt; res = sqrt(cos(a) + sin(b)) * c;
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div class="fragment" style="margin-top: 3%">
+                            <div class="left-panel">
+                                <p style="text-align: right;">Traditional implementation</p>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xarray&lt;double&gt; tmp1 = cos(a);
+                                    xarray&lt;double&gt; tmp2 = sin(b);
+                                    xarray&lt;double&gt; tmp3 = tmp1 + tmp2;
+                                    xarray&lt;double&gt; tmp4 = sqrt(tmp3);
+                                    xarray&lt;double&gt; res = tmp4 * c;
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div class="fragment" style="margin-top: 3%;">
+                            <div class="left-panel">
+                                <p style="text-align: right;">xtensor generated implementation</p>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xarray&lt;double&gt; res(broadcast_shape(a, b, c));
+                                    for(size_t i = 0; i < res.shape()[0]; ++i)
+                                        res(i) = sqrt(cos(a(i)) + sin(b(i))) * c(i);
+                                </code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="splitting"></div>
+                        <p>Expression system</p>
+                        <div>
+                            <div class="left-panel">
+                                <p style="text-align: right;">Client code</p>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xarray&lt;double&gt; a, b, c;
+                                    // ... initialization of a, b and c ...
+                                    double res = (sqrt(cos(a) + sin(b)) * c)(4, 2);
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div class="fragment" style="margin-top: 3%">
+                            <div class="left-panel">
+                                <p style="text-align: right;">The traditional implementation is equivalent to</p>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    xarray&lt;double&gt; tmp1 = cos(a);
+                                    xarray&lt;double&gt; tmp2 = sin(b);
+                                    xarray&lt;double&gt; tmp3 = tmp1 + tmp2;
+                                    xarray&lt;double&gt; tmp4 = sqrt(tmp3);
+                                    xarray&lt;double&gt; tmp5 = tmp4 * c;
+                                    double d = tmp5(4, 2);
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div class="fragment" style="margin-top: 3%;">
+                            <div class="left-panel">
+                                <p style="text-align: right;">The xtensor generated assembly is equivalent to</p>
+                            </div>
+                            <div class="right-panel">
+                                <pre class="panel"><code class="cpp panel" data-trim>
+                                    double d = sqrt(cos(a(4, 2)) + sin(b(4, 2)))
+                                               * c(4, 2);
+                                </code></pre>
+                            </div>
+                        </div>
+                    </section>
+ 
+ 
+                    <section>
+                        <img alt="xframe" src="xframe.svg" width="65%"/>
+                        <h2>Data structures for data science</h2>
+                    </section>
+
+                    <section>
+                        <p>Generalization of the dataframe data structure</p>
+                        <img alt="xframe-diagram" src="xframe-diagram.png" width="70%"></img>
+                        <div style="max-width: 70%; margin: auto;">
+                        <ul style="text-align: left; font-size: 28px;">
+                            <li>A collection of N-D variables (instead of 1-D columns)</li>
+                            <li>Each variable is a tensor with named dimensions and labeledd coordinates</li>
+                            <li>Each named dimension corresponds to (instead of a single index for the dataframe)</li>
+                        </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>A dataframe expression system</h2>
+                        <ul style="max-width: 60%; margin: auto; font-size: 28px;">
+                            <li>xframe is to xtensor what pandas and xarray are to numpy</li>
+                            <li>Like with xtensor, operations on xframe are lazy and only evaluated upon access or assignment</li>
+                            <li>The Data model of xframe is very close to that of PyData's xarray</li>
+                        </ul>
+                    </section>
+                </section>
+               
+                <section>
+                    <section>
+                        <h4>Communicating with Notebooks</h4>
+                        <div style="width: 60%; margin: auto; font-size: 16px; text-align: left;">
+                        <p>Notebook are often seen as an implementation of Donald Knuth's <i>litterate programming</i>. A program is given as an explanation of the program logic in a natural language alongside de source code.</p>
+                        <p>Jupyter notebooks have proved invaluable</p>
+                        <ul>
+                            <li>to provide a narative alongside code,</li>
+                            <li>to walk a user through the logic of an algorithm.</li>
+                        </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h4>Communicating with Notebooks</h4>
+                        <div style="width: 70%; margin: auto; font-size: 20px; text-align: left;">
+                            <p>Notebook are not always ideal to address <i>non-technical readers.</i></p>
+                                <ul>
+                                    <li>confused by code cells, or the need to run the notebook to see results.</li>
+                                    <li>following the order of the code in the narrative results in the most interesting content to be at the end of the document.</li>
+                                </ul>
+                            <p>The <i>security</i> model for sharing notebooks is also a challenge.</p>
+                            <ul>
+                                <li>Arbitrary code execution is the main feature of the plaform.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div style="margin: auto; width: 971px;">
+                            <img style="width: 428px;" src="voila.svg">
+                            <p style="font-size: 20px;">From Jupyter notebooks to standalone web applications and dashboards</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div style="margin: auto; width: 971px;">
+                            <p>A voilà application</p>
+                            <img style="width: 428px;" src="voila-basics.gif">
+                        </div>
+                    </section>
+
+                    <section>
+                        <div style="margin: auto; width: 971px; background: #AAA;">
+                            <p>The voilà execution model</p>
+                            <img style="width: 428px;" src="voila-execution.png">
+                        </div>
+                    </section>
+
+                    <section>
+                        <div>
+                            <h4>Custom voilà templates</h4>
+                            <pre>voila --template=foobar</pre>
+                            <pre>
+PREFIX/share/jupyter/voila/templates/foobar/
+|
+├── conf.json                # Template configuration file
+├── nbconvert_templates/     # Custom nbconvert templates
+├── static/                  # Static directory
+└── templates/               # Custom tornado templates
+                            </pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div style="margin: auto; width: 971px;">
+                            <p>Custom voilà templates</p>
+                            <img style="width: 428px;" src="voila-dashboard.gif">
+                            <pre>pip install voila-gridstack</pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div style="margin: auto; width: 971px;">
+                            <p>Custom voilà templates</p>
+                            <img style="width: 428px;" src="voila-vuetify.gif">
+                            <pre>pip install voila-vuetify</pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h4>How does it compare to other dashboarding systems</h4>
+                        <div style="margin: auto; width: 971px;">
+                            <ul>
+                                <li>Built upon Jupyter protocols, Voilà is language-agnostic.</li>
+                                <li>The main entry point is a notebook document. Voilà is merely another way to look at it.</li>
+                                <li>It allows separating content from the dashboarding layout information.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div style="margin: auto; width: 971px;">
+                            <p>Coming soon</p>
+                            <ul>
+                                <li>A Voilà template for slideshows</li>
+                                <li>A Voilà template for the dock area layout</li>
+                                <li>Progressive rendering of notebooks in voilà</li>
+                                <li>Support for the legacy jupyter-dashboards format in voila-gridstack</li>
+                            </ul>
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <p>Et</p>
+                    <img style="width: 428px;" src="voila.svg">
+                </section>
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
+                width: "100%",
+                height: "100%",
+                margin: 0,
+                minScale: 1,
+                maxScale: 1,
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
+</html>
