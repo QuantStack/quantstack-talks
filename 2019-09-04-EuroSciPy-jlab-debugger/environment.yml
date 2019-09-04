@@ -1,0 +1,10 @@
+name: euroscipy-2019-jupyterlab-debugger
+channels:
+- conda-forge
+dependencies:
+- ipdb
+- ipywidgets
+- jupyterlab
+- nodejs
+- ptvsd
+- xeus-python
