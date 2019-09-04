@@ -1,0 +1,5 @@
+jupyter labextension install @jupyterlab/toc \
+                             @jupyter-widgets/jupyterlab-manager \
+                             jupyterlab-topbar-extension \
+                             jupyterlab-topbar-text \
+                             ../jupyterlab-debugger
