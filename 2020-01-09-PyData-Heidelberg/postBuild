@@ -1,0 +1,21 @@
+jupyter labextension install @jupyter-widgets/jupyterlab-manager \
+                             @jupyterlab/debugger \
+                             @jupyterlab/celltags \
+                             @jupyterlab/toc \
+                             @jupyterlab/git \
+                             jupyter-leaflet \
+                             jupyter-vuetify \
+                             jupyterlab-topbar-extension \
+                             jupyterlab-topbar-text \
+                             jupyterlab-theme-toggle \
+                             jupyterlab-heroku \
+                             @jupyter-voila/jupyterlab-preview \
+                             ipycanvas \
+                             bqplot \
+                             --no-build
+
+jupyter lab build
+
+jupyter labextension disable @jupyterlab/debugger
+
+jupyter serverextension enable --sys-prefix --py jupyterlab_heroku jupyterlab_git
