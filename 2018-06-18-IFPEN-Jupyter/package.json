@@ -11,7 +11,7 @@
   "license": "BSD",
   "dependencies": {
     "genericons": "^1.0.1",
-    "reveal.js": "^3.4.1"
+    "reveal.js": "^4.3.0"
   },
   "devDependencies": {
     "cpx": "^1.5.0"
