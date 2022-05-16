@@ -1,0 +1,322 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>reveal.js</title>
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css">
+        <link rel="stylesheet" href="genericons.css">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+        <style>
+        .reveal section img {
+            border: none;
+            background-color: initial;
+            margin: 10px;
+        }
+        .reveal .normal-paragraph {
+            text-align: left;
+            margin: 0 auto 0 auto;
+            width: 60%;
+        }
+        .reveal .normal-paragraph p {
+            text-align: left;
+        }
+        .header-left {
+            position: absolute;
+            top: 2%;
+            left: 2%;
+        }
+        .header-right {
+            position: absolute;
+            top: 2%;
+            right: 2%;
+        }
+        .footer-left {
+            position: absolute;
+            bottom: 2%;
+            left: 2%;
+        }
+        .reveal .genericon {
+          font-family: "genericons";
+        }
+
+        .reveal .bio-card {
+          background: #333;
+          border-radius: 2px;
+          display: inline-block;
+          width: 260px;
+          margin: 1rem;
+          position: relative;
+          font-size: 20px;
+        }
+
+        .reveal .card-photo {
+          display: block;
+          width: 200px;
+          border-top-left-radius: 2px;
+          border-top-right-radius: 2px;
+          margin: 28px auto 0 auto;
+        }
+
+        .reveal .card-header {
+          width: 100%;
+          font-size: 20px;
+          margin-top: 10px;
+          text-align: center;
+        }
+
+        .reveal .card-info {
+          width: 100%;
+          float: left;
+          font-size: 20px;
+          margin-top: 0;
+          padding: 0 4px;
+          text-align: center;
+        }
+
+        .reveal .card-info a {
+          text-decoration: none;
+          color: #999;
+        }
+
+        .reveal .card-info em {
+          vertical-align: top;
+        }
+
+        .revral .card-info a .genericon {
+          vertical-align: middle;
+        }
+
+        .reveal .bio-social a {
+          text-decoration: none;
+        }
+
+        .reveal .bio-photo {
+          width: 200px;
+          margin: 0 40px 40px -40px;
+          float: left;
+        }
+
+        .reveal section img {
+            box-shadow: none;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="common" style="z-index: 2;">
+            <div class="header-left">
+                <img alt="QuantStack" src="quantstack-white.svg" width="30%"/>
+            </div>
+            <div class="footer-left">
+                <div style="color: white; font-family: Source Sans Pro, Helvetica, sans-serif;">
+                <img alt="Twitter" src="twitter-white.svg" height="20px"/>
+                <img alt="GitHub" src="github-white.svg" height="20px"/>
+                <p style="display: inline; vertical-align: top; margin-left: 4px; font-size: 20px;">@JohanMabille @QuantStack</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <div style="position: relative; margin: auto; height: 428px; width: 971px;">
+                        <img style="position: absolute; top: 0; left: 0; height: 428px;" src="circle1.svg">
+                        <img style="position: absolute; top: 0; left: 0; height: 428px;" src="circle2.svg">
+                        <img style="position: absolute; top: 0; left: 0; height: 428px;" src="circle3.svg">
+                        <img style="position: absolute; top: 0; left: 320px; height: 428px;" src="main-logo.svg">
+                    </div>
+                    <div style="height: 40px;">
+                    </div>
+                    <p>Jupyter: Humans in the Read-Eval-Print-Loop</p>
+                </section>
+                <section>
+                    <img src="jupyter.svg" width="10%" style="box-shadow: none;">
+                    <p>What is Jupyter?</p>
+                    <div style="width: 70%; margin: auto; font-size: 24px;">
+                    <p>A consistent set of tools (protocols, standards, libraries) meant to improve the workflow of engineers, scientists</p>
+                    <ul>
+                       <li>from the <i>exploratory</i> phase of their work</p>
+                       <li>to the <i>communication</i> of their result</li>
+                       <li>including all the intermediary steps</li>
+                    </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>The Jupyter Architecture</h2>
+                    <img alt="Jupyter Architecture" src="jupyter-arch.svg" width="35%"/>
+                    <div style="max-width: 80%; text-align: left; margin: auto;">
+                    <ul>
+                        <li>A well-specified protocol built upon web standards</li>
+                        <li>Implemented for more than 40 languages</li>
+                    </ul>
+                    </ul>
+                </section>
+                <section>
+                    <p>The Jupyter ecosystem: main apps</p>
+                    <ul>
+                        <li>Jupyter Lab</li>
+                        <li>Notebook</li>
+                        <li>Voilà</li>
+                        <li>Qt Console</li>
+                        <li>Jupyter Hub</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>The Jupyter ecosystem: core libraries (Python)</p>
+                    <ul>
+                        <li>jupyter_client</li>
+                        <li>jupyter_server</li>
+                        <li>ipython</li>
+                        <li>ipykernel</li>
+                        <li>nbconvert</li>
+                        <li>ipywidgets</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>The Jupyter ecosystem: the Xeus stack (C++)</p>
+                    <ul>
+                        <li>xeus</li>
+                        <li>xeus-cling</li>
+                        <li>xeus-python</li>
+                        <li>xeus-sqlite</li>
+                        <li>xeus-sql</li>
+                        <li>xwidgets</li>
+                        <li>xena (coming soon...)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>The Jupyter Architecture</h2>
+                    <img alt="Jupyter Architecture 2" src="jupyter-arch2.svg" width="50%"/>
+                    <div style="max-width: 80%; text-align: left; margin: auto;">
+
+                </section>
+                <section>
+                    <h2>The Jupyter Protocol</h2>
+                    <p>Clients and kernels communicate through 5 channels</p>
+                    <ul>
+                        <li>Shell: code execution, code completion</li>
+                        <li>Control: stop and restart, kernel info, debugging</li>
+                        <li>stdin: input request</li>
+                        <li>IOPub: broadcast channel to publish results and kernel state</li>
+                        <li>Heartbeat: to check the kernel is still alive</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Message format</h2>
+                    <ul>
+                        <li>Header: identifiers, message type, protocol version</li>
+                        <li>Parent header: when the message is the "result" of another one</li>
+                        <li>Metadata: additional information</li>
+                        <li>Content: body of the message</li>
+                        <li>Buffers: binary buffers for perfomance considerations</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Message format</h2>
+                    <pre class="panel"><code class="python panel">
+{
+    "header" : {
+        "msg_id": "...",
+        "msg_type": "...",
+        ...
+    },
+    "parent_header": {},
+    "metadata": {},
+    "content": {},
+    "buffers": [],
+}
+                    </code></pre>
+                </section>
+                <section>
+                    <h2>Wire protocol</h2>
+                    <pre class="panel"><code class="python panel">
+[
+    b'u-u-i-d',         # zmq identy(ies)
+    b'&lt;IDS|MSG&gt;',       # delimiter
+    b'baddad42',        # HMAC signature
+    b'{header}',        # serialized header dict
+    b'{parent_header}', # serialized parent header dict
+    b'{metadata}',      # serialized metadata dict
+    b'{content}',       # serialized content dict
+    b'\xf0\x9f\x90\xb1' # extra raw data buffer(s)
+    ...
+]
+                    </code></pre>
+                </section>
+                <section>
+                    <h2>Message activity</h2>
+                    <img alt="Message Activity" src="message-activity.svg" width="50%"/>
+                    <div style="max-width: 80%; text-align: left; margin: auto;">
+                </section>
+                <section>
+                    <h2>ZeroMQ sockets</h2>
+                    <ul>
+                        <li>REQ: sends a request, blocks until it receives a reply</li>
+                        <li>REP: waits for a request and sends a reply</li>
+                        <li>ROUTER: can handle multi requests from many sockets (REQ or DEALER)</li>
+                        <li>DEALER: can send multi request to many sockets (REP or ROUTER)</li>
+                        <li>PUB: publisher socket, sends messages to all its suscribers</li>
+                        <li>SUB: subscriber, connects to a PUB sockets and can filter messages</li>
+                        <li>XPUB: publisher tracking new subscribers</li>
+                        <li>XSUB: subscriber tracking new publishers</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>ZeroMQ common patterns</h2>
+                    <ul>
+                        <li>REQ - REP : 1 - 1 (blocking - blocking)</li>
+                        <li>REQ - ROUTER : N - 1 (blocking - async)</li>
+                        <li>DEALER - REP : 1 - N (async - blocking)</li>
+                        <li>DEALER - ROUTER : N - N (async - async)</li>
+                        <li>PUB - SUB</li>
+                        <li>PUB - XSUB</li>
+                        <li>XPUB - SUB</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>ZeroMQ sockets</h2>
+                    <img alt="Jupyter ZeroMQ" src="jupyter-zeromq.svg" width="50%"/>
+                    <div style="max-width: 80%; text-align: left; margin: auto;">
+                </section>
+                <section>
+                    <h2>END</h2>
+                </section>
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
+                width: "100%",
+                height: "100%",
+                margin: 0,
+                minScale: 1,
+                maxScale: 1,
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
+</html>
