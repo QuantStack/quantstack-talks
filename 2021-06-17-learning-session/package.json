@@ -10,7 +10,7 @@
   "author": "",
   "license": "BSD",
   "dependencies": {
-    "decktape": "^3.0.0",
+    "decktape": "^3.4.1",
     "genericons": "^1.0.1",
     "reveal.js": "^3.9.2"
   },
